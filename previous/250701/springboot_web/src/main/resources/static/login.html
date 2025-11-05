@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>次元舱 - 登录</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="login_styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <div class="logo">
+                <h1>次元舱</h1>
+            </div>
+            <p>开始你的个人之旅</p>
+        </div>
+        
+        <form id="login-form" class="login-form">
+            <div class="form-group">
+                <label for="username">账号</label>
+                <input type="text" id="username" name="username" required placeholder="请输入账号">
+            </div>
+            
+            <div class="form-group">
+                <label for="password">密码</label>
+                <input type="password" id="password" name="password" required placeholder="请输入密码">
+            </div>
+            
+            <button onclick="login(event)" type="submit" class="login-btn">登录</button>
+            
+            <div class="form-footer">
+                <a href="register.html">注册新账号</a>|
+                <a href="index.html">游客登录</a>
+            </div>
+        </form>
+    </div>
+
+    <div class="background-animation"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

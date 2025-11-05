@@ -1,0 +1,119 @@
+/* 主容器 */
+.home-container {
+    position: absolute;
+    top: 60px;
+    left: 110px;
+    right: 0;
+    bottom: 0;
+    background-color: #F5FFFF;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* 气泡样式 - 半透明 + 随机色 */
+.bubble {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: floatUp 12s infinite ease-in-out;
+    pointer-events: none;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(0.9);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateY(-200px) scale(1.2);
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateY(-400px) scale(0.8);
+        opacity: 0;
+    }
+}
+
+/* 樱花飘落 */
+.petal {
+    position: absolute;
+    font-size: 24px;
+    color: rgba(255, 200, 200, 0.6);
+    animation: fall linear infinite;
+}
+
+.petal::before {
+    content: '🌸';
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+/* 气泡定位与动画延迟 */
+.bubble1 { top: 10%; left: 10%; animation-delay: 0s; }
+.bubble2 { top: 30%; left: 50%; animation-delay: 2s; }
+.bubble3 { top: 50%; left: 30%; animation-delay: 4s; }
+.bubble4 { top: 70%; left: 80%; animation-delay: 6s; }
+.bubble5 { top: 90%; left: 40%; animation-delay: 8s; }
+
+/* 樱花定位与动画延迟 */
+.petal1 { left: 10%; top: -20px; animation-duration: 15s; animation-delay: 0s; }
+.petal2 { left: 30%; top: -10px; animation-duration: 12s; animation-delay: 3s; }
+.petal3 { left: 50%; top: -30px; animation-duration: 10s; animation-delay: 6s; }
+.petal4 { left: 70%; top: -20px; animation-duration: 14s; animation-delay: 9s; }
+.petal5 { left: 90%; top: -10px; animation-duration: 11s; animation-delay: 12s; }
+
+
+.draggable-text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    color: #ff6b6b;
+    background-color: #FFFAFA;
+    padding: 15px 30px;
+    border-radius: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    user-select: none;
+    cursor: grab;
+    z-index: 10;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    min-width: 400px;
+    max-width: 800px;
+    width: fit-content;
+}
+
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    color: #ff6b6b;
+    background-color: rgba(245, 245, 220, 0.9); /* 米白色半透明背景 */
+    padding: 15px 30px;
+    border-radius: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    user-select: none;
+    font-family: "Microsoft YaHei", sans-serif;
+    text-align: center;
+    max-width: 90%;
+}
+
+@keyframes floatIn {
+    0% { opacity: 0; transform: translate(-50%, -60%) scale(0.95); }
+    100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}

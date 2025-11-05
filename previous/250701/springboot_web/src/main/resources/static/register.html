@@ -1,0 +1,49 @@
+<!-- register.html -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>次元舱 - 注册</title>
+    <link rel="stylesheet" href="login_styles.css">
+</head>
+<body>
+<div class="login-container">
+    <div class="login-header">
+        <div class="logo">
+            <h1>次元舱</h1>
+        </div>
+        <p>注册新账号</p>
+    </div>
+
+    <form id="register-form" class="login-form">
+        <div class="form-group">
+            <label for="user_name">用户名称</label>
+            <input type="text" id="user_name" name="user_name" required placeholder="请输入您的用户名称">
+        </div>
+
+        <div class="form-group">
+            <label for="username">账号</label>
+            <input type="text" id="username" name="username" required placeholder="请输入账号">
+        </div>
+
+        <div class="form-group">
+            <label for="password">密码</label>
+            <input type="password" id="password" name="password" required placeholder="请输入密码">
+        </div>
+
+        <div class="form-group">
+            <label for="confirmPassword">确认密码</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="请再次输入密码">
+        </div>
+
+        <button onclick="register(event)" type="submit" class="login-btn">注册</button>
+
+        <div class="form-footer">
+            <a href="login.html">已有账号？去登录</a>
+        </div>
+    </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

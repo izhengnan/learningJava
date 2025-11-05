@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "微软雅黑", "Microsoft YaHei", sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px; /* 更大的圆角 */
+    box-shadow: 0 5px 20px rgba(255, 107, 107, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #ff6b6b; /* 玫红色标题 */
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e1e1e1;
+    border-radius: 20px; /* 大 R 角输入框 */
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #ff9e9e;
+    background-color: #fff;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff6b6b; /* 玫红按钮 */
+    color: white;
+    border: none;
+    border-radius: 20px; /* 大 R 角按钮 */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #ff5353;
+}
+
+.footer {
+    margin-top: 20px;
+    color: #666;
+    font-size: 14px;
+}
+
+.footer a {
+    color: #ff6b6b; /* 玫红色链接 */
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+

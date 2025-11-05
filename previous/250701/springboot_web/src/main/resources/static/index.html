@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>次元舱 - 首页</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="page_styles.css">
+    <link rel="stylesheet" href="index_styles.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="#" class="logo">
+        <span class="logo-icon">🍥</span>
+        <span class="logo-text">次元舱</span>
+    </a>
+
+    <div class="search-container">
+        <input type="text" class="search-bar" placeholder="搜索...">
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="about.html">关于</a></li>
+        <li id="user-status">
+            <a href="login.html" class="login-btn">登录</a>
+            <a href="register.html" class="register-btn">注册</a>
+        </li>
+    </ul>
+</nav>
+
+<aside class="sidebar collapsed ">
+    <ul class="sidebar-menu">
+        <li><a href="#" class="active">首页</a></li>
+        <li><a href="anime.html">追番</a></li>
+        <li><a href="movie.html">影视</a></li>
+        <li><a href="read.html">阅读</a></li>
+        <li><a href="music.html">音乐</a></li>
+        <li><a href="about.html">关于</a></li>
+    </ul>
+</aside>
+
+<button id="sidebar-toggle" class="sidebar-toggle-btn">
+    <i class="fas fa-angle-left"></i>
+</button>
+
+<main class="main-content">
+    <div class="left-section"></div>
+    <div class="right-section"></div>
+    <div class="content-card">
+        <h1>次元舱</h1>
+        <p>一舱承载万千故事：番剧、影视、小说、音乐，尽在次元舱！</p>
+    </div>
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>

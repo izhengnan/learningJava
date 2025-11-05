@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>次元舱</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="page_styles.css">
+    <link rel="stylesheet" href="music_styles.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="logo">
+        <span class="logo-icon">🍥</span>
+        <span class="logo-text">次元舱</span>
+    </a>
+
+    <div class="search-container">
+        <input type="text" class="search-bar" placeholder="搜索...">
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="about.html">关于</a></li>
+        <li id="user-status">
+            <a href="login.html" class="login-btn">登录</a>
+            <a href="register.html" class="register-btn">注册</a>
+        </li>
+    </ul>
+</nav>
+
+<aside class="sidebar">
+    <ul class="sidebar-menu">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="anime.html">追番</a></li>
+        <li><a href="movie.html">影视</a></li>
+        <li><a href="read.html">阅读</a></li>
+        <li><a href="#" class="active">音乐</a></li>
+        <li><a href="about.html">关于</a></li>
+    </ul>
+</aside>
+
+<button id="sidebar-toggle" class="sidebar-toggle-btn">
+    <i class="fas fa-angle-left"></i>
+</button>
+
+<div class="container">
+    <div class="player-section">
+        <h2>正在播放</h2>
+
+        <div class="disc-container">
+            <div class="disc">
+                <div class="disc-image" id="album-art"></div>
+                <div class="disc-inner"></div>
+                <div class="disc-hole"></div>
+            </div>
+        </div>
+
+        <p id="current-song">未选择歌曲</p>
+
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+
+        <div class="time-info">
+            <span id="current-time">0:00</span>
+            <span id="total-time">0:00</span>
+        </div>
+
+        <div class="player-controls">
+            <button class="control-btn" onclick="togglePlayMode()" id="play-mode-btn">
+                <i class="fas fa-redo"></i>
+            </button>
+
+
+            <!-- 上一首 -->
+            <button class="control-btn" onclick="prevSong()">
+                <i class="fas fa-step-backward"></i>
+            </button>
+
+            <!-- 播放/暂停 -->
+            <button class="control-btn main" onclick="togglePlayPause()" id="play-pause">
+                <i class="fas fa-play"></i>
+            </button>
+
+            <!-- 下一首 -->
+            <button class="control-btn" onclick="nextSong()">
+                <i class="fas fa-step-forward"></i>
+            </button>
+
+            <button class="control-btn" onclick="togglePlaylist()" id="playlist-toggle">
+                <i class="fas fa-list"></i>
+            </button>
+        </div>
+
+
+        <div class="volume-container">
+            <i class="fas fa-volume-up"></i>
+            <div class="volume-slider" id="volume-slider">
+                <div class="volume-level" id="volume-level"></div>
+            </div>
+        </div>
+
+        <div class="upload-container">
+            <label for="upload-music" class="upload-label">
+                <i class="fas fa-cloud-upload-alt"></i> 上传音乐
+            </label>
+            <input type="file" id="upload-music" accept="audio/*" multiple>
+        </div>
+
+        <audio id="audio-player"></audio>
+    </div>
+
+    <!-- 右侧播放列表 -->
+    <div class="playlist-sidebar collapsed" id="playlist-sidebar">
+        <div class="playlist-header">
+            <h2>播放列表</h2>
+            <button class="add-song-btn" onclick="document.getElementById('upload-music').click()">
+                <i class="fas fa-plus"></i> 添加歌曲
+            </button>
+        </div>
+
+        <div class="playlist-options" style="display: none;">
+            <label><input type="checkbox" id="loop-toggle"> 循环播放</label>
+            <label><input type="checkbox" id="shuffle-toggle"> 随机播放</label>
+        </div>
+
+        <ul id="playlist"></ul>
+    </div>
+</div>
+
+<script src="music.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
