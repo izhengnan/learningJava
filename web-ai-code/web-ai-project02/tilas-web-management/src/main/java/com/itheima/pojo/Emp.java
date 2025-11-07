@@ -25,4 +25,6 @@ public class Emp {
     private LocalDateTime updateTime; //修改时间
 
     private String deptName;
+
+    private List<EmpExpr> exprList;
 }

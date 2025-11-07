@@ -2,7 +2,7 @@ package zn;
 
 import java.util.Scanner;
 
-public class zn {
+public class Demo0 {
     public static void main(String[] args) {
         String name;
         int age;
