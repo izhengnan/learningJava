@@ -1,0 +1,835 @@
+2025-11-08 13:39:01.204 [http-nio-8080-exec-8] INFO  com.itheima.controller.DeptController-查询全部的部门数据
+2025-11-08 13:39:01.208 [http-nio-8080-exec-6] INFO  com.itheima.controller.EmpController-分页查询:EmpQueryParam(page=1, pageSize=10, name=, gender=null, begin=null, end=null)
+2025-11-08 13:39:06.129 [http-nio-8080-exec-4] INFO  com.itheima.controller.DeptController-查询全部的部门数据
+2025-11-08 13:39:07.427 [http-nio-8080-exec-9] INFO  com.itheima.controller.DeptController-查询全部的部门数据
+2025-11-08 13:39:07.429 [http-nio-8080-exec-2] INFO  com.itheima.controller.EmpController-分页查询:EmpQueryParam(page=1, pageSize=10, name=, gender=null, begin=null, end=null)
+2025-11-08 14:46:33.395 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-08 14:46:33.424 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-11-08 14:46:33.432 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2025-11-08 14:46:33.437 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2025-11-08 14:46:40.412 [main] INFO  com.itheima.TilasWebManagementApplication-Starting TilasWebManagementApplication using Java 23.0.1 with PID 37320 (C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management\target\classes started by 16048 in C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management)
+2025-11-08 14:46:40.415 [main] INFO  com.itheima.TilasWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2025-11-08 14:46:42.277 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2025-11-08 14:46:42.305 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2025-11-08 14:46:42.309 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-11-08 14:46:42.310 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-08 14:46:42.404 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-11-08 14:46:42.405 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1881 ms
+2025-11-08 14:46:43.710 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2025-11-08 14:46:43.746 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2025-11-08 14:46:43.761 [main] INFO  com.itheima.TilasWebManagementApplication-Started TilasWebManagementApplication in 4.075 seconds (process running for 5.471)
+2025-11-08 14:47:01.124 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-08 14:47:01.125 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2025-11-08 14:47:01.126 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2025-11-08 14:47:07.204 [http-nio-8080-exec-6] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver-Resolved [org.springframework.web.multipart.MaxUploadSizeExceededException: Maximum upload size exceeded]
+2025-11-08 14:47:07.206 [http-nio-8080-exec-6] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver-Resolved [org.springframework.web.multipart.MaxUploadSizeExceededException: Maximum upload size exceeded]
+2025-11-08 14:48:53.713 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-08 14:48:53.741 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-11-08 14:48:57.592 [main] INFO  com.itheima.TilasWebManagementApplication-Starting TilasWebManagementApplication using Java 23.0.1 with PID 41236 (C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management\target\classes started by 16048 in C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management)
+2025-11-08 14:48:57.595 [main] INFO  com.itheima.TilasWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2025-11-08 14:48:59.204 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2025-11-08 14:48:59.227 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2025-11-08 14:48:59.230 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-11-08 14:48:59.231 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-08 14:48:59.308 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-11-08 14:48:59.309 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1627 ms
+2025-11-08 14:49:00.427 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2025-11-08 14:49:00.459 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2025-11-08 14:49:00.476 [main] INFO  com.itheima.TilasWebManagementApplication-Started TilasWebManagementApplication in 3.552 seconds (process running for 5.34)
+2025-11-08 14:49:06.917 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-08 14:49:06.917 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2025-11-08 14:49:06.919 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 2 ms
+2025-11-08 14:49:08.323 [http-nio-8080-exec-4] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver-Resolved [org.springframework.web.multipart.MaxUploadSizeExceededException: Maximum upload size exceeded]
+2025-11-08 14:49:08.325 [http-nio-8080-exec-4] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver-Resolved [org.springframework.web.multipart.MaxUploadSizeExceededException: Maximum upload size exceeded]
+2025-11-08 14:49:48.869 [http-nio-8080-exec-6] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver-Resolved [org.springframework.web.multipart.MaxUploadSizeExceededException: Maximum upload size exceeded]
+2025-11-08 14:49:48.870 [http-nio-8080-exec-6] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver-Resolved [org.springframework.web.multipart.MaxUploadSizeExceededException: Maximum upload size exceeded]
+2025-11-08 14:50:50.446 [http-nio-8080-exec-10] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver-Resolved [org.springframework.web.multipart.MaxUploadSizeExceededException: Maximum upload size exceeded]
+2025-11-08 14:50:50.448 [http-nio-8080-exec-10] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver-Resolved [org.springframework.web.multipart.MaxUploadSizeExceededException: Maximum upload size exceeded]
+2025-11-08 14:52:29.092 [http-nio-8080-exec-8] INFO  com.itheima.controller.UploadController-上传文件：1，1，org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@625c6529
+2025-11-08 14:54:09.161 [http-nio-8080-exec-3] INFO  com.itheima.controller.UploadController-上传文件：1，1，org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@5e64acba
+2025-11-08 15:03:10.703 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-08 15:03:10.738 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-11-08 15:03:18.665 [main] INFO  com.itheima.TilasWebManagementApplication-Starting TilasWebManagementApplication using Java 23.0.1 with PID 50844 (C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management\target\classes started by 16048 in C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management)
+2025-11-08 15:03:18.670 [main] INFO  com.itheima.TilasWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2025-11-08 15:03:20.679 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2025-11-08 15:03:20.710 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2025-11-08 15:03:20.714 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-11-08 15:03:20.714 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-08 15:03:20.800 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-11-08 15:03:20.800 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 2027 ms
+2025-11-08 15:03:22.272 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2025-11-08 15:03:22.312 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2025-11-08 15:03:22.329 [main] INFO  com.itheima.TilasWebManagementApplication-Started TilasWebManagementApplication in 4.465 seconds (process running for 6.288)
+2025-11-08 15:03:38.227 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-08 15:03:38.227 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2025-11-08 15:03:38.229 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2025-11-08 15:03:38.370 [http-nio-8080-exec-1] INFO  com.itheima.controller.UploadController-上传文件：1，1，org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@620cb439
+2025-11-08 15:13:44.362 [http-nio-8080-exec-8] INFO  com.itheima.controller.UploadController-上传文件：null，null，org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@5b336097
+2025-11-08 15:14:04.307 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-08 15:14:04.336 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-11-08 15:14:11.220 [main] INFO  com.itheima.TilasWebManagementApplication-Starting TilasWebManagementApplication using Java 23.0.1 with PID 58564 (C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management\target\classes started by 16048 in C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management)
+2025-11-08 15:14:11.223 [main] INFO  com.itheima.TilasWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2025-11-08 15:14:12.986 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2025-11-08 15:14:13.015 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2025-11-08 15:14:13.019 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-11-08 15:14:13.019 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-08 15:14:13.091 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-11-08 15:14:13.092 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1772 ms
+2025-11-08 15:14:14.170 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2025-11-08 15:14:14.201 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2025-11-08 15:14:14.214 [main] INFO  com.itheima.TilasWebManagementApplication-Started TilasWebManagementApplication in 3.635 seconds (process running for 4.841)
+2025-11-08 15:14:16.886 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-08 15:14:16.886 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2025-11-08 15:14:16.888 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2025-11-08 15:14:16.986 [http-nio-8080-exec-1] INFO  com.itheima.controller.UploadController-上传文件：null，null，org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@7f04a081
+2025-11-08 15:21:05.093 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-08 15:21:05.120 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-11-08 15:21:11.160 [main] INFO  com.itheima.TilasWebManagementApplication-Starting TilasWebManagementApplication using Java 23.0.1 with PID 37372 (C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management\target\classes started by 16048 in C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management)
+2025-11-08 15:21:11.163 [main] INFO  com.itheima.TilasWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2025-11-08 15:21:13.007 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2025-11-08 15:21:13.033 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2025-11-08 15:21:13.035 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-11-08 15:21:13.036 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-08 15:21:13.114 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-11-08 15:21:13.115 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1847 ms
+2025-11-08 15:21:14.253 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2025-11-08 15:21:14.286 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2025-11-08 15:21:14.301 [main] INFO  com.itheima.TilasWebManagementApplication-Started TilasWebManagementApplication in 3.834 seconds (process running for 5.069)
+2025-11-08 15:21:47.623 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-08 15:21:47.624 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2025-11-08 15:21:47.625 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2025-11-08 15:21:47.705 [http-nio-8080-exec-1] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver-Resolved [org.springframework.web.multipart.MaxUploadSizeExceededException: Maximum upload size exceeded]
+2025-11-08 15:21:47.713 [http-nio-8080-exec-1] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver-Resolved [org.springframework.web.multipart.MaxUploadSizeExceededException: Maximum upload size exceeded]
+2025-11-08 15:22:01.534 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-08 15:22:01.559 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-11-08 15:22:05.191 [main] INFO  com.itheima.TilasWebManagementApplication-Starting TilasWebManagementApplication using Java 23.0.1 with PID 42448 (C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management\target\classes started by 16048 in C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management)
+2025-11-08 15:22:05.194 [main] INFO  com.itheima.TilasWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2025-11-08 15:22:06.958 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2025-11-08 15:22:06.979 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2025-11-08 15:22:06.983 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-11-08 15:22:06.983 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-08 15:22:07.078 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-11-08 15:22:07.079 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1787 ms
+2025-11-08 15:22:08.241 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2025-11-08 15:22:08.271 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2025-11-08 15:22:08.284 [main] INFO  com.itheima.TilasWebManagementApplication-Started TilasWebManagementApplication in 3.798 seconds (process running for 5.037)
+2025-11-08 15:22:13.704 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-08 15:22:13.705 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2025-11-08 15:22:13.706 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2025-11-08 15:22:13.786 [http-nio-8080-exec-1] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver-Resolved [org.springframework.web.multipart.MaxUploadSizeExceededException: Maximum upload size exceeded]
+2025-11-08 15:22:13.794 [http-nio-8080-exec-1] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver-Resolved [org.springframework.web.multipart.MaxUploadSizeExceededException: Maximum upload size exceeded]
+2025-11-08 15:22:59.804 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-08 15:22:59.834 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-11-08 15:23:03.301 [main] INFO  com.itheima.TilasWebManagementApplication-Starting TilasWebManagementApplication using Java 23.0.1 with PID 46728 (C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management\target\classes started by 16048 in C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management)
+2025-11-08 15:23:03.304 [main] INFO  com.itheima.TilasWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2025-11-08 15:23:04.990 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2025-11-08 15:23:05.016 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2025-11-08 15:23:05.021 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-11-08 15:23:05.022 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-08 15:23:05.099 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-11-08 15:23:05.100 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1699 ms
+2025-11-08 15:23:06.156 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2025-11-08 15:23:06.185 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2025-11-08 15:23:06.197 [main] INFO  com.itheima.TilasWebManagementApplication-Started TilasWebManagementApplication in 3.523 seconds (process running for 4.724)
+2025-11-08 15:23:14.584 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-08 15:23:14.584 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2025-11-08 15:23:14.585 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2025-11-08 15:23:14.800 [http-nio-8080-exec-1] INFO  com.itheima.controller.UploadController-上传文件：null，null，org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@1eab4d6d
+2025-11-08 16:24:31.090 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-08 16:24:31.115 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-11-08 16:42:56.944 [main] WARN  com.aliyun.oss-[Server]Unable to execute HTTP request: Invalid signing region in Authorization header.
+[ErrorCode]: InvalidArgument
+[RequestId]: 690F0290B980BA3839A8B528
+[HostId]: java-ai-25-11-09.oss-cn-beijing.aliyuncs.com
+[EC]: 0002-00000226
+[ResponseError]:
+<?xml version="1.0" encoding="UTF-8"?>
+<Error>
+  <Code>InvalidArgument</Code>
+  <Message>Invalid signing region in Authorization header.</Message>
+  <RequestId>690F0290B980BA3839A8B528</RequestId>
+  <HostId>java-ai-25-11-09.oss-cn-beijing.aliyuncs.com</HostId>
+  <Authorization>OSS4-HMAC-SHA256 Credential=LTAI5tDT2JxACGHhEbG2qx43/20251108/cn-hangzhou/oss/aliyun_v4_request,Signature=bec43a895f41139762bade53b1fe85685f7de379575ecd12ea4b3590583cf3f5</Authorization>
+  <EC>0002-00000226</EC>
+  <RecommendDoc>https://api.aliyun.com/troubleshoot?q=0002-00000226</RecommendDoc>
+</Error>
+
+2025-11-08 17:56:06.296 [main] INFO  com.itheima.TilasWebManagementApplication-Starting TilasWebManagementApplication using Java 23.0.1 with PID 30500 (C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management\target\classes started by 16048 in C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management)
+2025-11-08 17:56:06.299 [main] INFO  com.itheima.TilasWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2025-11-08 17:56:08.251 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2025-11-08 17:56:08.281 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2025-11-08 17:56:08.284 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-11-08 17:56:08.284 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-08 17:56:08.402 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-11-08 17:56:08.402 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 2001 ms
+2025-11-08 17:56:09.942 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2025-11-08 17:56:09.994 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2025-11-08 17:56:10.004 [main] INFO  com.itheima.TilasWebManagementApplication-Started TilasWebManagementApplication in 4.507 seconds (process running for 5.834)
+2025-11-08 17:56:44.495 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-08 17:56:44.495 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2025-11-08 17:56:44.497 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 2 ms
+2025-11-08 17:56:44.601 [http-nio-8080-exec-2] INFO  com.itheima.controller.UploadController-上传文件：1.png
+2025-11-08 17:56:46.420 [http-nio-8080-exec-2] INFO  com.itheima.controller.UploadController-文件上传成功，返回访问路径：https://java-ai-25-11-09.oss-cn-beijing.aliyuncs.com/2025/11/13321568-4318-4ce8-b7ae-4bdcf07b0713.png
+2025-11-08 18:01:30.262 [http-nio-8080-exec-3] INFO  com.itheima.controller.UploadController-上传文件：615fae97469647eca275350aff74bb99.jpeg
+2025-11-08 18:01:31.071 [http-nio-8080-exec-3] INFO  com.itheima.controller.UploadController-文件上传成功，返回访问路径：https://java-ai-25-11-09.oss-cn-beijing.aliyuncs.com/2025/11/1e60fad1-3cf0-42ae-9d77-7ba0c30e9730.jpeg
+2025-11-08 18:01:52.966 [http-nio-8080-exec-5] INFO  com.itheima.controller.EmpController-新增员工：Emp(id=null, username=辉神, password=null, name=辉神, gender=1, phone=19967778989, job=4, salary=9999999, image=https://java-ai-25-11-09.oss-cn-beijing.aliyuncs.com/2025/11/1e60fad1-3cf0-42ae-9d77-7ba0c30e9730.jpeg, entryDate=2025-11-03, deptId=8, createTime=null, updateTime=null, deptName=null, exprList=[EmpExpr(id=null, empId=null, begin=2025-11-05, end=2025-12-10, company=辉哥办事处, job=神)])
+2025-11-08 18:01:52.984 [http-nio-8080-exec-5] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2025-11-08 18:01:53.330 [http-nio-8080-exec-5] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@70f677cc
+2025-11-08 18:01:53.334 [http-nio-8080-exec-5] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2025-11-08 18:01:53.662 [http-nio-8080-exec-6] INFO  com.itheima.controller.EmpController-分页查询:EmpQueryParam(page=1, pageSize=10, name=, gender=null, begin=null, end=null)
+2025-11-08 18:03:05.463 [http-nio-8080-exec-8] INFO  com.itheima.controller.DeptController-查询全部的部门数据
+2025-11-08 18:03:05.463 [http-nio-8080-exec-7] INFO  com.itheima.controller.EmpController-分页查询:EmpQueryParam(page=1, pageSize=10, name=, gender=null, begin=null, end=null)
+2025-11-08 18:03:20.914 [http-nio-8080-exec-10] INFO  com.itheima.controller.DeptController-查询全部的部门数据
+2025-11-08 18:03:20.915 [http-nio-8080-exec-9] INFO  com.itheima.controller.EmpController-分页查询:EmpQueryParam(page=1, pageSize=10, name=, gender=null, begin=null, end=null)
+2025-11-08 18:20:05.110 [http-nio-8080-exec-2] INFO  com.itheima.controller.DeptController-查询全部的部门数据
+2025-11-08 18:20:05.110 [http-nio-8080-exec-1] INFO  com.itheima.controller.EmpController-分页查询:EmpQueryParam(page=1, pageSize=10, name=, gender=null, begin=null, end=null)
+2025-11-08 18:23:50.117 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-08 18:23:50.144 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-11-08 18:23:50.149 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2025-11-08 18:23:50.159 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2025-11-08 18:23:56.273 [main] INFO  com.itheima.TilasWebManagementApplication-Starting TilasWebManagementApplication using Java 23.0.1 with PID 52544 (C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management\target\classes started by 16048 in C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management)
+2025-11-08 18:23:56.276 [main] INFO  com.itheima.TilasWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2025-11-08 18:23:58.092 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2025-11-08 18:23:58.123 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2025-11-08 18:23:58.125 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-11-08 18:23:58.126 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-08 18:23:58.225 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-11-08 18:23:58.225 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1854 ms
+2025-11-08 18:23:58.756 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext-Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'uploadController': Unsatisfied dependency expressed through field 'aliyunOSSOperator': Error creating bean with name 'aliyunOSSOperator': Injection of autowired dependencies failed
+2025-11-08 18:23:58.759 [main] INFO  org.apache.catalina.core.StandardService-Stopping service [Tomcat]
+2025-11-08 18:23:58.774 [main] INFO  o.s.b.a.logging.ConditionEvaluationReportLogger-
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-11-08 18:23:58.810 [main] ERROR org.springframework.boot.SpringApplication-Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'uploadController': Unsatisfied dependency expressed through field 'aliyunOSSOperator': Error creating bean with name 'aliyunOSSOperator': Injection of autowired dependencies failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1459)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1228)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1130)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:990)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.itheima.TilasWebManagementApplication.main(TilasWebManagementApplication.java:10)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'aliyunOSSOperator': Injection of autowired dependencies failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:515)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1459)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1708)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1653)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+	... 22 common frames omitted
+Caused by: org.springframework.util.PlaceholderResolutionException: Could not resolve placeholder 'aliyun.endpoint' in value "${aliyun.endpoint}"
+	at org.springframework.util.PlaceholderResolutionException.withValue(PlaceholderResolutionException.java:81)
+	at org.springframework.util.PlaceholderParser$ParsedValue.resolve(PlaceholderParser.java:298)
+	at org.springframework.util.PlaceholderParser.replacePlaceholders(PlaceholderParser.java:131)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:114)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:293)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:264)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:186)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:970)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1675)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1653)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	... 32 common frames omitted
+2025-11-08 18:34:54.661 [main] INFO  com.itheima.TilasWebManagementApplication-Starting TilasWebManagementApplication using Java 23.0.1 with PID 52304 (C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management\target\classes started by 16048 in C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management)
+2025-11-08 18:34:54.663 [main] INFO  com.itheima.TilasWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2025-11-08 18:34:56.525 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2025-11-08 18:34:56.552 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2025-11-08 18:34:56.555 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-11-08 18:34:56.555 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-08 18:34:56.643 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-11-08 18:34:56.643 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1893 ms
+2025-11-08 18:34:57.910 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2025-11-08 18:34:57.939 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2025-11-08 18:34:57.953 [main] INFO  com.itheima.TilasWebManagementApplication-Started TilasWebManagementApplication in 3.985 seconds (process running for 5.243)
+2025-11-08 18:36:47.777 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-08 18:36:47.777 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2025-11-08 18:36:47.778 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2025-11-08 18:36:47.883 [http-nio-8080-exec-1] INFO  com.itheima.controller.UploadController-上传文件：11.png
+2025-11-08 18:36:47.912 [http-nio-8080-exec-1] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet]-Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: 参数"endpoint"为空指针。] with root cause
+java.lang.NullPointerException: 参数"endpoint"为空指针。
+	at com.aliyun.oss.common.utils.CodingUtils.assertParameterNotNull(CodingUtils.java:35)
+	at com.aliyun.oss.OSSClientBuilder$OSSClientBuilderImpl.build(OSSClientBuilder.java:132)
+	at com.itheima.utils.AliyunOSSOperator.upload(AliyunOSSOperator.java:41)
+	at com.itheima.controller.UploadController.upload(UploadController.java:39)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2025-11-08 18:38:09.920 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-08 18:38:09.946 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-11-08 18:38:16.419 [main] INFO  com.itheima.TilasWebManagementApplication-Starting TilasWebManagementApplication using Java 23.0.1 with PID 38380 (C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management\target\classes started by 16048 in C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management)
+2025-11-08 18:38:16.421 [main] INFO  com.itheima.TilasWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2025-11-08 18:38:18.293 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2025-11-08 18:38:18.318 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2025-11-08 18:38:18.321 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-11-08 18:38:18.322 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-08 18:38:18.413 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-11-08 18:38:18.413 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1892 ms
+2025-11-08 18:38:19.646 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2025-11-08 18:38:19.675 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2025-11-08 18:38:19.687 [main] INFO  com.itheima.TilasWebManagementApplication-Started TilasWebManagementApplication in 3.938 seconds (process running for 5.174)
+2025-11-08 18:38:27.134 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-08 18:38:27.135 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2025-11-08 18:38:27.136 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2025-11-08 18:38:27.238 [http-nio-8080-exec-1] INFO  com.itheima.controller.UploadController-上传文件：11.png
+2025-11-08 18:38:27.273 [http-nio-8080-exec-1] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet]-Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: 参数"endpoint"为空指针。] with root cause
+java.lang.NullPointerException: 参数"endpoint"为空指针。
+	at com.aliyun.oss.common.utils.CodingUtils.assertParameterNotNull(CodingUtils.java:35)
+	at com.aliyun.oss.OSSClientBuilder$OSSClientBuilderImpl.build(OSSClientBuilder.java:132)
+	at com.itheima.utils.AliyunOSSOperator.upload(AliyunOSSOperator.java:45)
+	at com.itheima.controller.UploadController.upload(UploadController.java:39)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2025-11-08 18:41:42.886 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-08 18:41:42.912 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-11-08 18:41:46.452 [main] INFO  com.itheima.TilasWebManagementApplication-Starting TilasWebManagementApplication using Java 23.0.1 with PID 58508 (C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management\target\classes started by 16048 in C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management)
+2025-11-08 18:41:46.454 [main] INFO  com.itheima.TilasWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2025-11-08 18:41:48.287 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2025-11-08 18:41:48.311 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2025-11-08 18:41:48.314 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-11-08 18:41:48.314 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-08 18:41:48.400 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-11-08 18:41:48.400 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1851 ms
+2025-11-08 18:41:49.569 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2025-11-08 18:41:49.599 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2025-11-08 18:41:49.611 [main] INFO  com.itheima.TilasWebManagementApplication-Started TilasWebManagementApplication in 3.838 seconds (process running for 5.121)
+2025-11-08 18:41:57.549 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-08 18:41:57.550 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2025-11-08 18:41:57.552 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 2 ms
+2025-11-08 18:41:57.662 [http-nio-8080-exec-1] INFO  com.itheima.controller.UploadController-上传文件：11.png
+2025-11-08 18:41:59.611 [http-nio-8080-exec-1] INFO  com.itheima.controller.UploadController-文件上传成功，返回访问路径：https://java-ai-25-11-09.oss-cn-beijing.aliyuncs.com/2025/11/0a63b1e1-e347-414f-9605-3cd05321b573.png
+2025-11-08 19:49:44.532 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-08 19:49:44.557 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-11-08 19:49:51.396 [main] INFO  com.itheima.TilasWebManagementApplication-Starting TilasWebManagementApplication using Java 23.0.1 with PID 36556 (C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management\target\classes started by 16048 in C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management)
+2025-11-08 19:49:51.399 [main] INFO  com.itheima.TilasWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2025-11-08 19:49:53.161 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2025-11-08 19:49:53.187 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2025-11-08 19:49:53.191 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-11-08 19:49:53.191 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-08 19:49:53.286 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-11-08 19:49:53.287 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1804 ms
+2025-11-08 19:49:54.543 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2025-11-08 19:49:54.572 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2025-11-08 19:49:54.584 [main] INFO  com.itheima.TilasWebManagementApplication-Started TilasWebManagementApplication in 3.84 seconds (process running for 5.196)
+2025-11-08 19:50:11.271 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-08 19:50:11.271 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2025-11-08 19:50:11.272 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2025-11-08 19:50:11.333 [http-nio-8080-exec-1] INFO  com.itheima.controller.EmpController-删除员工：{}
+2025-11-08 19:50:11.363 [http-nio-8080-exec-1] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet]-Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot read the array length because "<local2>" is null] with root cause
+java.lang.NullPointerException: Cannot read the array length because "<local2>" is null
+	at com.itheima.service.impl.EmpServiceImpl.deleteById(EmpServiceImpl.java:75)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
+	at com.itheima.service.impl.EmpServiceImpl$$SpringCGLIB$$0.deleteById(<generated>)
+	at com.itheima.controller.EmpController.deleteById(EmpController.java:48)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:936)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:596)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2025-11-08 19:59:13.661 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-08 19:59:13.689 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-11-08 19:59:20.294 [main] INFO  com.itheima.TilasWebManagementApplication-Starting TilasWebManagementApplication using Java 23.0.1 with PID 35704 (C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management\target\classes started by 16048 in C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management)
+2025-11-08 19:59:20.297 [main] INFO  com.itheima.TilasWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2025-11-08 19:59:22.139 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2025-11-08 19:59:22.165 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2025-11-08 19:59:22.169 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-11-08 19:59:22.169 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-08 19:59:22.259 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-11-08 19:59:22.260 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1873 ms
+2025-11-08 19:59:23.515 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2025-11-08 19:59:23.550 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2025-11-08 19:59:23.564 [main] INFO  com.itheima.TilasWebManagementApplication-Started TilasWebManagementApplication in 3.939 seconds (process running for 5.183)
+2025-11-08 20:00:05.671 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-08 20:00:05.705 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-11-08 20:00:11.752 [main] INFO  com.itheima.TilasWebManagementApplication-Starting TilasWebManagementApplication using Java 23.0.1 with PID 46856 (C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management\target\classes started by 16048 in C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management)
+2025-11-08 20:00:11.754 [main] INFO  com.itheima.TilasWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2025-11-08 20:00:13.659 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2025-11-08 20:00:13.688 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2025-11-08 20:00:13.693 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-11-08 20:00:13.693 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-08 20:00:13.791 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-11-08 20:00:13.792 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1952 ms
+2025-11-08 20:00:15.066 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2025-11-08 20:00:15.222 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2025-11-08 20:00:15.234 [main] INFO  com.itheima.TilasWebManagementApplication-Started TilasWebManagementApplication in 4.143 seconds (process running for 5.375)
+2025-11-08 20:00:25.240 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-08 20:00:25.240 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2025-11-08 20:00:25.243 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 3 ms
+2025-11-08 20:00:25.325 [http-nio-8080-exec-1] INFO  com.itheima.controller.EmpController-删除员工：39
+2025-11-08 20:00:25.337 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2025-11-08 20:00:26.146 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6eb21aa2
+2025-11-08 20:00:26.151 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2025-11-08 20:00:26.512 [http-nio-8080-exec-2] INFO  com.itheima.controller.EmpController-分页查询:EmpQueryParam(page=1, pageSize=10, name=, gender=null, begin=null, end=null)
+2025-11-08 20:00:47.642 [http-nio-8080-exec-3] INFO  com.itheima.controller.EmpController-新增员工：Emp(id=null, username=5665, password=null, name=5656, gender=1, phone=19098762378, job=1, salary=222, image=, entryDate=2025-11-03, deptId=8, createTime=null, updateTime=null, deptName=null, exprList=[])
+2025-11-08 20:00:47.694 [http-nio-8080-exec-5] INFO  com.itheima.controller.EmpController-分页查询:EmpQueryParam(page=1, pageSize=10, name=, gender=null, begin=null, end=null)
+2025-11-08 20:00:51.752 [http-nio-8080-exec-4] INFO  com.itheima.controller.EmpController-删除员工：42
+2025-11-08 20:00:51.794 [http-nio-8080-exec-6] INFO  com.itheima.controller.EmpController-分页查询:EmpQueryParam(page=1, pageSize=10, name=, gender=null, begin=null, end=null)
+2025-11-08 20:28:47.240 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-08 20:28:47.267 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-11-08 20:28:47.274 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2025-11-08 20:28:47.286 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2025-11-08 20:28:54.207 [main] INFO  com.itheima.TilasWebManagementApplication-Starting TilasWebManagementApplication using Java 23.0.1 with PID 15328 (C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management\target\classes started by 16048 in C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management)
+2025-11-08 20:28:54.211 [main] INFO  com.itheima.TilasWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2025-11-08 20:28:56.061 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2025-11-08 20:28:56.086 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2025-11-08 20:28:56.089 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-11-08 20:28:56.089 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-08 20:28:56.184 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-11-08 20:28:56.184 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1874 ms
+2025-11-08 20:28:57.401 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2025-11-08 20:28:57.436 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2025-11-08 20:28:57.448 [main] INFO  com.itheima.TilasWebManagementApplication-Started TilasWebManagementApplication in 3.968 seconds (process running for 5.475)
+2025-11-08 20:44:24.267 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-08 20:44:24.267 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2025-11-08 20:44:24.268 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2025-11-08 20:45:15.224 [http-nio-8080-exec-2] INFO  com.itheima.controller.DeptController-查询全部的部门数据
+2025-11-08 20:45:15.271 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2025-11-08 20:45:15.930 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4de597bf
+2025-11-08 20:45:15.933 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2025-11-08 20:45:17.844 [http-nio-8080-exec-3] INFO  com.itheima.controller.DeptController-查询id对应的数据：8
+2025-11-08 20:47:31.564 [http-nio-8080-exec-4] INFO  com.itheima.controller.DeptController-查询id对应的数据：8
+2025-11-08 20:47:33.064 [http-nio-8080-exec-5] INFO  com.itheima.controller.DeptController-查询id对应的数据：8
+2025-11-08 20:48:52.780 [http-nio-8080-exec-6] INFO  com.itheima.controller.DeptController-查询id对应的数据：8
+2025-11-08 20:49:18.508 [http-nio-8080-exec-7] INFO  com.itheima.controller.DeptController-查询id对应的数据：8
+2025-11-08 20:49:26.477 [http-nio-8080-exec-9] INFO  com.itheima.controller.DeptController-查询全部的部门数据
+2025-11-08 20:49:26.497 [http-nio-8080-exec-8] INFO  com.itheima.controller.EmpController-分页查询:EmpQueryParam(page=1, pageSize=10, name=, gender=null, begin=null, end=null)
+2025-11-08 20:55:48.590 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-08 20:55:48.618 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-11-08 20:55:48.625 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2025-11-08 20:55:48.636 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2025-11-08 20:55:55.137 [main] INFO  com.itheima.TilasWebManagementApplication-Starting TilasWebManagementApplication using Java 23.0.1 with PID 9484 (C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management\target\classes started by 16048 in C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management)
+2025-11-08 20:55:55.140 [main] INFO  com.itheima.TilasWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2025-11-08 20:55:56.902 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2025-11-08 20:55:56.926 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2025-11-08 20:55:56.929 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-11-08 20:55:56.929 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-08 20:55:57.016 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-11-08 20:55:57.016 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1781 ms
+2025-11-08 20:55:58.213 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2025-11-08 20:55:58.244 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2025-11-08 20:55:58.255 [main] INFO  com.itheima.TilasWebManagementApplication-Started TilasWebManagementApplication in 3.736 seconds (process running for 4.953)
+2025-11-08 20:56:04.087 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-08 20:56:04.087 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2025-11-08 20:56:04.091 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 2 ms
+2025-11-08 20:59:18.800 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-08 20:59:18.830 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-11-08 20:59:24.917 [main] INFO  com.itheima.TilasWebManagementApplication-Starting TilasWebManagementApplication using Java 23.0.1 with PID 46608 (C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management\target\classes started by 16048 in C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management)
+2025-11-08 20:59:24.921 [main] INFO  com.itheima.TilasWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2025-11-08 20:59:26.583 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2025-11-08 20:59:26.607 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2025-11-08 20:59:26.612 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-11-08 20:59:26.612 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-08 20:59:26.707 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-11-08 20:59:26.708 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1686 ms
+2025-11-08 20:59:27.990 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2025-11-08 20:59:28.020 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2025-11-08 20:59:28.033 [main] INFO  com.itheima.TilasWebManagementApplication-Started TilasWebManagementApplication in 3.788 seconds (process running for 5.005)
+2025-11-08 20:59:32.543 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-08 20:59:32.544 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2025-11-08 20:59:32.545 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2025-11-08 21:02:51.460 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-08 21:02:51.485 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-11-08 21:02:57.406 [main] INFO  com.itheima.TilasWebManagementApplication-Starting TilasWebManagementApplication using Java 23.0.1 with PID 42884 (C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management\target\classes started by 16048 in C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management)
+2025-11-08 21:02:57.409 [main] INFO  com.itheima.TilasWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2025-11-08 21:02:59.263 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2025-11-08 21:02:59.289 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2025-11-08 21:02:59.293 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-11-08 21:02:59.294 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-08 21:02:59.385 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-11-08 21:02:59.386 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1879 ms
+2025-11-08 21:03:00.631 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2025-11-08 21:03:00.659 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2025-11-08 21:03:00.670 [main] INFO  com.itheima.TilasWebManagementApplication-Started TilasWebManagementApplication in 3.918 seconds (process running for 5.159)
+2025-11-08 21:03:12.236 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-08 21:03:12.237 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2025-11-08 21:03:12.239 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 2 ms
+2025-11-08 21:03:12.309 [http-nio-8080-exec-1] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver-Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'empList' for method parameter type List is not present]
+2025-11-08 21:04:24.071 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-08 21:04:24.097 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-11-08 21:04:30.709 [main] INFO  com.itheima.TilasWebManagementApplication-Starting TilasWebManagementApplication using Java 23.0.1 with PID 53868 (C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management\target\classes started by 16048 in C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management)
+2025-11-08 21:04:30.715 [main] INFO  com.itheima.TilasWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2025-11-08 21:04:32.515 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2025-11-08 21:04:32.545 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2025-11-08 21:04:32.549 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-11-08 21:04:32.549 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-08 21:04:32.636 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-11-08 21:04:32.639 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1836 ms
+2025-11-08 21:04:33.902 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2025-11-08 21:04:33.940 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2025-11-08 21:04:33.953 [main] INFO  com.itheima.TilasWebManagementApplication-Started TilasWebManagementApplication in 3.926 seconds (process running for 5.157)
+2025-11-08 21:04:36.786 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-08 21:04:36.787 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2025-11-08 21:04:36.788 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2025-11-08 21:04:36.864 [http-nio-8080-exec-1] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver-Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'id' for method parameter type Integer is not present]
+2025-11-08 21:05:34.729 [http-nio-8080-exec-3] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver-Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'id' for method parameter type Integer is not present]
+2025-11-08 21:05:46.610 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-08 21:05:46.638 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-11-08 21:05:52.637 [main] INFO  com.itheima.TilasWebManagementApplication-Starting TilasWebManagementApplication using Java 23.0.1 with PID 53260 (C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management\target\classes started by 16048 in C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management)
+2025-11-08 21:05:52.640 [main] INFO  com.itheima.TilasWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2025-11-08 21:05:54.347 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2025-11-08 21:05:54.371 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2025-11-08 21:05:54.375 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-11-08 21:05:54.375 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-08 21:05:54.455 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-11-08 21:05:54.456 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1723 ms
+2025-11-08 21:05:55.656 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2025-11-08 21:05:55.688 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2025-11-08 21:05:55.702 [main] INFO  com.itheima.TilasWebManagementApplication-Started TilasWebManagementApplication in 3.712 seconds (process running for 4.986)
+2025-11-08 21:06:00.586 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-08 21:06:00.586 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2025-11-08 21:06:00.587 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2025-11-08 21:06:00.657 [http-nio-8080-exec-1] INFO  com.itheima.controller.EmpController-根据ID查询员工数据：null
+2025-11-08 21:06:00.697 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2025-11-08 21:06:01.269 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@567b820b
+2025-11-08 21:06:01.272 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2025-11-08 21:06:45.905 [http-nio-8080-exec-3] INFO  com.itheima.controller.EmpController-根据ID查询员工数据：null
+2025-11-08 21:07:01.997 [http-nio-8080-exec-8] INFO  com.itheima.controller.EmpController-根据ID查询员工数据：null
+2025-11-08 21:07:54.223 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-08 21:07:54.247 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-11-08 21:07:54.252 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2025-11-08 21:07:54.262 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2025-11-08 21:08:00.702 [main] INFO  com.itheima.TilasWebManagementApplication-Starting TilasWebManagementApplication using Java 23.0.1 with PID 57440 (C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management\target\classes started by 16048 in C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management)
+2025-11-08 21:08:00.705 [main] INFO  com.itheima.TilasWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2025-11-08 21:08:02.527 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2025-11-08 21:08:02.555 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2025-11-08 21:08:02.558 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-11-08 21:08:02.559 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-08 21:08:02.639 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-11-08 21:08:02.639 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1850 ms
+2025-11-08 21:08:03.895 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2025-11-08 21:08:03.925 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2025-11-08 21:08:03.937 [main] INFO  com.itheima.TilasWebManagementApplication-Started TilasWebManagementApplication in 3.909 seconds (process running for 5.184)
+2025-11-08 21:08:10.632 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-08 21:08:10.662 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-11-08 21:08:16.749 [main] INFO  com.itheima.TilasWebManagementApplication-Starting TilasWebManagementApplication using Java 23.0.1 with PID 44560 (C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management\target\classes started by 16048 in C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management)
+2025-11-08 21:08:16.751 [main] INFO  com.itheima.TilasWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2025-11-08 21:08:18.451 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2025-11-08 21:08:18.480 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2025-11-08 21:08:18.483 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-11-08 21:08:18.484 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-08 21:08:18.570 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-11-08 21:08:18.570 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1731 ms
+2025-11-08 21:08:19.779 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2025-11-08 21:08:19.813 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2025-11-08 21:08:19.827 [main] INFO  com.itheima.TilasWebManagementApplication-Started TilasWebManagementApplication in 3.709 seconds (process running for 4.965)
+2025-11-08 21:08:22.051 [http-nio-8080-exec-3] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-08 21:08:22.052 [http-nio-8080-exec-3] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2025-11-08 21:08:22.054 [http-nio-8080-exec-3] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 2 ms
+2025-11-08 21:08:22.133 [http-nio-8080-exec-3] INFO  com.itheima.controller.EmpController-根据ID查询员工数据：null
+2025-11-08 21:08:22.175 [http-nio-8080-exec-3] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2025-11-08 21:08:22.732 [http-nio-8080-exec-3] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@489affd5
+2025-11-08 21:08:22.735 [http-nio-8080-exec-3] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2025-11-08 21:09:36.632 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-08 21:09:36.661 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-11-08 21:09:36.667 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2025-11-08 21:09:36.683 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2025-11-08 21:09:42.624 [main] INFO  com.itheima.TilasWebManagementApplication-Starting TilasWebManagementApplication using Java 23.0.1 with PID 16784 (C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management\target\classes started by 16048 in C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management)
+2025-11-08 21:09:42.627 [main] INFO  com.itheima.TilasWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2025-11-08 21:09:44.403 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2025-11-08 21:09:44.429 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2025-11-08 21:09:44.432 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-11-08 21:09:44.433 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-08 21:09:44.516 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-11-08 21:09:44.518 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1792 ms
+2025-11-08 21:09:45.681 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2025-11-08 21:09:45.713 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2025-11-08 21:09:45.729 [main] INFO  com.itheima.TilasWebManagementApplication-Started TilasWebManagementApplication in 3.769 seconds (process running for 5.045)
+2025-11-08 21:09:49.751 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-08 21:09:49.752 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2025-11-08 21:09:49.753 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2025-11-08 21:09:49.819 [http-nio-8080-exec-1] INFO  com.itheima.controller.EmpController-根据ID查询员工数据：16
+2025-11-08 21:09:49.860 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2025-11-08 21:09:50.395 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7ca8f516
+2025-11-08 21:09:50.399 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2025-11-08 21:09:59.907 [http-nio-8080-exec-4] INFO  com.itheima.controller.EmpController-根据ID查询员工数据：41
+2025-11-08 21:10:09.157 [http-nio-8080-exec-5] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver-Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'PUT' is not supported]
+2025-11-08 21:11:37.069 [http-nio-8080-exec-2] INFO  com.itheima.controller.EmpController-根据ID查询员工数据：41
+2025-11-08 21:16:26.640 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-08 21:16:26.665 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-11-08 21:16:26.671 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2025-11-08 21:16:26.683 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2025-11-08 21:16:34.222 [main] INFO  com.itheima.TilasWebManagementApplication-Starting TilasWebManagementApplication using Java 23.0.1 with PID 2320 (C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management\target\classes started by 16048 in C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management)
+2025-11-08 21:16:34.226 [main] INFO  com.itheima.TilasWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2025-11-08 21:16:36.023 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2025-11-08 21:16:36.051 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2025-11-08 21:16:36.053 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-11-08 21:16:36.054 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-08 21:16:36.153 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-11-08 21:16:36.153 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1832 ms
+2025-11-08 21:16:37.323 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2025-11-08 21:16:37.355 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2025-11-08 21:16:37.366 [main] INFO  com.itheima.TilasWebManagementApplication-Started TilasWebManagementApplication in 3.803 seconds (process running for 5.095)
+2025-11-08 21:16:38.675 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-08 21:16:38.676 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2025-11-08 21:16:38.679 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 3 ms
+2025-11-08 21:16:38.747 [http-nio-8080-exec-2] INFO  com.itheima.controller.EmpController-根据ID查询员工数据：16
+2025-11-08 21:16:38.791 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2025-11-08 21:16:39.375 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@542fd025
+2025-11-08 21:16:39.379 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2025-11-08 21:16:39.584 [http-nio-8080-exec-2] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet]-Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.mybatis.spring.MyBatisSystemException: 
+### Error querying database.  Cause: org.apache.ibatis.builder.BuilderException: Error evaluating expression 'empIds'.  Return value (16) was not iterable.
+### Cause: org.apache.ibatis.builder.BuilderException: Error evaluating expression 'empIds'.  Return value (16) was not iterable.] with root cause
+org.apache.ibatis.builder.BuilderException: Error evaluating expression 'empIds'.  Return value (16) was not iterable.
+	at org.apache.ibatis.scripting.xmltags.ExpressionEvaluator.evaluateIterable(ExpressionEvaluator.java:81)
+	at org.apache.ibatis.scripting.xmltags.ForEachSqlNode.apply(ForEachSqlNode.java:70)
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.lambda$apply$0(MixedSqlNode.java:32)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.apply(MixedSqlNode.java:32)
+	at org.apache.ibatis.scripting.xmltags.DynamicSqlSource.getBoundSql(DynamicSqlSource.java:39)
+	at org.apache.ibatis.mapping.MappedStatement.getBoundSql(MappedStatement.java:320)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:119)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59)
+	at jdk.proxy2/jdk.proxy2.$Proxy86.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:333)
+	at jdk.proxy2/jdk.proxy2.$Proxy70.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:194)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy75.selectByEmpId(Unknown Source)
+	at com.itheima.service.impl.EmpServiceImpl.SelectById(EmpServiceImpl.java:94)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
+	at com.itheima.service.impl.EmpServiceImpl$$SpringCGLIB$$0.SelectById(<generated>)
+	at com.itheima.controller.EmpController.SelectById(EmpController.java:57)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2025-11-08 21:18:04.592 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-08 21:18:04.618 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-11-08 21:18:04.623 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2025-11-08 21:18:04.633 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2025-11-08 21:18:07.996 [main] INFO  com.itheima.TilasWebManagementApplication-Starting TilasWebManagementApplication using Java 23.0.1 with PID 59208 (C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management\target\classes started by 16048 in C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management)
+2025-11-08 21:18:07.999 [main] INFO  com.itheima.TilasWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2025-11-08 21:18:09.786 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2025-11-08 21:18:09.816 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2025-11-08 21:18:09.821 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-11-08 21:18:09.822 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-08 21:18:09.921 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-11-08 21:18:09.922 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1833 ms
+2025-11-08 21:18:11.209 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2025-11-08 21:18:11.241 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2025-11-08 21:18:11.254 [main] INFO  com.itheima.TilasWebManagementApplication-Started TilasWebManagementApplication in 3.958 seconds (process running for 5.204)
+2025-11-08 21:18:19.099 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-08 21:18:19.099 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2025-11-08 21:18:19.101 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 2 ms
+2025-11-08 21:18:19.180 [http-nio-8080-exec-2] INFO  com.itheima.controller.EmpController-根据ID查询员工数据：16
+2025-11-08 21:18:19.226 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2025-11-08 21:18:19.787 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3b41573
+2025-11-08 21:18:19.792 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2025-11-08 21:18:28.006 [http-nio-8080-exec-3] INFO  com.itheima.controller.EmpController-根据ID查询员工数据：41
+2025-11-08 21:18:44.342 [http-nio-8080-exec-4] INFO  com.itheima.controller.EmpController-根据ID查询员工数据：4
+2025-11-08 21:18:48.402 [http-nio-8080-exec-8] INFO  com.itheima.controller.EmpController-根据ID查询员工数据：41

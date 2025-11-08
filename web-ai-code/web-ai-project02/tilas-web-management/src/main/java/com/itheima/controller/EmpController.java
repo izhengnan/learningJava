@@ -10,6 +10,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * 员工管理控制器类
  * 处理员工相关的HTTP请求
@@ -40,5 +42,19 @@ public class EmpController {
         log.info("新增员工：{}",emp);
         empService.addEmp(emp);
         return Result.success();
+    }
+
+    @DeleteMapping
+    public Result deleteById(Integer[] ids){
+        log.info("删除员工：{}",ids);
+        empService.deleteById(ids);
+        return Result.success();
+    }
+
+    @GetMapping("/{id}")
+    public Result SelectById(@PathVariable Integer id){
+        log.info("根据ID查询员工数据：{}",id);
+        Emp emp = empService.SelectById(id);
+        return Result.success(emp);
     }
 }

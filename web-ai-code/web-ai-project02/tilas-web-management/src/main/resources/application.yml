@@ -6,9 +6,19 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: zn010924
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
 
 mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     map-underscore-to-camel-case: true
   mapper-locations: classpath:com/itheima/mapper/*.xml
+
+aliyun:
+  oss:
+    endpoint: https://oss-cn-beijing.aliyuncs.com
+    bucket-name: java-ai-25-11-09
+    region: cn-beijing

@@ -9,4 +9,7 @@
             (#{expr.empId},#{expr.begin},#{expr.end},#{expr.company},#{expr.job})
         </foreach>
     </insert>
+    <select id="selectByEmpId">
+        select * from emp_expr where emp_id = #{id}
+    </select>
 </mapper>
