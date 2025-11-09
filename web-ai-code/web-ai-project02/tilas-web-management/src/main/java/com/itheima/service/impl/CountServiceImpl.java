@@ -1,8 +1,10 @@
 package com.itheima.service.impl;
 
 import com.itheima.mapper.CountMapper;
+import com.itheima.pojo.ClazzStudentNum;
 import com.itheima.pojo.EmpGender;
 import com.itheima.pojo.JobOption;
+import com.itheima.pojo.StudentDegree;
 import com.itheima.service.CountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,5 +32,19 @@ public class CountServiceImpl implements CountService {
     @Override
     public List<EmpGender> CountEmpGender() {
         return countMapper.CountEmpGender();
+    }
+
+    @Override
+    public List<StudentDegree> CountStudentDegree() {
+        return countMapper.CountStudentDegree();
+
+    }
+
+    @Override
+    public ClazzStudentNum CountStudentNum() {
+        List<Map<String, Object>> list = countMapper.CountStudentNum();
+        List<Object> clazzList = list.stream().map(dataMap -> dataMap.get("clazz")).toList();
+        List<Object> dataList = list.stream().map(dataMap -> dataMap.get("num")).toList();
+        return new ClazzStudentNum(clazzList, dataList);
     }
 }

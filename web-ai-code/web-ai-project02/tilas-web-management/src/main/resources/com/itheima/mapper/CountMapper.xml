@@ -9,4 +9,21 @@
         when 2 then '女性员工' end) name,
         count(*) value from emp group by gender order by value
     </select>
+    <select id="CountStudentDegree" resultType="com.itheima.pojo.StudentDegree">
+        select (case degree when 1 then '初中'
+        when 2 then '高中'
+        when 3 then '大专'
+        when 4 then '本科'
+        when 5 then '硕士'
+        when 6 then '博士'
+        end) name,
+        count(*) value from student group by degree order by value
+    </select>
+    <select id="CountStudentNum" resultType="map">
+        SELECT c.name AS clazz, COUNT(s.id) AS num
+        FROM clazz c
+        LEFT JOIN student s ON c.id = s.clazz_id
+        GROUP BY c.id, c.name
+        ORDER BY num
+    </select>
 </mapper>

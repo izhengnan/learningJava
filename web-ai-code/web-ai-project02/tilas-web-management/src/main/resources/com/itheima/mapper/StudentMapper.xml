@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.mapper.StudentMapper">
+    <select id="list" resultType="com.itheima.pojo.Student">
+        select * from student
+        <where>
+            <if test="name != null">
+                name like concat('%', #{name}, '%')
+            </if>
+            <if test="degree!= null">
+                and degree = #{degree}
+            </if>
+            <if test="clazzId!= null">
+                and clazz_id = #{clazzId}
+            </if>
+        </where>
+        order by update_time desc
+    </select>
+
+    <insert id="insert">
+        insert into student(name,no,gender,phone,degree,clazz_id,id_card,is_college,address,graduation_date)
+        values(#{name},#{no},#{gender},#{phone},#{degree},#{clazzId},#{idCard},#{isCollege},#{address},#{graduationDate})
+    </insert>
+
+    <select id="selectById" resultType="com.itheima.pojo.Student">
+        select * from student where id = #{id}
+    </select>
+
+
+    <update id="update">
+        update student set name = #{name},no = #{no},gender = #{gender},phone = #{phone},degree = #{degree},clazz_id = #{clazzId},id_card = #{idCard},is_college = #{isCollege},address = #{address},graduation_date = #{graduationDate}
+        where id = #{id}
+    </update>
+
+
+    <delete id="deleteById">
+        delete from student where id in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <update id="violation">
+        update student set violation_count = violation_count + 1,
+        violation_score = violation_score + #{violationScore}
+        where id = #{id}
+    </update>
+</mapper>

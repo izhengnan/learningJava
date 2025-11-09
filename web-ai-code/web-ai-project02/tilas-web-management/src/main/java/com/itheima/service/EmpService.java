@@ -18,4 +18,6 @@ public interface EmpService {
     Emp SelectById(Integer id);
 
     void update(Emp emp);
+
+    List<Emp> SelectAll();
 }

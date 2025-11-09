@@ -2,6 +2,7 @@ package com.itheima.mapper;
 
 import com.itheima.pojo.EmpGender;
 import com.itheima.pojo.JobOption;
+import com.itheima.pojo.StudentDegree;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -20,4 +21,9 @@ public interface CountMapper {
     List<Map<String, Object>> countEmpJob();
 
     List<EmpGender> CountEmpGender();
+
+    List<StudentDegree> CountStudentDegree();
+
+    //查询student表中的clazz_id和clazz表中的name并分封装到Map中
+    List<Map<String, Object>> CountStudentNum();
 }

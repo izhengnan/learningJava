@@ -64,4 +64,11 @@ public class EmpController {
         empService.update(emp);
         return Result.success();
     }
+
+    @GetMapping("/list")
+    public Result SelectAll(){
+        log.info("查询所有员工数据");
+        List<Emp> empList = empService.SelectAll();
+        return Result.success(empList);
+    }
 }
