@@ -16,4 +16,6 @@ public interface EmpService {
     void deleteById(Integer[] array);
 
     Emp SelectById(Integer id);
+
+    void update(Emp emp);
 }

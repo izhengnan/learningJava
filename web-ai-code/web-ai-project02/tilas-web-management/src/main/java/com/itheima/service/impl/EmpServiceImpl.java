@@ -11,6 +11,7 @@ import com.itheima.pojo.EmpQueryParam;
 import com.itheima.pojo.PageResult;
 import com.itheima.service.EmpLogService;
 import com.itheima.service.EmpService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -25,6 +26,7 @@ import java.util.List;
 /**
  * 员工服务实现类
  */
+@Slf4j
 @Service
 public class EmpServiceImpl implements EmpService {
     @Autowired
@@ -93,5 +95,19 @@ public class EmpServiceImpl implements EmpService {
         Emp emp = empMapper.SelectById(id);
         emp.setExprList(empExprMapper.selectByEmpId(id));
         return emp;
+    }
+
+    @Transactional(rollbackFor = {Exception.class})
+    @Override
+    public void update(Emp emp) {
+        emp.setUpdateTime(LocalDateTime.now());
+        empMapper.update(emp);
+
+        empExprMapper.deleteByEmpId(emp.getId());
+        if(!CollectionUtils.isEmpty(emp.getExprList())){
+            emp.getExprList().forEach(empExpr ->empExpr.setEmpId(emp.getId()));
+            empExprMapper.insertBatch(emp.getExprList());
+        }
+
     }
 }

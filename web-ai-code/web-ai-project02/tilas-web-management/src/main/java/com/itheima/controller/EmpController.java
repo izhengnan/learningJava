@@ -57,4 +57,11 @@ public class EmpController {
         Emp emp = empService.SelectById(id);
         return Result.success(emp);
     }
+
+    @PutMapping
+    public Result update(@RequestBody Emp emp){
+        log.info("修改员工数据：{}",emp);
+        empService.update(emp);
+        return Result.success();
+    }
 }
