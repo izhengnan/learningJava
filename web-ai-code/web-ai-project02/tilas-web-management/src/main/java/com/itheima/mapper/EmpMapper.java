@@ -3,6 +3,7 @@ package com.itheima.mapper;
 import com.itheima.pojo.Emp;
 import com.itheima.pojo.EmpExpr;
 import com.itheima.pojo.EmpQueryParam;
+import com.itheima.pojo.LoginInfo;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -36,4 +37,7 @@ public interface EmpMapper {
 
     @Select("select * from emp where dept_id = #{deptId}")
     List<Emp> selectByDeptId(Integer deptId);
+
+    @Select("select * from emp where username = #{username} and password = #{password}")
+    Emp login(Emp emp);
 }
