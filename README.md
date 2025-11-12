@@ -26,3 +26,6 @@ Options注释
 
 2025.11.11
 学习了SpringAop 、Aop核心概念（连接点、切入点、通知、切面、目标对象）
+
+2025.11.12
+学习了SpringAop通知顺序 、AOP切入点表达式(execution、annotation)

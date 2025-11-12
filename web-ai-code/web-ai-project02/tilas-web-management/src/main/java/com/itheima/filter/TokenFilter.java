@@ -1,6 +1,8 @@
 package com.itheima.filter;
 
+import com.itheima.utils.CurrentHolder;
 import com.itheima.utils.JwtUtils;
+import io.jsonwebtoken.Claims;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
@@ -41,13 +43,20 @@ public class TokenFilter implements Filter {
         }
         //验证令牌合法性
         try {
-            JwtUtils.parseToken(token);
+            Claims claims = JwtUtils.parseToken(token);
+            Integer empId = Integer.valueOf(claims.get("id").toString());
+            CurrentHolder.setCurrentId(empId);//存入当前用户ID
+            log.info("当前用户ID为：{},将其存入ThreadLocal",empId);
         } catch (Exception e) {
             log.info("令牌非法");
             response.setStatus(401);
             return;
         }
+        //放行
         log.info("令牌合法");
         filterChain.doFilter(servletRequest,servletResponse);
+
+        //删除当前用户ID
+        CurrentHolder.remove();
     }
 }
