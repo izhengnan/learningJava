@@ -28,4 +28,8 @@ Options注释
 学习了SpringAop 、Aop核心概念（连接点、切入点、通知、切面、目标对象）
 
 2025.11.12
-学习了SpringAop通知顺序 、AOP切入点表达式(execution、annotation)
+学习了SpringAop通知顺序 、AOP切入点表达式(execution、annotation)、AOP连接点Joinpoint、ThreadLocal
+向练习项目中添加了记录操作日志功能以及运用ThreadLocal
+
+2025.11.13
+了解了Maven的分模块设计与开发、继承
