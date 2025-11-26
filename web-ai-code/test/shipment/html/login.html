@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户登录</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', 'Arial', sans-serif;
+            background: #333333;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .login-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .login-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #64b5f6, #2196f3);
+        }
+        
+        .login-title {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 28px;
+            font-weight: 700;
+            position: relative;
+        }
+        
+        .login-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(90deg, #64b5f6, #2196f3);
+            margin: 10px auto;
+        }
+        
+        .login-type-tabs {
+            display: flex;
+            margin-bottom: 30px;
+            background: rgba(99, 177, 245, 0.1);
+            border-radius: 25px;
+            padding: 4px;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .login-type-tab {
+            flex: 1;
+            padding: 12px 16px;
+            text-align: center;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #2196f3;
+            font-weight: 500;
+            font-size: 14px;
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+        }
+        
+        .login-type-tab.active {
+            color: white;
+            transform: scale(1.02);
+        }
+        
+        /* 滑动指示器 */
+        .login-type-indicator {
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            bottom: 4px;
+            width: calc(33.33% - 8px);
+            background: linear-gradient(135deg, #64b5f6 0%, #2196f3 100%);
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+        
+        .login-type-tab:hover:not(.active) {
+            background: rgba(99, 177, 245, 0.05);
+            transform: scale(1.01);
+        }
+        
+        .login-type-tab::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .login-type-tab.active::before {
+            left: 100%;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        
+        input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e1e5e9;
+            border-radius: 50px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+            outline: none;
+        }
+        
+        input:focus {
+            border-color: #2196f3;
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .login-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #64b5f6 0%, #2196f3 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .login-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(33, 150, 243, 0.3);
+        }
+        
+        .login-btn:active {
+            transform: translateY(-1px);
+        }
+        
+        .login-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .login-btn:hover::before {
+            left: 100%;
+        }
+        
+        .message {
+            margin-top: 20px;
+            padding: 15px 20px;
+            border-radius: 50px;
+            text-align: center;
+            font-weight: 500;
+            display: none;
+            animation: slideIn 0.3s ease;
+        }
+        
+        .success {
+            background: linear-gradient(135deg, #56ab2f 0%, #a8e6cf 100%);
+            color: white;
+            border: none;
+        }
+        
+        .error {
+            background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+            color: white;
+            border: none;
+        }
+        
+        .link {
+            text-align: center;
+            margin-top: 25px;
+        }
+        
+        .link a {
+            color: #2196f3;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .link a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 50%;
+            background: #2196f3;
+            transition: all 0.3s ease;
+        }
+        
+        .link a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+        
+        /* 图标样式已删除 */
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .login-container {
+            animation: fadeIn 0.6s ease;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 30px 25px;
+                margin: 10px;
+            }
+            
+            .login-title {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2 class="login-title">航运物流系统登录</h2>
+        <div class="login-type-tabs">
+            <div class="login-type-indicator"></div>
+            <div class="login-type-tab active" data-type="user">用户登录</div>
+            <div class="login-type-tab" data-type="carrier">承运商登录</div>
+            <div class="login-type-tab" data-type="admin">管理员登录</div>
+        </div>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="userId" id="userIdLabel">用户名</label>
+                <input type="text" id="userId" name="identifier" placeholder="请输入用户名" required>
+            </div>
+            <div class="form-group">
+                <label for="password">密码</label>
+                <input type="password" id="password" name="passwd" placeholder="请输入密码" required>
+            </div>
+            <button type="submit" class="login-btn">登录</button>
+        </form>
+        <div id="message"></div>
+        <div class="link">
+            <a href="register.html">还没有账户？立即注册</a>
+        </div>
+        <div class="link" style="margin-top: 15px;">
+            <a href="index.html">返回首页</a>
+        </div>
+    </div>
+
+    <script>
+        // 当前登录类型
+        let currentLoginType = 'user';
+        
+        // 登录类型配置
+        const loginTypeConfig = {
+            user: {
+                label: '用户名',
+                placeholder: '请输入用户名',
+                api: '/user/check',
+                type: 'user'
+            },
+            carrier: {
+                label: '用户名',
+                placeholder: '请输入用户名',
+                api: '/carrier/check',
+                type: 'carrier'
+            },
+            admin: {
+                label: '账号',
+                placeholder: '请输入账号',
+                api: '/admin/check',
+                type: 'admin'
+            }
+        };
+        
+        // 更新滑动指示器位置
+        function updateIndicatorPosition(activeTab) {
+            const indicator = document.querySelector('.login-type-indicator');
+            const tabs = document.querySelectorAll('.login-type-tab');
+            const tabWidth = activeTab.offsetWidth;
+            const tabLeft = activeTab.offsetLeft;
+            
+            indicator.style.width = `${tabWidth}px`;
+            indicator.style.left = `${tabLeft}px`;
+        }
+        
+        // 登录类型切换功能
+        document.querySelectorAll('.login-type-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                const type = this.dataset.type;
+                
+                // 更新选项卡状态
+                document.querySelectorAll('.login-type-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                // 更新滑动指示器位置
+                updateIndicatorPosition(this);
+                
+                // 更新表单配置
+                updateFormForType(type);
+                
+                // 清空消息
+                const messageDiv = document.getElementById('message');
+                messageDiv.style.display = 'none';
+            });
+        });
+        
+        // 根据登录类型更新表单
+        function updateFormForType(type) {
+            currentLoginType = type;
+            const config = loginTypeConfig[type];
+            
+            // 更新标签和占位符
+            const label = document.getElementById('userIdLabel');
+            const input = document.getElementById('userId');
+            
+            label.textContent = config.label;
+            input.placeholder = config.placeholder;
+            input.value = ''; // 清空输入
+            
+            // 更新按钮文字
+            const submitBtn = document.querySelector('.login-btn');
+            submitBtn.textContent = '登录';
+        }
+        
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const userId = document.getElementById('userId').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const messageDiv = document.getElementById('message');
+            
+            // 简单的输入验证
+            if (!userId || !password) {
+                messageDiv.className = 'message error';
+                messageDiv.textContent = '请填写所有必填字段';
+                messageDiv.style.display = 'block';
+                return;
+            }
+            
+            const config = loginTypeConfig[currentLoginType];
+            
+            // 根据登录类型构造不同的请求数据
+            let requestData;
+            if (currentLoginType === 'user') {
+                requestData = {
+                    name: userId,      // 改为 name 字段以匹配后端Controller
+                    passwd: password
+                };
+            } else if (currentLoginType === 'carrier') {
+                requestData = {
+                    name: userId,      // 改为 name 字段以匹配后端Controller
+                    passwd: password
+                };
+            } else if (currentLoginType === 'admin') {
+                requestData = {
+                    account: userId,
+                    passwd: password
+                };
+            }
+            
+            // 显示加载状态
+            const submitBtn = document.querySelector('.login-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = '登录中...';
+            submitBtn.disabled = true;
+            
+            // 隐藏之前的消息
+            messageDiv.style.display = 'none';
+            
+            fetch(config.api, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(requestData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.code === "0") {
+                    messageDiv.className = 'message success';
+                    messageDiv.textContent = '登录成功！正在跳转...';
+                    messageDiv.style.display = 'block';
+                    
+                    // 从后端返回的数据中获取登录信息
+                    const loginInfo = data.data;
+                    
+                    // 存储登录类型和用户信息到本地存储
+                    localStorage.setItem('currentLoginType', currentLoginType);
+                    
+                    // 存储token（如果存在）
+                    if (loginInfo && loginInfo.token) {
+                        localStorage.setItem('token', loginInfo.token);
+                        console.log('已存储token:', loginInfo.token);
+                        
+                        // 存储完整的loginInfo对象
+                        localStorage.setItem('loginInfo', JSON.stringify(loginInfo));
+                        console.log('已存储完整loginInfo对象:', loginInfo);
+                        
+                        // 存储正确的userId（来自后端返回的LoginInfo对象）
+                        if (loginInfo.userId) {
+                            localStorage.setItem('userId', loginInfo.userId.toString());
+                            console.log('已存储用户ID:', loginInfo.userId.toString());
+                        } else {
+                            // 对于承运商登录，不回退到使用名称作为ID，避免类型转换错误
+                            if (currentLoginType === 'carrier') {
+                                console.error('警告：后端未返回承运商ID，无法存储有效的ID');
+                                localStorage.setItem('userId', '0'); // 设置默认值
+                            } else {
+                                // 对于其他用户类型，仍然可以使用输入的ID
+                                localStorage.setItem('userId', userId);
+                                console.log('使用输入的用户ID:', userId);
+                            }
+                        }
+                    } else {
+                        // 如果没有token，仍然存储用户输入的userId
+                        localStorage.setItem('userId', userId);
+                    }
+                    
+                    // 成功后延迟跳转（根据登录类型跳转到不同页面）
+                    setTimeout(() => {
+                        switch(currentLoginType) {
+                            case 'user':
+                                window.location.href = 'shippers.html';
+                                console.log('货主登录成功，跳转到shippers.html');
+                                break;
+                            case 'carrier':
+                                window.location.href = 'carrier.html';
+                                console.log('承运商登录成功，跳转到carrier.html');
+                                break;
+                            case 'admin':
+                                localStorage.setItem('token', data.data.token);
+                                localStorage.setItem('account', data.data.account);
+                                localStorage.setItem('userType', data.data.userType);
+                                window.location.href = 'admin/admin.html';
+                                console.log('管理员登录成功，跳转到管理员仪表板');
+                                break;
+                        }
+                    }, 1500);
+                } else {
+                    messageDiv.className = 'message error';
+                    messageDiv.textContent = data.message || '登录失败，请检查用户名和密码';
+                    messageDiv.style.display = 'block';
+                }
+            })
+            .catch(error => {
+                console.error('登录错误:', error);
+                messageDiv.className = 'message error';
+                messageDiv.textContent = '网络错误，请检查网络连接后重试';
+                messageDiv.style.display = 'block';
+            })
+            .finally(() => {
+                // 恢复按钮状态
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
+        });
+        
+        // 输入框焦点效果增强
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'scale(1.02)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'scale(1)';
+            });
+        });
+        
+        // 键盘快捷键支持
+        document.addEventListener('keydown', function(e) {
+            // Ctrl+1, Ctrl+2, Ctrl+3 切换登录类型
+            if (e.ctrlKey) {
+                switch(e.key) {
+                    case '1':
+                        e.preventDefault();
+                        switchLoginType('user');
+                        break;
+                    case '2':
+                        e.preventDefault();
+                        switchLoginType('carrier');
+                        break;
+                    case '3':
+                        e.preventDefault();
+                        switchLoginType('admin');
+                        break;
+                }
+            }
+        });
+        
+        // 切换登录类型的函数
+        function switchLoginType(type) {
+            const tab = document.querySelector(`[data-type="${type}"]`);
+            if (tab && !tab.classList.contains('active')) {
+                tab.click();
+            }
+        }
+        
+        // 回车键快速登录
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    document.getElementById('loginForm').dispatchEvent(new Event('submit'));
+                }
+            });
+        });
+        
+        // 选项卡切换动画
+        document.querySelectorAll('.login-type-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // 添加点击反馈
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
+        
+        // 页面加载完成后的初始化
+        window.addEventListener('load', function() {
+            // 设置默认登录类型
+            updateFormForType('user');
+            
+            // 设置初始滑动指示器位置
+            const activeTab = document.querySelector('.login-type-tab.active');
+            updateIndicatorPosition(activeTab);
+            
+            // 窗口大小变化时重新计算指示器位置
+            window.addEventListener('resize', function() {
+                const activeTab = document.querySelector('.login-type-tab.active');
+                updateIndicatorPosition(activeTab);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户注册</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', 'Arial', sans-serif;
+            background: #333333;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .register-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .register-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #64b5f6, #2196f3);
+        }
+        
+        .register-title {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 28px;
+            font-weight: 700;
+            position: relative;
+        }
+        
+        .register-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(90deg, #64b5f6, #2196f3);
+            margin: 10px auto;
+        }
+        
+        .register-type-tabs {
+            display: flex;
+            margin-bottom: 30px;
+            background: rgba(99, 177, 245, 0.1);
+            border-radius: 25px;
+            padding: 4px;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .register-type-tab {
+            flex: 1;
+            padding: 12px 16px;
+            text-align: center;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #2196f3;
+            font-weight: 500;
+            font-size: 14px;
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+        }
+        
+        .register-type-tab.active {
+            color: white;
+            transform: scale(1.02);
+        }
+        
+        /* 滑动指示器 */
+        .register-type-indicator {
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            bottom: 4px;
+            width: calc(50% - 8px);
+            background: linear-gradient(135deg, #64b5f6 0%, #2196f3 100%);
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+        
+        .register-type-tab:hover:not(.active) {
+            background: rgba(99, 177, 245, 0.05);
+            transform: scale(1.01);
+        }
+        
+        .register-type-tab::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .register-type-tab.active::before {
+            left: 100%;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        
+        input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e1e5e9;
+            border-radius: 50px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+            outline: none;
+        }
+        
+        input:focus {
+            border-color: #2196f3;
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .register-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #64b5f6 0%, #2196f3 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        
+        .register-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(33, 150, 243, 0.3);
+        }
+        
+        .register-btn:active {
+            transform: translateY(-1px);
+        }
+        
+        .register-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .register-btn:hover::before {
+            left: 100%;
+        }
+        
+        .message {
+            margin-top: 20px;
+            padding: 15px 20px;
+            border-radius: 50px;
+            text-align: center;
+            font-weight: 500;
+            display: none;
+            animation: slideIn 0.3s ease;
+        }
+        
+        .success {
+            background: linear-gradient(135deg, #56ab2f 0%, #a8e6cf 100%);
+            color: white;
+            border: none;
+        }
+        
+        .error {
+            background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+            color: white;
+            border: none;
+        }
+        
+        .link {
+            text-align: center;
+            margin-top: 25px;
+        }
+        
+        .link a {
+            color: #2196f3;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .link a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 50%;
+            background: #2196f3;
+            transition: all 0.3s ease;
+        }
+        
+        .link a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+        
+        /* 图标样式已删除 */
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .register-container {
+            animation: fadeIn 0.6s ease;
+        }
+        
+        /* 密码强度指示器 */
+        .password-strength {
+            margin-top: 5px;
+            height: 4px;
+            background: #e1e5e9;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .strength-bar {
+            height: 100%;
+            width: 0;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+        
+        .strength-weak {
+            width: 33%;
+            background: #ff416c;
+        }
+        
+        .strength-medium {
+            width: 66%;
+            background: #ffd700;
+        }
+        
+        .strength-strong {
+            width: 100%;
+            background: #56ab2f;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 480px) {
+            .register-container {
+                padding: 30px 25px;
+                margin: 10px;
+            }
+            
+            .register-title {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <h2 class="register-title">航运物流系统注册</h2>
+        <div class="register-type-tabs">
+            <div class="register-type-indicator"></div>
+            <div class="register-type-tab active" data-type="user">用户注册</div>
+            <div class="register-type-tab" data-type="carrier">承运商注册</div>
+        </div>
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="username" id="usernameLabel">用户名</label>
+                <input type="text" id="username" name="username" placeholder="请输入用户名" required>
+            </div>
+            <div class="form-group" id="descriptionGroup" style="display: none;">
+                <label for="description">简介</label>
+                <input type="text" id="description" name="description" placeholder="请输入简介">
+            </div>
+            <div class="form-group">
+                <label for="password">密码</label>
+                <input type="password" id="password" name="passwd" placeholder="请输入密码" required>
+                <!-- <div class="password-strength">
+                    <div class="strength-bar" id="strengthBar"></div>
+                </div> -->
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">确认密码</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="请再次输入密码" required>
+            </div>
+            <button type="submit" class="register-btn">注册</button>
+        </form>
+        <div id="message"></div>
+        <div class="link">
+            <a href="login.html">已有账户？立即登录</a>
+        </div>
+        <div class="link" style="margin-top: 15px;">
+            <a href="index.html">返回首页</a>
+        </div>
+    </div>
+
+    <script>
+        // 当前注册类型
+        let currentRegisterType = 'user';
+        
+        // 注册类型配置 - 匹配后端Controller
+        const registerTypeConfig = {
+            user: {
+                label: '用户名',
+                placeholder: '请输入用户名',
+                api: '/user/add',
+                type: 'user',
+                hasDescription: false
+            },
+            carrier: {
+                label: '用户名',
+                placeholder: '请输入用户名',
+                api: '/carrier/add',
+                type: 'carrier',
+                hasDescription: true
+            }
+        };
+        
+        // 更新滑动指示器位置
+        function updateIndicatorPosition(activeTab) {
+            const indicator = document.querySelector('.register-type-indicator');
+            const tabWidth = activeTab.offsetWidth;
+            const tabLeft = activeTab.offsetLeft;
+            
+            indicator.style.width = `${tabWidth}px`;
+            indicator.style.left = `${tabLeft}px`;
+        }
+        
+        // 注册类型切换功能
+        document.querySelectorAll('.register-type-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                const type = this.dataset.type;
+                
+                // 更新选项卡状态
+                document.querySelectorAll('.register-type-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                // 更新滑动指示器位置
+                updateIndicatorPosition(this);
+                
+                // 更新表单配置
+                updateFormForType(type);
+                
+                // 清空消息
+                const messageDiv = document.getElementById('message');
+                messageDiv.style.display = 'none';
+            });
+        });
+        
+        // 根据注册类型更新表单
+        function updateFormForType(type) {
+            currentRegisterType = type;
+            const config = registerTypeConfig[type];
+            
+            // 更新标签和占位符
+            const label = document.getElementById('usernameLabel');
+            const input = document.getElementById('username');
+            
+            label.textContent = config.label;
+            input.placeholder = config.placeholder;
+            input.value = ''; // 清空输入
+            
+            // 显示/隐藏简介字段
+            const descriptionGroup = document.getElementById('descriptionGroup');
+            if (config.hasDescription) {
+                descriptionGroup.style.display = 'block';
+                document.getElementById('description').required = true;
+            } else {
+                descriptionGroup.style.display = 'none';
+                document.getElementById('description').required = false;
+            }
+            
+            // 清空表单
+            document.getElementById('password').value = '';
+            document.getElementById('confirmPassword').value = '';
+            document.getElementById('description').value = '';
+        }
+        
+        // 密码强度检测
+        function checkPasswordStrength(password) {
+            const strengthBar = document.getElementById('strengthBar');
+            strengthBar.className = 'strength-bar';
+            
+            if (password.length === 0) {
+                return;
+            }
+            
+            let strength = 0;
+            if (password.length >= 6) strength++;
+            if (password.match(/[a-z]/) && password.match(/[A-Z]/)) strength++;
+            if (password.match(/\d/)) strength++;
+            if (password.match(/[^a-zA-Z\d]/)) strength++;
+            
+            if (strength <= 1) {
+                strengthBar.classList.add('strength-weak');
+            } else if (strength <= 3) {
+                strengthBar.classList.add('strength-medium');
+            } else {
+                strengthBar.classList.add('strength-strong');
+            }
+        }
+        
+        // 绑定密码强度检测
+        document.getElementById('password').addEventListener('input', function() {
+            checkPasswordStrength(this.value);
+        });
+        
+        // 表单提交处理
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const confirmPassword = document.getElementById('confirmPassword').value.trim();
+            const description = document.getElementById('description').value.trim();
+            const messageDiv = document.getElementById('message');
+            
+            // 密码确认验证
+            if (password !== confirmPassword) {
+                messageDiv.className = 'message error';
+                messageDiv.textContent = '两次输入的密码不一致';
+                messageDiv.style.display = 'block';
+                return;
+            }
+            
+            // 简单密码强度验证
+            if (password.length < 6) {
+                messageDiv.className = 'message error';
+                messageDiv.textContent = '密码长度至少为6位';
+                messageDiv.style.display = 'block';
+                return;
+            }
+            
+            const config = registerTypeConfig[currentRegisterType];
+            let requestData;
+            
+            if (currentRegisterType === 'user') {
+                // 用户注册：后端期望 name 和 passwd 字段
+                requestData = {
+                    name: username,  // 改为 name 字段以匹配后端
+                    passwd: password
+                };
+            } else if (currentRegisterType === 'carrier') {
+                // 承运商注册：后端期望 name、info 和 passwd 字段
+                requestData = {
+                    name: username,      // 改为 name 字段以匹配后端
+                    passwd: password,
+                    info: description    // 改为 info 字段以匹配后端
+                };
+            }
+            
+            // 显示加载状态
+            const submitBtn = document.querySelector('.register-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = '注册中...';
+            submitBtn.disabled = true;
+            
+            // 隐藏之前的消息
+            messageDiv.style.display = 'none';
+            
+            fetch(config.api, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(requestData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('注册响应:', data);
+                if (data.code === "0") {
+                    messageDiv.className = 'message success';
+                    messageDiv.textContent = '注册成功！正在跳转...';
+                    messageDiv.style.display = 'block';
+                    
+                    // 成功后延迟跳转到登录页面
+                    setTimeout(() => {
+                        window.location.href = 'login.html';
+                    }, 2000);
+                } else {
+                    messageDiv.className = 'message error';
+                    messageDiv.textContent = data.message || '注册失败，请重试';
+                    messageDiv.style.display = 'block';
+                }
+            })
+            .catch(error => {
+                console.error('注册错误:', error);
+                messageDiv.className = 'message error';
+                messageDiv.textContent = '网络错误，请检查网络连接后重试';
+                messageDiv.style.display = 'block';
+            })
+            .finally(() => {
+                // 恢复按钮状态
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
+        });
+        
+        // 键盘快捷键支持
+        document.addEventListener('keydown', function(e) {
+            // Ctrl+1, Ctrl+2 切换注册类型
+            if (e.ctrlKey) {
+                switch(e.key) {
+                    case '1':
+                        e.preventDefault();
+                        switchRegisterType('user');
+                        break;
+                    case '2':
+                        e.preventDefault();
+                        switchRegisterType('carrier');
+                        break;
+                }
+            }
+        });
+        
+        // 切换注册类型的函数
+        function switchRegisterType(type) {
+            const tab = document.querySelector(`[data-type="${type}"]`);
+            if (tab && !tab.classList.contains('active')) {
+                tab.click();
+            }
+        }
+        
+        // 选项卡切换动画
+        document.querySelectorAll('.register-type-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // 添加点击反馈
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
+        
+        // 页面加载完成后的初始化
+        window.addEventListener('load', function() {
+            // 设置默认注册类型
+            updateFormForType('user');
+            
+            // 设置初始滑动指示器位置
+            const activeTab = document.querySelector('.register-type-tab.active');
+            updateIndicatorPosition(activeTab);
+            
+            // 窗口大小变化时重新计算指示器位置
+            window.addEventListener('resize', function() {
+                const activeTab = document.querySelector('.register-type-tab.active');
+                updateIndicatorPosition(activeTab);
+            });
+        });
+    </script>
+</body>
+</html>

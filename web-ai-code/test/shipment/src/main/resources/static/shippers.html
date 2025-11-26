@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>航运物流系统 - 货主中心</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="components/toast.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .wrapper {
+            display: flex;
+            min-height: 100vh;
+            position: relative;
+        }
+        
+        /* 添加页面背景装饰 */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(255, 119, 198, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        /* 主体内容区域 */
+        .main-content {
+            flex: 1;
+            padding: 0;
+        }
+        
+        .top-bar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 15px 35px;
+            box-shadow: 
+                0 4px 6px -1px rgba(0, 0, 0, 0.08),
+                0 2px 4px -1px rgba(0, 0, 0, 0.04);
+            border-bottom: 2px solid #3b82f6;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .top-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.5), transparent);
+        }
+        
+        .top-bar::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -20px;
+            width: 40px;
+            height: 40px;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .top-bar .left-section::after {
+            content: '';
+            position: absolute;
+            top: 15px;
+            right: 40px;
+            width: 12px;
+            height: 12px;
+            background: rgba(59, 130, 246, 0.2);
+            border-radius: 2px;
+            transform: rotate(45deg);
+        }
+        
+        .left-section {
+            flex: 1;
+        }
+        
+        .top-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+        }
+        
+        .top-bar h1 {
+            color: #1f2937;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            letter-spacing: -0.025em;
+            position: relative;
+            padding-left: 40px;
+        }
+        
+        .top-bar h1::before {
+            content: '📦';
+            position: absolute;
+            left: 0;
+            font-size: 1.4rem;
+        }
+        
+        .top-bar h1::after {
+            content: '';
+            position: absolute;
+            left: 32px;
+            top: 50%;
+            height: 20px;
+            width: 2px;
+            background: #3b82f6;
+            transform: translateY(-50%);
+        }
+        
+        .top-bar h1 i {
+            margin-right: 18px;
+            background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.8rem;
+        }
+        
+        .breadcrumb {
+            background: none;
+            padding: 0;
+            margin-top: 8px;
+        }
+        
+        .breadcrumb-item {
+            color: #718096;
+        }
+        
+        .breadcrumb-item.active {
+            color: #4a5568;
+            font-weight: 500;
+        }
+        
+        .content-area {
+            padding: 30px;
+            padding-top: 100px;
+        }
+        
+        .dashboard-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 
+                0 10px 25px -5px rgba(0, 0, 0, 0.1),
+                0 8px 10px -6px rgba(0, 0, 0, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            margin-bottom: 30px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                0 20px 30px -10px rgba(0, 0, 0, 0.15),
+                0 10px 15px -5px rgba(0, 0, 0, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        }
+        
+        .card-header {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .card-header h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2d3748;
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+        
+        .card-header h3 i {
+            margin-right: 12px;
+            color: #4299e1;
+        }
+        
+        .search-section {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(247, 250, 252, 0.8);
+            border-radius: 15px;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        
+        .search-section h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .search-section h4 i {
+            margin-right: 8px;
+            color: #718096;
+        }
+        
+        .search-input-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: flex-end;
+            margin-bottom: 15px;
+            flex-wrap: nowrap; /* 防止换行 */
+        }
+        
+        .search-input-group input {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .search-input {
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 10px 15px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            width: 300px; /* 稍微增加宽度以适应合并后的搜索需求 */
+            flex-shrink: 0;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: #4299e1;
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+        }
+        
+        .btn-custom {
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-custom::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn-custom:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary-custom {
+            background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+            color: white;
+            box-shadow: 0 4px 12px rgba(66, 153, 225, 0.3);
+            min-width: 160px; /* 固定最小宽度确保两个按钮宽度相等 */
+        }
+        
+        .btn-primary-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(66, 153, 225, 0.4);
+        }
+        
+        .btn-secondary-custom {
+            background: linear-gradient(135deg, #718096 0%, #4a5568 100%);
+            color: white;
+            box-shadow: 0 4px 12px rgba(113, 128, 150, 0.3);
+        }
+        
+        .btn-secondary-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(113, 128, 150, 0.4);
+        }
+        
+        .btn-outline-danger {
+            border: 2px solid #e53e3e;
+            color: #e53e3e;
+            background: transparent;
+            border-radius: 10px;
+            padding: 8px 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-danger:hover {
+            background: #e53e3e;
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(229, 62, 62, 0.3);
+        }
+        
+        .user-info-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .user-info {
+            text-align: right;
+        }
+        
+        .username {
+            font-weight: 500;
+            color: #2d3748;
+            font-size: 1rem;
+        }
+        
+        .role {
+            font-size: 0.85rem;
+            color: #666;
+        }
+        
+        .shipment-table {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        
+        .shipment-table table {
+            margin-bottom: 0;
+            width: 100%;
+        }
+        
+        .shipment-table thead {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .shipment-table th {
+            padding: 15px 20px;
+            text-align: left;
+            font-weight: 600;
+            color: #4a5568;
+            border-bottom: 1px solid #e2e8f0;
+            position: relative;
+        }
+        
+        .shipment-table th:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 10px;
+            bottom: 10px;
+            width: 1px;
+            background: rgba(0, 0, 0, 0.05);
+        }
+        
+        .shipment-table td {
+            padding: 15px 20px;
+            vertical-align: middle;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            color: #2d3748;
+            transition: all 0.2s ease;
+        }
+        
+        .shipment-table tbody tr {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+        
+        .shipment-table tbody tr:hover {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            transform: translateX(5px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .status-active {
+            background: rgba(52, 211, 153, 0.1);
+            color: #22c55e;
+            border: 1px solid rgba(52, 211, 153, 0.3);
+        }
+        
+        .status-pending {
+            background: rgba(245, 158, 11, 0.1);
+            color: #f59e0b;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+        
+        .status-completed {
+            background: rgba(66, 153, 225, 0.1);
+            color: #3b82f6;
+            border: 1px solid rgba(66, 153, 225, 0.3);
+        }
+        
+        .loading-spinner {
+            text-align: center;
+            padding: 40px;
+            color: #718096;
+        }
+        
+        .alert-custom {
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .alert-success {
+            background: linear-gradient(135deg, rgba(52, 211, 153, 0.1) 0%, rgba(34, 197, 94, 0.1) 100%);
+            color: #16a34a;
+            border-left: 4px solid #22c55e;
+        }
+        
+        .alert-danger {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(220, 38, 38, 0.1) 100%);
+            color: #dc2626;
+            border-left: 4px solid #ef4444;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .main-content {
+                margin-left: 0;
+            }
+            
+            .top-bar {
+                padding: 20px 20px;
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+            
+            .user-info-section {
+                align-self: flex-end;
+            }
+            
+            .top-bar h1 {
+                font-size: 1.8rem;
+            }
+            
+            .content-area {
+                padding: 20px;
+            }
+            
+            .dashboard-card {
+                padding: 20px;
+            }
+            
+            .search-input-group {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 15px; /* 在移动端增加间距 */
+            }
+            
+            .search-input {
+                width: 100%; /* 在移动端使用100%宽度 */
+            }
+            
+            .btn-primary-custom,
+            .btn-secondary-custom {
+                min-width: auto; /* 在移动端自动宽度 */
+            }
+            
+            .shipment-table th,
+            .shipment-table td {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <main class="main-content">
+            <!-- 顶部导航栏 -->
+            <div class="top-bar">
+                <div class="left-section">
+                    <h1>
+                        航运物流系统
+                    </h1>
+                </div>
+                <!-- 用户信息和退出按钮 -->
+                <div class="user-info-section">
+                    <div class="user-info">
+                        <div class="username" style="position: relative; padding-left: 8px;">
+                            货主
+                            <span style="position: absolute; left: 0; top: 50%; width: 4px; height: 16px; background: #3b82f6; border-radius: 2px; transform: translateY(-50%);"></span>
+                        </div>
+                        <div class="role" style="font-size: 0.85rem; color: #6b7280;">系统用户</div>
+                    </div>
+                    <button class="btn" style="border: 1px solid #3b82f6; color: #3b82f6; border-radius: 6px; padding: 6px 16px; transition: all 0.2s; background: transparent;" onclick="logout()">
+                        <i class="bi bi-box-arrow-right"></i>
+                        退出
+                    </button>
+                </div>
+            </div>
+            
+            <!-- 内容区域 -->
+            <div class="content-area">
+                <!-- 物流管理卡片 -->
+                <div class="dashboard-card">
+                    <!-- 搜索区域 -->
+                    <div class="search-section">
+                        <h4><i class="bi bi-search"></i> 搜索物流信息</h4>
+                        
+                        <!-- 合并搜索区域 -->
+                        <div class="search-input-group">
+                            <input type="text" class="form-control search-input" id="searchInput" placeholder="请输入物流ID或承运商ID进行查询...">
+                            <button class="btn btn-primary-custom" onclick="searchByShipmentId()">
+                                <i class="bi bi-search"></i>
+                                按物流ID查询
+                            </button>
+                            <button class="btn btn-primary-custom" onclick="searchByCarrierId()">
+                                <i class="bi bi-search"></i>
+                                按承运商ID查询
+                            </button>
+                            <button class="btn btn-secondary-custom" onclick="clearSearchAndShowAll()">
+                                <i class="bi bi-trash"></i>
+                                清空查询
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- 加载指示器 -->
+                    <div class="loading-spinner" id="loadingSpinner">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">加载中...</span>
+                        </div>
+                        <div class="mt-3">正在加载物流数据...</div>
+                    </div>
+                    
+                    <!-- 消息提示 -->
+                    <div id="messageContainer"></div>
+                    
+                    <!-- 物流列表表格 -->
+                    <div class="shipment-table">
+                        <table class="table table-hover mb-0">
+                            <thead>
+                                <tr>
+                                    <th><i class="bi bi-hash"></i> 物流ID</th>
+                                    <th><i class="bi bi-person"></i> 用户ID</th>
+                                    <th><i class="bi bi-building"></i> 承运商</th>
+                                    <th><i class="bi bi-map"></i> 出发地</th>
+                                    <th><i class="bi bi-flag"></i> 目的地</th>
+                                    <th><i class="bi bi-clock"></i> 创建时间</th>
+                                    <th><i class="bi bi-arrow-repeat"></i> 更新时间</th>
+                                    <th><i class="bi bi-check-circle"></i> 状态</th>
+                                </tr>
+                            </thead>
+                            <tbody id="shipmentTableBody">
+                                <!-- 动态生成物流列表 -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- JavaScript库 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- 页面JavaScript逻辑 -->
+    <script>
+        // 退出登录功能相关变量
+        let redirectTimer;
+        
+        // 打开退出登录模态框
+        function logout() {
+            document.getElementById('logoutModal').style.display = 'flex';
+        }
+        
+        // 关闭退出登录模态框
+        function closeLogoutModal() {
+            document.getElementById('logoutModal').style.display = 'none';
+        }
+        
+        // 确认退出登录
+        function confirmLogout() {
+            // 清除localStorage中的登录信息
+            localStorage.removeItem('currentLoginType');
+            localStorage.removeItem('userId');
+            localStorage.removeItem('token');
+            localStorage.removeItem('loginInfo');
+            
+            // 关闭确认模态框
+            closeLogoutModal();
+            
+            // 显示成功模态框
+            showSuccessModal();
+        }
+        
+        // 显示成功提示模态框
+        function showSuccessModal() {
+            const successModal = document.getElementById('successModal');
+            successModal.style.display = 'flex';
+            
+            // 设置倒计时跳转
+            let seconds = 3;
+            const countdownEl = document.getElementById('redirectCountdown');
+            
+            redirectTimer = setInterval(() => {
+                seconds--;
+                countdownEl.textContent = `${seconds}秒后自动跳转...`;
+                
+                if (seconds <= 0) {
+                    clearInterval(redirectTimer);
+                    window.location.href = 'login.html';
+                }
+            }, 1000);
+        }
+        
+        // 关闭成功提示模态框
+        function closeSuccessModal() {
+            clearInterval(redirectTimer);
+            document.getElementById('successModal').style.display = 'none';
+            window.location.href = 'login.html';
+        }
+        
+        // 当前登录的用户ID（实际应用中应从登录状态获取）
+        // 从localStorage中获取用户ID（从LoginInfo中提取）
+        const currentUserId = localStorage.getItem('userId');
+        
+        // 注释掉模拟数据，使用真实API调用
+        
+        // 缓存已查询过的承运商信息，避免重复请求
+        const carrierCache = {};
+        
+        // 根据承运商ID获取承运商名称
+        function getCarrierName(carrierId) {
+            if (!carrierId) return '-';
+            
+            // 先从缓存中查找
+            if (carrierCache[carrierId]) {
+                return carrierCache[carrierId];
+            }
+            
+            // 如果缓存中没有，发起请求获取承运商信息
+            fetchCarrierInfo(carrierId);
+            
+            // 暂时返回ID，等请求完成后会更新
+            return carrierId;
+        }
+        
+        // 获取承运商信息并更新缓存
+        function fetchCarrierInfo(carrierId) {
+            // 如果已经在请求中，避免重复请求
+            if (carrierCache[carrierId + '_loading']) return;
+            
+            carrierCache[carrierId + '_loading'] = true;
+            
+            fetch(`/carrier/getById?id=${carrierId}`, {
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('未找到承运商信息');
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.data && data.data.name) {
+                    // 更新缓存
+                    carrierCache[carrierId] = data.data.name;
+                    // 刷新表格以显示更新后的承运商名称
+                    updateCarrierNamesInTable();
+                }
+            })
+            .catch(error => {
+                console.error('获取承运商信息失败:', error);
+                // 出错时仍将ID存入缓存，避免频繁请求
+                carrierCache[carrierId] = carrierId;
+            })
+            .finally(() => {
+                // 清除加载状态
+                delete carrierCache[carrierId + '_loading'];
+            });
+        }
+        
+        // 更新表格中的所有承运商名称
+        function updateCarrierNamesInTable() {
+            const tableRows = document.querySelectorAll('#shipmentTableBody tr');
+            tableRows.forEach(row => {
+                const carrierCell = row.querySelector('td:nth-child(3)');
+                if (carrierCell) {
+                    const carrierId = carrierCell.textContent.trim();
+                    const carrierName = carrierCache[carrierId] || carrierId;
+                    if (carrierName !== carrierId) {
+                        carrierCell.textContent = carrierName;
+                    }
+                }
+            });
+        }
+        
+        // 注释掉模拟数据，使用真实API调用
+        
+        // 显示加载指示器
+        function showLoading() {
+            document.getElementById('loadingSpinner').style.display = 'block';
+        }
+        
+        // 隐藏加载指示器
+        function hideLoading() {
+            document.getElementById('loadingSpinner').style.display = 'none';
+        }
+        
+        // 显示消息提示
+        function showMessage(type, message) {
+            const messageContainer = document.getElementById('messageContainer');
+            messageContainer.innerHTML = '';
+            
+            const alertClass = type === 'success' ? 'alert-success' : 'alert-danger';
+            const iconClass = type === 'success' ? 'bi-check-circle' : 'bi-exclamation-circle';
+            
+            const alert = document.createElement('div');
+            alert.className = `alert-custom ${alertClass}`;
+            alert.innerHTML = `
+                <i class="bi ${iconClass}"></i>
+                ${message}
+            `;
+            
+            messageContainer.appendChild(alert);
+            
+            // 3秒后自动隐藏消息
+            setTimeout(() => {
+                alert.style.opacity = '0';
+                alert.style.transition = 'opacity 0.3s ease';
+                setTimeout(() => {
+                    messageContainer.innerHTML = '';
+                }, 300);
+            }, 3000);
+        }
+        
+        // 根据状态获取对应的样式类和文本
+        function getStatusDisplay(status) {
+            const statusMap = {
+                active: { class: 'status-active', text: '进行中' },
+                pending: { class: 'status-pending', text: '待揽收' },
+                completed: { class: 'status-completed', text: '已完成' },
+                cancelled: { class: 'status-cancelled', text: '已取消' },
+                '待揽收': { class: 'status-pending', text: '待揽收' },
+                '进行中': { class: 'status-active', text: '进行中' },
+                '已完成': { class: 'status-completed', text: '已完成' },
+                '已取消': { class: 'status-cancelled', text: '已取消' }
+            };
+            return statusMap[status] || { class: 'status-pending', text: '未知' };
+        }
+        
+        // 格式化时间显示
+        function formatDateTime(dateTimeStr) {
+            if (!dateTimeStr) return '-';
+            
+            try {
+                // 创建Date对象，处理各种时间格式
+                const date = new Date(dateTimeStr);
+                
+                // 检查是否为有效日期
+                if (isNaN(date.getTime())) {
+                    return dateTimeStr; // 如果无法解析，返回原始字符串
+                }
+                
+                // 格式化日期时间
+                const year = date.getFullYear();
+                const month = String(date.getMonth() + 1).padStart(2, '0');
+                const day = String(date.getDate()).padStart(2, '0');
+                const hours = String(date.getHours()).padStart(2, '0');
+                const minutes = String(date.getMinutes()).padStart(2, '0');
+                const seconds = String(date.getSeconds()).padStart(2, '0');
+                
+                return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+            } catch (error) {
+                console.warn('时间格式化失败:', error);
+                return dateTimeStr; // 出错时返回原始字符串
+            }
+        }
+        
+        // 格式化地址显示
+        function formatAddress(address) {
+            if (!address) return '-';
+            return address;
+        }
+        
+        // 显示物流详情
+        function showShipmentDetail(shipment) {
+            // 这里可以实现物流详情展示，比如弹出模态框
+            console.log('查看物流详情:', shipment);
+            
+            // 获取承运商名称
+            let carrierName = shipment.carrier || '-';
+            if (carrierCache[shipment.carrier]) {
+                carrierName = carrierCache[shipment.carrier];
+            }
+            
+            // 模拟详情展示
+            alert(`物流详情:\nID: ${shipment.id}\n承运商: ${carrierName}\n出发地: ${shipment.from}\n目的地: ${shipment.to}\n状态: ${getStatusDisplay(shipment.status).text}\n创建时间: ${shipment.createTime}`);
+        }
+        
+        // 渲染物流数据到表格
+        function renderShipmentData(data) {
+            const tableBody = document.getElementById('shipmentTableBody');
+            tableBody.innerHTML = '';
+            
+            // 数据验证
+            if (!Array.isArray(data)) {
+                console.error('数据格式错误：期望数组格式');
+                showMessage('error', '数据加载异常');
+                return;
+            }
+            
+            if (data.length === 0) {
+                const emptyRow = document.createElement('tr');
+                emptyRow.innerHTML = `
+                    <td colspan="8" class="text-center py-4">
+                        <i class="bi bi-inbox text-gray-400" style="font-size: 2rem; display: block; margin-bottom: 10px;"></i>
+                        <div>暂无物流数据</div>
+                    </td>
+                `;
+                tableBody.appendChild(emptyRow);
+                return;
+            }
+            
+            // 收集所有不同的承运商ID，批量预加载
+            const uniqueCarrierIds = new Set();
+            data.forEach(shipment => {
+                if (shipment && shipment.carrier) {
+                    uniqueCarrierIds.add(shipment.carrier);
+                }
+            });
+            
+            // 预加载所有承运商信息
+            uniqueCarrierIds.forEach(carrierId => {
+                if (!carrierCache[carrierId]) {
+                    fetchCarrierInfo(carrierId);
+                }
+            });
+            
+            data.forEach(shipment => {
+                // 确保shipment对象有效
+                if (!shipment || typeof shipment !== 'object') {
+                    console.warn('无效的物流数据项:', shipment);
+                    return;
+                }
+                
+                const statusInfo = getStatusDisplay(shipment.status || 'unknown');
+                const row = document.createElement('tr');
+                
+                // 添加动画类
+                row.className = 'animate-fadeIn';
+                
+                // 设置承运商名称，优先使用缓存中的名称
+                let carrierName = getCarrierName(shipment.carrier) || '-';
+                
+                row.innerHTML = `
+                    <td>
+                        <div style="font-weight: 500; color: #4299e1;">${shipment.id || '-'}</div>
+                    </td>
+                    <td>
+                        <div>${shipment.userId || '-'}</div>
+                    </td>
+                    <td>${carrierName}</td>
+                    <td>
+                        <div style="display: flex; align-items: center;">
+                            <i class="bi bi-map-pin text-danger me-2"></i>
+                            ${formatAddress(shipment.from)}
+                        </div>
+                    </td>
+                    <td>
+                        <div style="display: flex; align-items: center;">
+                            <i class="bi bi-flag text-success me-2"></i>
+                            ${formatAddress(shipment.to)}
+                        </div>
+                    </td>
+                    <td>${formatDateTime(shipment.createTime)}</td>
+                    <td>${formatDateTime(shipment.updateTime)}</td>
+                    <td>
+                        <span class="status-badge ${statusInfo.class}">${statusInfo.text}</span>
+                    </td>
+                `;
+                
+                // 添加点击事件
+                row.addEventListener('click', function() {
+                    showShipmentDetail(shipment);
+                });
+                
+                // 添加鼠标悬停效果增强
+                row.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = 'rgba(66, 153, 225, 0.05)';
+                });
+                
+                row.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = '';
+                });
+                
+                // 添加行到表格
+                tableBody.appendChild(row);
+                
+                // 添加渐入动画
+                setTimeout(() => {
+                    row.style.opacity = '1';
+                    row.style.transform = 'translateY(0)';
+                }, 50 * data.indexOf(shipment));
+            });
+        }
+        
+        // 添加表格行动画样式
+        function addAnimationStyles() {
+            const style = document.createElement('style');
+            style.textContent = `
+                .animate-fadeIn {
+                    opacity: 0;
+                    transform: translateY(10px);
+                    transition: opacity 0.3s ease, transform 0.3s ease;
+                }
+            `;
+            document.head.appendChild(style);
+        }
+        
+        // 响应式调整函数
+        function handleResponsiveLayout() {
+            const isMobile = window.innerWidth < 768;
+            const topBar = document.querySelector('.top-bar');
+            const userInfoSection = document.querySelector('.user-info-section');
+            
+            if (isMobile) {
+                topBar.classList.remove('justify-content-between');
+                topBar.classList.add('flex-column', 'align-items-start', 'gap-15px');
+                if (userInfoSection) {
+                    userInfoSection.classList.add('align-self-end');
+                }
+            } else {
+                topBar.classList.add('justify-content-between', 'align-items-center');
+                topBar.classList.remove('flex-column', 'align-items-start', 'gap-15px');
+                if (userInfoSection) {
+                    userInfoSection.classList.remove('align-self-end');
+                }
+            }
+        }
+        
+        // 错误处理增强
+        function handleError(error, context) {
+            console.error(`[${context}] 错误:`, error);
+            showMessage('error', `操作失败: ${error.message || '未知错误'}`);
+        }
+        
+        // 获取当前用户的物流数据
+        function loadUserShipments() {
+            showLoading();
+            
+            try {
+                // 从localStorage重新获取用户ID（确保使用最新的登录信息）
+                const userIdFromStorage = localStorage.getItem('userId');
+                const userIdToUse = userIdFromStorage || currentUserId;
+                
+                // 调用后端API获取用户物流数据，确保userId是数字类型
+                const numericUserId = Number(userIdToUse);
+                if (isNaN(numericUserId)) {
+                    hideLoading();
+                    showMessage('error', '无效的用户ID');
+                    console.error('用户ID无效:', userIdToUse);
+                    return;
+                }
+                // 使用fetch API并添加Authorization头
+                fetch(`/shipment/getByUserId?userId=${numericUserId}`, {
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                    }
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('网络响应异常');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        // 从响应对象中提取data字段，该字段包含实际的物流数据数组
+                        const shipmentData = data.data || [];
+                        
+                        // 按修改时间倒序排序
+                        const sortedData = [...shipmentData].sort((a, b) => {
+                            // 处理可能的时间格式问题
+                            const timeA = a.updateTime ? new Date(a.updateTime) : new Date(0);
+                            const timeB = b.updateTime ? new Date(b.updateTime) : new Date(0);
+                            // 倒序排序（最新的在前）
+                            return timeB - timeA;
+                        });
+                        
+                        renderShipmentData(sortedData);
+                        hideLoading();
+                    })
+                    .catch(error => {
+                        console.error('加载物流数据失败:', error);
+                        showMessage('error', '加载物流数据失败，请稍后重试');
+                        hideLoading();
+                    });
+            } catch (error) {
+                console.error('加载物流数据失败:', error);
+                showMessage('error', '加载物流数据失败，请稍后重试');
+                hideLoading();
+            }
+        }
+        
+        // 清空搜索并显示所有物流信息
+        function clearSearchAndShowAll() {
+            const searchInput = document.getElementById('searchInput');
+            searchInput.value = '';
+            loadUserShipments();
+            showMessage('success', '已清空输入框');
+        }
+
+        // 根据物流ID搜索物流信息
+        function searchByShipmentId() {
+            const searchInput = document.getElementById('searchInput');
+            const shipmentId = searchInput.value.trim();
+            
+            if (!shipmentId) {
+                showMessage('error', '请输入物流ID');
+                return;
+            }
+            
+            showLoading();
+            
+            try {
+                // 调用后端API根据ID查询物流信息，确保id是数字类型
+                const numericShipmentId = Number(shipmentId);
+                if (isNaN(numericShipmentId)) {
+                    hideLoading();
+                    showMessage('error', '无效的物流ID');
+                    return;
+                }
+                fetch(`/shipment/getById?id=${numericShipmentId}`, {
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                    }
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('未找到物流信息');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        // 从响应对象中提取data字段，这是单个物流对象
+                        const shipmentData = data.data;
+                        
+                        // 验证物流是否存在，不验证用户ID以确保能找到信息
+                        if (shipmentData) {
+                            renderShipmentData([shipmentData]);
+                            showMessage('success', '找到物流信息');
+                        } else {
+                            renderShipmentData([]);
+                            showMessage('error', '未找到物流信息');
+                        }
+                        hideLoading();
+                    })
+                    .catch(error => {
+                        console.error('搜索物流失败:', error);
+                        showMessage('error', `未找到ID为 ${shipmentId} 的物流信息`);
+                        renderShipmentData([]);
+                        hideLoading();
+                    });
+            } catch (error) {
+                console.error('搜索物流失败:', error);
+                showMessage('error', '搜索失败，请稍后重试');
+                hideLoading();
+            }
+        }
+        
+        // 根据承运商ID搜索物流信息
+        function searchByCarrierId() {
+            const searchInput = document.getElementById('searchInput');
+            const carrierId = searchInput.value.trim();
+            
+            if (!carrierId) {
+                showMessage('error', '请输入承运商ID');
+                return;
+            }
+            
+            showLoading();
+            
+            try {
+                // 调用后端API根据用户ID和承运商ID查询物流信息
+                // 获取用户ID并确保其为数字类型
+                const userIdFromStorage = localStorage.getItem('userId');
+                if (!userIdFromStorage) {
+                    hideLoading();
+                    showMessage('error', '用户未登录');
+                    return;
+                }
+                
+                const numericUserId = Number(userIdFromStorage);
+                if (isNaN(numericUserId)) {
+                    hideLoading();
+                    showMessage('error', '用户身份验证失败');
+                    console.error('用户ID无效:', userIdFromStorage);
+                    return;
+                }
+                
+                // 确保carrierId是数字类型
+                const numericCarrierId = Number(carrierId);
+                if (isNaN(numericCarrierId)) {
+                    hideLoading();
+                    showMessage('error', '无效的承运商ID');
+                    return;
+                }
+                
+                fetch(`/shipment/getByUserIdAndCarrierId?userId=${numericUserId}&carrierId=${numericCarrierId}`, {
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                    }
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('网络响应异常');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        // 从响应对象中提取data字段，该字段包含实际的物流数据数组
+                        const shipmentData = data.data || [];
+                        renderShipmentData(shipmentData);
+                        
+                        if (shipmentData.length === 0) {
+                            showMessage('error', `未找到承运商ID为 ${carrierId} 的物流信息`);
+                        } else {
+                            showMessage('success', `找到 ${shipmentData.length} 条物流信息`);
+                        }
+                        
+                        hideLoading();
+                    })
+                    .catch(error => {
+                        console.error('搜索物流失败:', error);
+                        showMessage('error', `未找到承运商ID为 ${carrierId} 的物流信息`);
+                        renderShipmentData([]);
+                        hideLoading();
+                    });
+            } catch (error) {
+                console.error('搜索物流失败:', error);
+                showMessage('error', '搜索失败，请稍后重试');
+                hideLoading();
+            }
+        }
+        
+        // 清除搜索，重新加载所有物流数据
+        function clearSearch() {
+            document.getElementById('searchInput').value = '';
+            loadUserShipments();
+            showMessage('success', '已清除搜索条件');
+        }
+        
+        // 添加回车搜索功能（默认按物流ID搜索）
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchByShipmentId();
+            }
+        });
+        
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 检查登录状态，如果未登录则不继续初始化
+            if (!checkLoginStatus()) {
+                return;
+            }
+            
+            // 添加动画样式
+            addAnimationStyles();
+            
+            // 初始化响应式布局
+            handleResponsiveLayout();
+            
+            // 监听窗口大小变化
+            window.addEventListener('resize', handleResponsiveLayout);
+            
+            // 加载物流数据
+            loadUserShipments();
+            
+            // 增强按钮交互体验
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(button => {
+                button.addEventListener('mousedown', function() {
+                    this.style.transform = 'scale(0.98)';
+                });
+                button.addEventListener('mouseup', function() {
+                    this.style.transform = '';
+                });
+                button.addEventListener('mouseleave', function() {
+                    this.style.transform = '';
+                });
+            });
+            
+            // 为搜索输入框添加焦点效果
+            const searchInputs = document.querySelectorAll('.search-input');
+            searchInputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.parentElement.classList.add('search-input-focused');
+                });
+                input.addEventListener('blur', function() {
+                    this.parentElement.classList.remove('search-input-focused');
+                });
+            });
+        });
+        
+        // 检查登录状态函数
+        function checkLoginStatus() {
+            // 检查localStorage中是否存在登录信息
+            const userId = localStorage.getItem('userId');
+            const token = localStorage.getItem('token');
+            const currentLoginType = localStorage.getItem('currentLoginType');
+            
+            // 如果没有登录信息或登录类型不是user，显示登录过期提示
+            if (!userId || !token || currentLoginType !== 'user') {
+                console.warn('未登录或登录信息不完整');
+                if (typeof showLoginExpiredToast === 'function') {
+                    showLoginExpiredToast();
+                } else {
+                    console.log('请先登录');
+                }
+                // 3秒后跳转到登录页
+                setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 3000);
+                return false;
+            }
+            
+            // 更新页面上的用户信息显示
+            updateUserInfoDisplay(userId);
+            
+            return true;
+        }
+        
+        // 更新用户信息显示
+        function updateUserInfoDisplay(userId) {
+            const userInfoElement = document.querySelector('.user-info');
+            if (userInfoElement) {
+                userInfoElement.textContent = `用户ID: ${userId}`;
+            }
+        }
+    </script>
+    
+    <style>
+        /* 自定义模态框样式 */
+        .custom-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1050;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-backdrop {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(3px);
+            animation: fadeIn 0.3s ease-in-out;
+            z-index: 1050;
+        }
+        
+        .modal-container {
+            position: relative;
+            z-index: 1060;
+            background: white;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 450px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            animation: slideIn 0.3s ease-out;
+            overflow: hidden;
+        }
+        
+        .success-container {
+            text-align: center;
+            padding: 30px;
+            max-width: 350px;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 25px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .modal-header h3 {
+            margin: 0;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+        
+        .modal-close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #9ca3af;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.2s;
+        }
+        
+        .modal-close-btn:hover {
+            background-color: #f3f4f6;
+            color: #4b5563;
+        }
+        
+        .custom-modal .modal-body {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .logout-icon {
+            margin-bottom: 15px;
+        }
+        
+        .logout-icon i {
+            font-size: 3rem;
+            color: #3b82f6;
+        }
+        
+        .logout-message {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #1f2937;
+            margin-bottom: 8px;
+        }
+        
+        .logout-note {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            padding: 15px 25px 20px;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .modal-footer .btn {
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-secondary {
+            background-color: #f3f4f6;
+            color: #4b5563;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #e5e7eb;
+        }
+        
+        .btn-primary {
+            background-color: #3b82f6;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #2563eb;
+        }
+        
+        /* 成功提示样式 */
+        .success-icon {
+            margin-bottom: 20px;
+        }
+        
+        .success-icon i {
+            font-size: 4rem;
+            color: #10b981;
+        }
+        
+        .success-modal h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+        
+        .success-modal p {
+            color: #6b7280;
+            margin-bottom: 15px;
+        }
+        
+        .countdown {
+            color: #3b82f6;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        /* 动画效果 */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    
+    <!-- 自定义退出登录模态框 -->
+    <div id="logoutModal" class="custom-modal" style="display: none;">
+        <div class="modal-backdrop" onclick="closeLogoutModal()"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="bi bi-box-arrow-right"></i>
+                    退出登录确认
+                </h5>
+                <button type="button" class="btn-close" onclick="closeLogoutModal()"></button>
+            </div>
+            <div class="modal-body">
+                <div class="logout-icon">
+                    <i class="bi bi-box-arrow-right"></i>
+                </div>
+                <p class="logout-message">确定要退出登录吗？</p>
+                <p class="logout-note">退出后需要重新登录才能使用系统功能</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeLogoutModal()">取消</button>
+                <button class="btn btn-primary" onclick="confirmLogout()">确定退出</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 自定义成功提示模态框 -->
+    <div id="successModal" class="custom-modal success-modal" style="display: none;">
+        <div class="modal-backdrop" onclick="closeSuccessModal()"></div>
+        <div class="modal-container success-container">
+            <div class="success-icon">
+                <i class="bi bi-check-circle"></i>
+            </div>
+            <h3>退出成功</h3>
+            <p>您已成功退出登录</p>
+            <div class="countdown" id="redirectCountdown">3秒后自动跳转...</div>
+        </div>
+    </div>
+</body>
+</html>
