@@ -28,7 +28,7 @@ function showLoginExpiredToast() {
     // 3秒后跳转到登录页面
     setTimeout(() => {
         // 使用相对于网站根目录的路径，确保在任何目录层级都能正确跳转
-        window.location.href = '/html/login.html';
+        window.location.href = '/login.html';
     }, 3000);
 }
 

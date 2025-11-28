@@ -1576,18 +1576,18 @@
             countdownEl.textContent = `${seconds}秒后自动跳转...`;
             
             if (seconds <= 0) {
-                clearInterval(redirectTimer);
-                window.location.href = '../login.html';
-            }
+                    clearInterval(redirectTimer);
+                    window.location.href = '../login.html';
+                }
         }, 1000);
     }
     
     // 关闭成功提示模态框
     function closeSuccessModal() {
-        clearInterval(redirectTimer);
-        document.getElementById('successModal').style.display = 'none';
-        window.location.href = '../login.html';
-    }
+            clearInterval(redirectTimer);
+            document.getElementById('successModal').style.display = 'none';
+            window.location.href = '../login.html';
+        }
     
     // 全局变量用于存储倒计时计时器
     let redirectTimer;
