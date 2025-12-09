@@ -1,6 +1,7 @@
 package com.sky.controller.admin;
 
 import com.sky.constant.JwtClaimsConstant;
+import com.sky.constant.StatusConstant;
 import com.sky.dto.EmployeeDTO;
 import com.sky.dto.EmployeeLoginDTO;
 import com.sky.dto.EmployeePageQueryDTO;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * 员工管理
@@ -88,12 +90,25 @@ public class EmployeeController {
 
     @PostMapping("/status/{status}")
     public Result startOrStopEmployee(@PathVariable Integer status,Long id){
-        if (status == 1) {
+        if (Objects.equals(status, StatusConstant.ENABLE)) {
             log.info("启用员工");
         } else {
             log.info("禁用员工");
         }
         employeeService.startOrStopEmployee(status,id);
         return Result.success();
+    }
+
+    @PutMapping()
+    public Result updateEmployee(EmployeeDTO employeeDTO){
+        log.info("编辑员工信息:{}",employeeDTO);
+        employeeService.updateEmployee(employeeDTO);
+        return Result.success();
+    }
+
+    @GetMapping("/{id}")
+    public Result selectEmployeeById(@PathVariable Integer id){
+        Employee employee = employeeService.selectEmployeeById(id);
+        return Result.success(employee);
     }
 }
