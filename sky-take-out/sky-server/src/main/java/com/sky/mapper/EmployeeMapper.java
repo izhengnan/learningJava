@@ -6,6 +6,7 @@ import com.sky.entity.Employee;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -25,4 +26,9 @@ public interface EmployeeMapper {
     void saveEmployee(Employee employee);
 
     Page<Employee> selectEmployeeList(EmployeePageQueryDTO employeePageQueryDTO);
+
+    @Update("update employee set status = #{status} where id = #{id}")
+    void startOrStopEmployee(Integer status, Long id);
+
+    void updateEmployee(Employee employee);
 }
