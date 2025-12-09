@@ -75,7 +75,7 @@ public class EmployeeController {
     }
 
     @PostMapping
-    public Result save(@RequestBody EmployeeDTO employeeDTO){
+    public Result<Employee> save(@RequestBody EmployeeDTO employeeDTO){
         log.info("新增员工，员工数据：{}",employeeDTO);
         employeeService.save(employeeDTO);
         return Result.success();
@@ -89,7 +89,7 @@ public class EmployeeController {
     }
 
     @PostMapping("/status/{status}")
-    public Result startOrStopEmployee(@PathVariable Integer status,Long id){
+    public Result<Employee> startOrStopEmployee(@PathVariable Integer status,Long id){
         if (Objects.equals(status, StatusConstant.ENABLE)) {
             log.info("启用员工");
         } else {
@@ -100,14 +100,14 @@ public class EmployeeController {
     }
 
     @PutMapping()
-    public Result updateEmployee(EmployeeDTO employeeDTO){
+    public Result<Employee> updateEmployee(@RequestBody EmployeeDTO employeeDTO){
         log.info("编辑员工信息:{}",employeeDTO);
         employeeService.updateEmployee(employeeDTO);
         return Result.success();
     }
 
     @GetMapping("/{id}")
-    public Result selectEmployeeById(@PathVariable Integer id){
+    public Result<Employee> selectEmployeeById(@PathVariable Integer id){
         Employee employee = employeeService.selectEmployeeById(id);
         return Result.success(employee);
     }
