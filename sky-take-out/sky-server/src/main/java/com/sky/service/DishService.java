@@ -18,4 +18,6 @@ public interface DishService {
     void updateDish(DishDTO dishDTO);
 
     void deleteDishList(ArrayList<Long> id);
+
+    void startOrStopDish(Integer status, Long id);
 }

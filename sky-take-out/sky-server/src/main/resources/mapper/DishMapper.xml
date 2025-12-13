@@ -77,6 +77,7 @@
         </set>
         where id = #{id}
     </update>
+
     <delete id="deleteDishList">
         delete from dish
         where id in
@@ -84,4 +85,7 @@
             #{id}
         </foreach>
     </delete>
+    <update id="startOrStopDish">
+        update dish set status = #{status},update_time = #{updateTime},update_user = #{updateUser} where id = #{id};
+    </update>
 </mapper>

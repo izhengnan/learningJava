@@ -41,4 +41,6 @@ public interface DishMapper {
     void updateDish(Dish dish);
 
     void deleteDishList(ArrayList<Long> id);
+
+    void startOrStopDish(Dish dish);
 }

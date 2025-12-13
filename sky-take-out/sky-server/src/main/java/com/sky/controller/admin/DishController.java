@@ -60,4 +60,11 @@ public class DishController {
         dishService.deleteDishList(id);
         return Result.success();
     }
+
+    @PostMapping("status/{status}")
+    public Result startOrStopDish(@PathVariable Integer status,Long id){
+        log.info("启用或禁用菜品：{}",id);
+        dishService.startOrStopDish(status,id);
+        return Result.success();
+    }
 }
