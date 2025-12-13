@@ -12,4 +12,6 @@ public interface DishService {
     DishVO selectDishById(Long id);
 
     PageResult selectDishList(DishPageQueryDTO dishPageQueryDTO);
+
+    void updateDish(DishDTO dishDTO);
 }

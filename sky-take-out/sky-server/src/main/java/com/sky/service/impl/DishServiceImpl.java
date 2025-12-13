@@ -47,7 +47,7 @@ public class DishServiceImpl implements DishService {
         List<DishFlavor> flavorList = dishDTO.getFlavors();
         if(flavorList != null&& !flavorList.isEmpty()){
             flavorList.forEach(flavor -> flavor.setDishId(id));
-            dishFlavorMapper.addDishCategory(flavorList);
+            dishFlavorMapper.addDishFlavor(flavorList);
         }
 
     }
@@ -62,13 +62,31 @@ public class DishServiceImpl implements DishService {
 
     @Override
     public PageResult selectDishList(DishPageQueryDTO dishPageQueryDTO) {
-        //TODO 未实现菜品分类的查询
         PageHelper.startPage(dishPageQueryDTO.getPage(), dishPageQueryDTO.getPageSize());
         PageResult pageResult = new PageResult();
         Page<DishVO> page = dishMapper.selectDishList(dishPageQueryDTO);
         pageResult.setTotal(page.getTotal());
         pageResult.setRecords(page.getResult());
         return pageResult;
+    }
+
+    @Override
+    @Transactional
+    public void updateDish(DishDTO dishDTO) {
+        Dish dish = new Dish();
+        BeanUtils.copyProperties(dishDTO,dish);
+        dish.setUpdateTime(LocalDateTime.now());
+        dish.setUpdateUser(BaseContext.getCurrentId());
+        dishMapper.updateDish(dish);
+
+        dishFlavorMapper.deleteDishFlavor(dishDTO.getId());
+        List<DishFlavor> flavorList = dishDTO.getFlavors();
+        if(flavorList != null&& !flavorList.isEmpty()){
+            flavorList.forEach(flavor -> flavor.setDishId(dishDTO.getId()));
+            dishFlavorMapper.addDishFlavor(flavorList);
+        }
+
+
     }
 
 

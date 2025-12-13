@@ -38,4 +38,10 @@ public class DishController {
         PageResult pageResult = dishService.selectDishList(dishPageQueryDTO);
         return Result.success(pageResult);
     }
+    @PutMapping
+    public Result updateDish(@RequestBody DishDTO dishDTO){
+        log.info("修改菜品：{}",dishDTO);
+        dishService.updateDish(dishDTO);
+        return Result.success();
+    }
 }
