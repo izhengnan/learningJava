@@ -4,10 +4,17 @@
 <mapper namespace="com.sky.mapper.DishFlavorMapper">
 
     <insert id="addDishFlavor">
-        INSERT INTO dish_flavor (dish_id, name, value) VALUES 
+        INSERT INTO dish_flavor (dish_id, name, value) VALUES
         <foreach collection="flavorList" item="df">
             (#{df.dishId}, #{df.name}, #{df.value})
         </foreach>
     </insert>
-    
+    <delete id="deleteDishFlavorList">
+        delete from dish_flavor
+        where dish_id in
+        <foreach collection="list" item="dishId" open="(" close=")" separator=",">
+            #{dishId}
+        </foreach>
+    </delete>
+
 </mapper>

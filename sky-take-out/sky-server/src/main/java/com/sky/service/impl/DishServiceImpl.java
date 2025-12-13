@@ -89,5 +89,11 @@ public class DishServiceImpl implements DishService {
 
     }
 
+    @Override
+    public void deleteDishList(ArrayList<Long> dishId) {
+        dishMapper.deleteDishList(dishId);
+        dishFlavorMapper.deleteDishFlavorList(dishId);
+    }
+
 
 }

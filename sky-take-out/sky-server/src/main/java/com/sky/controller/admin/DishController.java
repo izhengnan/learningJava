@@ -11,6 +11,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+
 @RestController
 @Slf4j
 @RequestMapping("/admin/dish")
@@ -42,6 +44,20 @@ public class DishController {
     public Result updateDish(@RequestBody DishDTO dishDTO){
         log.info("修改菜品：{}",dishDTO);
         dishService.updateDish(dishDTO);
+        return Result.success();
+    }
+
+    @DeleteMapping
+    public Result deleteDishList(@RequestParam("ids") String ids){
+        log.info("删除菜品：{}",ids);
+        ArrayList<Long> id = new ArrayList<>();
+        if (ids != null && !ids.isEmpty()) {
+            String[] idArray = ids.split(",");
+            for (String idStr : idArray) {
+                id.add(Long.parseLong(idStr.trim()));
+            }
+        }
+        dishService.deleteDishList(id);
         return Result.success();
     }
 }

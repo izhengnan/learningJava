@@ -6,6 +6,8 @@ import com.sky.entity.Dish;
 import com.sky.result.PageResult;
 import com.sky.vo.DishVO;
 
+import java.util.ArrayList;
+
 public interface DishService {
     void addDish(DishDTO dishDTO);
 
@@ -14,4 +16,6 @@ public interface DishService {
     PageResult selectDishList(DishPageQueryDTO dishPageQueryDTO);
 
     void updateDish(DishDTO dishDTO);
+
+    void deleteDishList(ArrayList<Long> id);
 }

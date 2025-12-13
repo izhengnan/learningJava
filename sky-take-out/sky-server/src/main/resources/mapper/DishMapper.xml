@@ -77,4 +77,11 @@
         </set>
         where id = #{id}
     </update>
+    <delete id="deleteDishList">
+        delete from dish
+        where id in
+        <foreach collection="list" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </delete>
 </mapper>
