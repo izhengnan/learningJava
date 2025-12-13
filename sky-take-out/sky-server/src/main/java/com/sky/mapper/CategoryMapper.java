@@ -1,6 +1,7 @@
 package com.sky.mapper;
 
 import com.github.pagehelper.Page;
+import com.sky.entity.DishFlavor;
 import com.sky.enumeration.OperationType;
 import com.sky.dto.CategoryPageQueryDTO;
 import com.sky.entity.Category;

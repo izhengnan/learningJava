@@ -22,7 +22,6 @@ public interface DishMapper {
     @Select("select count(id) from dish where category_id = #{categoryId}")
     Integer countByCategoryId(Long categoryId);
 
-    @Insert("insert into dish (id,name,category_id,price,image,description,status,create_time,update_time,create_user,update_user) value (#{id},#{name},#{categoryId},#{prcie},#{image},#{description},#{status},#{createTime},#{updateTime},#{createUser},#{updateUser})")
     void addDish(Dish dish);
 
     @Select("select * from dish where id = #{id}")
