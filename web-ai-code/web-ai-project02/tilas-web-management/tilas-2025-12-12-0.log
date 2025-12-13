@@ -1,0 +1,353 @@
+2025-12-12 20:52:41.203 [main] INFO  com.itheima.TilasWebManagementApplication-Starting TilasWebManagementApplication using Java 23.0.1 with PID 18012 (C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management\target\classes started by 16048 in C:\Users\16048\Documents\JAVA\web-ai-code\web-ai-project02\tilas-web-management)
+2025-12-12 20:52:41.206 [main] INFO  com.itheima.TilasWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2025-12-12 20:52:43.257 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2025-12-12 20:52:43.282 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2025-12-12 20:52:43.285 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2025-12-12 20:52:43.285 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-12 20:52:43.361 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2025-12-12 20:52:43.362 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 2078 ms
+2025-12-12 20:52:44.708 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2025-12-12 20:52:44.748 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2025-12-12 20:52:44.761 [main] INFO  com.itheima.TilasWebManagementApplication-Started TilasWebManagementApplication in 4.215 seconds (process running for 5.692)
+2025-12-12 20:53:17.613 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-12 20:53:17.613 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2025-12-12 20:53:17.613 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 0 ms
+2025-12-12 20:53:17.627 [http-nio-8080-exec-2] INFO  com.itheima.filter.TokenFilter-用户未登录
+2025-12-12 20:53:17.627 [http-nio-8080-exec-1] INFO  com.itheima.filter.TokenFilter-用户未登录
+2025-12-12 20:55:25.103 [http-nio-8080-exec-3] INFO  com.itheima.filter.TokenFilter-登录请求：/login
+2025-12-12 20:55:25.271 [http-nio-8080-exec-3] INFO  com.itheima.controller.LoginController-员工登录：Emp(id=null, username=huishen, password=123456, name=null, gender=null, phone=null, job=null, salary=null, image=null, entryDate=null, deptId=null, createTime=null, updateTime=null, deptName=null, exprList=null)
+2025-12-12 20:55:25.305 [http-nio-8080-exec-3] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2025-12-12 20:55:25.887 [http-nio-8080-exec-3] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@74d86db5
+2025-12-12 20:55:25.890 [http-nio-8080-exec-3] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2025-12-12 20:55:26.106 [http-nio-8080-exec-3] INFO  com.itheima.controller.LoginController-登录成功：LoginInfo(id=41, username=huishen, name=辉神666, token=eyJhbGciOiJIUzI1NiJ9.eyJpZCI6NDEsInVzZXJuYW1lIjoiaHVpc2hlbiIsImV4cCI6MTc2NTU4NzMyNn0.c27YciaS3grMX-k2OMbwtKyAgLXpBqz6z58hBaIM1wk)
+2025-12-12 20:55:31.705 [http-nio-8080-exec-4] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:55:31.705 [http-nio-8080-exec-4] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:55:31.705 [http-nio-8080-exec-5] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:55:31.705 [http-nio-8080-exec-5] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:55:31.705 [http-nio-8080-exec-5] INFO  com.itheima.controller.EmpController-查询所有员工数据
+2025-12-12 20:55:31.721 [http-nio-8080-exec-4] INFO  com.itheima.controller.ClazzController-分页查询:ClazzQueryParam(page=1, pageSize=10, name=, begin=null, end=null)
+2025-12-12 20:55:33.229 [http-nio-8080-exec-6] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:55:33.229 [http-nio-8080-exec-10] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:55:33.229 [http-nio-8080-exec-6] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:55:33.229 [http-nio-8080-exec-10] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:55:33.229 [http-nio-8080-exec-10] INFO  com.itheima.controller.ClazzController-查询所有班级
+2025-12-12 20:55:33.232 [http-nio-8080-exec-6] INFO  com.itheima.controller.StudentController-分页查询:StudentQueryParam(page=1, pageSize=10, name=, degree=null, clazzId=null)
+2025-12-12 20:55:33.872 [http-nio-8080-exec-9] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:55:33.872 [http-nio-8080-exec-8] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:55:33.872 [http-nio-8080-exec-9] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:55:33.873 [http-nio-8080-exec-8] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:55:33.873 [http-nio-8080-exec-9] INFO  com.itheima.controller.EmpController-查询所有员工数据
+2025-12-12 20:55:33.875 [http-nio-8080-exec-8] INFO  com.itheima.controller.ClazzController-分页查询:ClazzQueryParam(page=1, pageSize=10, name=, begin=null, end=null)
+2025-12-12 20:55:37.411 [http-nio-8080-exec-7] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:55:37.411 [http-nio-8080-exec-7] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:55:37.413 [http-nio-8080-exec-7] INFO  com.itheima.controller.DeptController-查询全部的部门数据
+2025-12-12 20:55:39.535 [http-nio-8080-exec-1] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:55:39.535 [http-nio-8080-exec-1] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:55:39.535 [http-nio-8080-exec-2] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:55:39.535 [http-nio-8080-exec-2] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:55:39.536 [http-nio-8080-exec-2] INFO  com.itheima.controller.DeptController-查询全部的部门数据
+2025-12-12 20:55:39.539 [http-nio-8080-exec-1] INFO  com.itheima.controller.EmpController-分页查询:EmpQueryParam(page=1, pageSize=10, name=, gender=null, begin=null, end=null)
+2025-12-12 20:55:40.669 [http-nio-8080-exec-3] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:55:40.671 [http-nio-8080-exec-3] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:55:40.673 [http-nio-8080-exec-3] INFO  com.itheima.controller.DeptController-查询全部的部门数据
+2025-12-12 20:55:41.134 [http-nio-8080-exec-5] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:55:41.134 [http-nio-8080-exec-4] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:55:41.134 [http-nio-8080-exec-5] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:55:41.134 [http-nio-8080-exec-4] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:55:41.134 [http-nio-8080-exec-4] INFO  com.itheima.controller.DeptController-查询全部的部门数据
+2025-12-12 20:55:41.135 [http-nio-8080-exec-5] INFO  com.itheima.controller.EmpController-分页查询:EmpQueryParam(page=1, pageSize=10, name=, gender=null, begin=null, end=null)
+2025-12-12 20:55:41.544 [http-nio-8080-exec-10] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:55:41.545 [http-nio-8080-exec-10] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:55:41.549 [http-nio-8080-exec-10] INFO  com.itheima.controller.DeptController-查询全部的部门数据
+2025-12-12 20:55:42.060 [http-nio-8080-exec-6] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:55:42.060 [http-nio-8080-exec-8] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:55:42.061 [http-nio-8080-exec-6] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:55:42.061 [http-nio-8080-exec-8] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:55:42.062 [http-nio-8080-exec-8] INFO  com.itheima.controller.DeptController-查询全部的部门数据
+2025-12-12 20:55:42.062 [http-nio-8080-exec-6] INFO  com.itheima.controller.EmpController-分页查询:EmpQueryParam(page=1, pageSize=10, name=, gender=null, begin=null, end=null)
+2025-12-12 20:55:45.243 [http-nio-8080-exec-9] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:55:45.243 [http-nio-8080-exec-9] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:55:45.243 [http-nio-8080-exec-9] INFO  com.itheima.controller.CountController-统计员工职位数据
+2025-12-12 20:55:45.243 [http-nio-8080-exec-7] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:55:45.243 [http-nio-8080-exec-7] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:55:45.243 [http-nio-8080-exec-7] INFO  com.itheima.controller.CountController-统计员工姓别数据
+2025-12-12 20:55:45.992 [http-nio-8080-exec-2] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:55:45.992 [http-nio-8080-exec-2] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:55:45.994 [http-nio-8080-exec-2] INFO  com.itheima.controller.CountController-统计班级人数历数据
+2025-12-12 20:55:46.007 [http-nio-8080-exec-1] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:55:46.007 [http-nio-8080-exec-1] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:55:46.011 [http-nio-8080-exec-1] INFO  com.itheima.controller.CountController-统计学生学历数据
+2025-12-12 20:55:46.750 [http-nio-8080-exec-3] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:55:46.751 [http-nio-8080-exec-3] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:55:46.764 [http-nio-8080-exec-3] ERROR com.itheima.exception.GlobalExceptionHandler-服务器发生异常:No static resource log/page.
+2025-12-12 20:55:48.832 [http-nio-8080-exec-4] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:55:48.832 [http-nio-8080-exec-5] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:55:48.832 [http-nio-8080-exec-4] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:55:48.833 [http-nio-8080-exec-5] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:55:48.833 [http-nio-8080-exec-5] INFO  com.itheima.controller.EmpController-查询所有员工数据
+2025-12-12 20:55:48.834 [http-nio-8080-exec-4] INFO  com.itheima.controller.ClazzController-分页查询:ClazzQueryParam(page=1, pageSize=10, name=, begin=null, end=null)
+2025-12-12 20:55:52.429 [http-nio-8080-exec-10] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:55:52.430 [http-nio-8080-exec-10] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:55:52.429 [http-nio-8080-exec-8] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:55:52.431 [http-nio-8080-exec-8] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:55:52.432 [http-nio-8080-exec-8] INFO  com.itheima.controller.ClazzController-查询所有班级
+2025-12-12 20:55:52.432 [http-nio-8080-exec-10] INFO  com.itheima.controller.StudentController-分页查询:StudentQueryParam(page=1, pageSize=10, name=, degree=null, clazzId=null)
+2025-12-12 20:55:53.283 [http-nio-8080-exec-6] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:55:53.283 [http-nio-8080-exec-7] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:55:53.284 [http-nio-8080-exec-6] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:55:53.284 [http-nio-8080-exec-7] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:55:53.284 [http-nio-8080-exec-7] INFO  com.itheima.controller.EmpController-查询所有员工数据
+2025-12-12 20:55:53.285 [http-nio-8080-exec-6] INFO  com.itheima.controller.ClazzController-分页查询:ClazzQueryParam(page=1, pageSize=10, name=, begin=null, end=null)
+2025-12-12 20:55:53.807 [http-nio-8080-exec-9] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:55:53.807 [http-nio-8080-exec-2] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:55:53.808 [http-nio-8080-exec-9] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:55:53.808 [http-nio-8080-exec-2] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:55:53.808 [http-nio-8080-exec-9] INFO  com.itheima.controller.ClazzController-查询所有班级
+2025-12-12 20:55:53.809 [http-nio-8080-exec-2] INFO  com.itheima.controller.StudentController-分页查询:StudentQueryParam(page=1, pageSize=10, name=, degree=null, clazzId=null)
+2025-12-12 20:55:58.666 [http-nio-8080-exec-1] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:55:58.666 [http-nio-8080-exec-1] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:55:58.668 [http-nio-8080-exec-1] INFO  com.itheima.controller.DeptController-查询全部的部门数据
+2025-12-12 20:56:00.047 [http-nio-8080-exec-4] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:00.047 [http-nio-8080-exec-3] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:00.047 [http-nio-8080-exec-4] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:00.047 [http-nio-8080-exec-3] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:00.048 [http-nio-8080-exec-4] INFO  com.itheima.controller.EmpController-查询所有员工数据
+2025-12-12 20:56:00.049 [http-nio-8080-exec-3] INFO  com.itheima.controller.ClazzController-分页查询:ClazzQueryParam(page=1, pageSize=10, name=, begin=null, end=null)
+2025-12-12 20:56:00.701 [http-nio-8080-exec-8] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:00.701 [http-nio-8080-exec-5] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:00.701 [http-nio-8080-exec-8] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:00.701 [http-nio-8080-exec-5] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:00.702 [http-nio-8080-exec-8] INFO  com.itheima.controller.ClazzController-查询所有班级
+2025-12-12 20:56:00.702 [http-nio-8080-exec-5] INFO  com.itheima.controller.StudentController-分页查询:StudentQueryParam(page=1, pageSize=10, name=, degree=null, clazzId=null)
+2025-12-12 20:56:01.396 [http-nio-8080-exec-6] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:01.396 [http-nio-8080-exec-10] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:01.397 [http-nio-8080-exec-6] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:01.397 [http-nio-8080-exec-10] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:01.397 [http-nio-8080-exec-6] INFO  com.itheima.controller.EmpController-查询所有员工数据
+2025-12-12 20:56:01.398 [http-nio-8080-exec-10] INFO  com.itheima.controller.ClazzController-分页查询:ClazzQueryParam(page=1, pageSize=10, name=, begin=null, end=null)
+2025-12-12 20:56:16.998 [http-nio-8080-exec-7] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:16.998 [http-nio-8080-exec-7] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:16.998 [http-nio-8080-exec-9] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:16.999 [http-nio-8080-exec-9] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:16.999 [http-nio-8080-exec-9] INFO  com.itheima.controller.ClazzController-查询所有班级
+2025-12-12 20:56:17.000 [http-nio-8080-exec-7] INFO  com.itheima.controller.StudentController-分页查询:StudentQueryParam(page=1, pageSize=10, name=, degree=null, clazzId=null)
+2025-12-12 20:56:19.449 [http-nio-8080-exec-2] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:19.449 [http-nio-8080-exec-2] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:19.449 [http-nio-8080-exec-1] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:19.449 [http-nio-8080-exec-1] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:19.450 [http-nio-8080-exec-1] INFO  com.itheima.controller.EmpController-查询所有员工数据
+2025-12-12 20:56:19.452 [http-nio-8080-exec-2] INFO  com.itheima.controller.ClazzController-分页查询:ClazzQueryParam(page=1, pageSize=10, name=, begin=null, end=null)
+2025-12-12 20:56:19.941 [http-nio-8080-exec-4] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:19.941 [http-nio-8080-exec-3] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:19.941 [http-nio-8080-exec-4] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:19.942 [http-nio-8080-exec-3] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:19.942 [http-nio-8080-exec-3] INFO  com.itheima.controller.ClazzController-查询所有班级
+2025-12-12 20:56:19.943 [http-nio-8080-exec-4] INFO  com.itheima.controller.StudentController-分页查询:StudentQueryParam(page=1, pageSize=10, name=, degree=null, clazzId=null)
+2025-12-12 20:56:20.848 [http-nio-8080-exec-5] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:20.848 [http-nio-8080-exec-8] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:20.849 [http-nio-8080-exec-5] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:20.849 [http-nio-8080-exec-8] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:20.849 [http-nio-8080-exec-5] INFO  com.itheima.controller.EmpController-查询所有员工数据
+2025-12-12 20:56:20.850 [http-nio-8080-exec-8] INFO  com.itheima.controller.ClazzController-分页查询:ClazzQueryParam(page=1, pageSize=10, name=, begin=null, end=null)
+2025-12-12 20:56:24.107 [http-nio-8080-exec-6] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:24.107 [http-nio-8080-exec-6] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:24.110 [http-nio-8080-exec-6] INFO  com.itheima.controller.ClazzController-根据id查询班级:8
+2025-12-12 20:56:25.949 [http-nio-8080-exec-10] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:25.950 [http-nio-8080-exec-10] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:25.965 [http-nio-8080-exec-10] INFO  com.itheima.controller.ClazzController-修改班级:Clazz(id=8, name=test, room=sint velit, beginDate=2006-03-07, endDate=2023-11-25, masterId=13, subject=80, createTime=2025-11-09T20:21:32, updateTime=2025-11-09T20:51:47, masterName=null, status=null)
+2025-12-12 20:56:26.002 [http-nio-8080-exec-9] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:26.002 [http-nio-8080-exec-9] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:26.003 [http-nio-8080-exec-9] INFO  com.itheima.controller.ClazzController-分页查询:ClazzQueryParam(page=1, pageSize=10, name=, begin=null, end=null)
+2025-12-12 20:56:27.515 [http-nio-8080-exec-7] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:27.515 [http-nio-8080-exec-2] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:27.515 [http-nio-8080-exec-7] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:27.515 [http-nio-8080-exec-2] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:27.515 [http-nio-8080-exec-2] INFO  com.itheima.controller.ClazzController-查询所有班级
+2025-12-12 20:56:27.515 [http-nio-8080-exec-7] INFO  com.itheima.controller.StudentController-分页查询:StudentQueryParam(page=1, pageSize=10, name=, degree=null, clazzId=null)
+2025-12-12 20:56:28.059 [http-nio-8080-exec-3] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:28.059 [http-nio-8080-exec-3] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:28.059 [http-nio-8080-exec-1] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:28.059 [http-nio-8080-exec-1] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:28.059 [http-nio-8080-exec-3] INFO  com.itheima.controller.EmpController-查询所有员工数据
+2025-12-12 20:56:28.060 [http-nio-8080-exec-1] INFO  com.itheima.controller.ClazzController-分页查询:ClazzQueryParam(page=1, pageSize=10, name=, begin=null, end=null)
+2025-12-12 20:56:29.426 [http-nio-8080-exec-4] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:29.426 [http-nio-8080-exec-4] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:29.426 [http-nio-8080-exec-8] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:29.426 [http-nio-8080-exec-8] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:29.426 [http-nio-8080-exec-8] INFO  com.itheima.controller.ClazzController-查询所有班级
+2025-12-12 20:56:29.426 [http-nio-8080-exec-4] INFO  com.itheima.controller.StudentController-分页查询:StudentQueryParam(page=1, pageSize=10, name=, degree=null, clazzId=null)
+2025-12-12 20:56:30.916 [http-nio-8080-exec-5] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:30.917 [http-nio-8080-exec-5] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:30.918 [http-nio-8080-exec-5] INFO  com.itheima.controller.StudentController-根据id查询学生:12
+2025-12-12 20:56:35.399 [http-nio-8080-exec-6] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:35.400 [http-nio-8080-exec-6] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:35.401 [http-nio-8080-exec-6] INFO  com.itheima.controller.StudentController-分页查询:StudentQueryParam(page=2, pageSize=10, name=, degree=null, clazzId=null)
+2025-12-12 20:56:36.426 [http-nio-8080-exec-10] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:36.426 [http-nio-8080-exec-10] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:36.426 [http-nio-8080-exec-10] INFO  com.itheima.controller.StudentController-分页查询:StudentQueryParam(page=1, pageSize=10, name=, degree=null, clazzId=null)
+2025-12-12 20:56:37.589 [http-nio-8080-exec-9] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:37.589 [http-nio-8080-exec-9] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:37.591 [http-nio-8080-exec-9] INFO  com.itheima.controller.DeptController-查询全部的部门数据
+2025-12-12 20:56:38.783 [http-nio-8080-exec-7] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:38.783 [http-nio-8080-exec-2] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:38.783 [http-nio-8080-exec-7] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:38.783 [http-nio-8080-exec-2] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:38.784 [http-nio-8080-exec-7] INFO  com.itheima.controller.DeptController-查询全部的部门数据
+2025-12-12 20:56:38.784 [http-nio-8080-exec-2] INFO  com.itheima.controller.EmpController-分页查询:EmpQueryParam(page=1, pageSize=10, name=, gender=null, begin=null, end=null)
+2025-12-12 20:56:42.541 [http-nio-8080-exec-3] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:42.541 [http-nio-8080-exec-3] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:42.543 [http-nio-8080-exec-3] INFO  com.itheima.controller.EmpController-分页查询:EmpQueryParam(page=3, pageSize=10, name=, gender=null, begin=null, end=null)
+2025-12-12 20:56:43.411 [http-nio-8080-exec-1] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:43.411 [http-nio-8080-exec-1] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:43.413 [http-nio-8080-exec-1] INFO  com.itheima.controller.EmpController-分页查询:EmpQueryParam(page=2, pageSize=10, name=, gender=null, begin=null, end=null)
+2025-12-12 20:56:43.885 [http-nio-8080-exec-4] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:43.885 [http-nio-8080-exec-4] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:43.887 [http-nio-8080-exec-4] INFO  com.itheima.controller.EmpController-分页查询:EmpQueryParam(page=4, pageSize=10, name=, gender=null, begin=null, end=null)
+2025-12-12 20:56:45.086 [http-nio-8080-exec-8] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:45.086 [http-nio-8080-exec-8] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:45.087 [http-nio-8080-exec-8] INFO  com.itheima.controller.EmpController-分页查询:EmpQueryParam(page=1, pageSize=10, name=, gender=null, begin=null, end=null)
+2025-12-12 20:56:46.421 [http-nio-8080-exec-5] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:46.421 [http-nio-8080-exec-5] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:46.423 [http-nio-8080-exec-5] INFO  com.itheima.controller.DeptController-查询全部的部门数据
+2025-12-12 20:56:47.341 [http-nio-8080-exec-10] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:47.341 [http-nio-8080-exec-6] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:47.341 [http-nio-8080-exec-10] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:47.341 [http-nio-8080-exec-6] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:47.342 [http-nio-8080-exec-10] INFO  com.itheima.controller.DeptController-查询全部的部门数据
+2025-12-12 20:56:47.342 [http-nio-8080-exec-6] INFO  com.itheima.controller.EmpController-分页查询:EmpQueryParam(page=1, pageSize=10, name=, gender=null, begin=null, end=null)
+2025-12-12 20:56:47.788 [http-nio-8080-exec-9] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:47.788 [http-nio-8080-exec-9] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:47.789 [http-nio-8080-exec-9] INFO  com.itheima.controller.DeptController-查询全部的部门数据
+2025-12-12 20:56:48.165 [http-nio-8080-exec-7] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:48.165 [http-nio-8080-exec-7] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:48.166 [http-nio-8080-exec-2] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:48.166 [http-nio-8080-exec-2] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:48.166 [http-nio-8080-exec-2] INFO  com.itheima.controller.DeptController-查询全部的部门数据
+2025-12-12 20:56:48.166 [http-nio-8080-exec-7] INFO  com.itheima.controller.EmpController-分页查询:EmpQueryParam(page=1, pageSize=10, name=, gender=null, begin=null, end=null)
+2025-12-12 20:56:48.455 [http-nio-8080-exec-3] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:48.456 [http-nio-8080-exec-3] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:48.456 [http-nio-8080-exec-3] INFO  com.itheima.controller.DeptController-查询全部的部门数据
+2025-12-12 20:56:48.965 [http-nio-8080-exec-1] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:48.965 [http-nio-8080-exec-4] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:48.965 [http-nio-8080-exec-1] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:48.965 [http-nio-8080-exec-4] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:48.965 [http-nio-8080-exec-4] INFO  com.itheima.controller.DeptController-查询全部的部门数据
+2025-12-12 20:56:48.966 [http-nio-8080-exec-1] INFO  com.itheima.controller.EmpController-分页查询:EmpQueryParam(page=1, pageSize=10, name=, gender=null, begin=null, end=null)
+2025-12-12 20:56:49.340 [http-nio-8080-exec-8] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:49.340 [http-nio-8080-exec-8] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:49.340 [http-nio-8080-exec-8] INFO  com.itheima.controller.DeptController-查询全部的部门数据
+2025-12-12 20:56:49.661 [http-nio-8080-exec-10] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:49.661 [http-nio-8080-exec-5] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:49.661 [http-nio-8080-exec-10] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:49.661 [http-nio-8080-exec-5] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:49.661 [http-nio-8080-exec-10] INFO  com.itheima.controller.DeptController-查询全部的部门数据
+2025-12-12 20:56:49.662 [http-nio-8080-exec-5] INFO  com.itheima.controller.EmpController-分页查询:EmpQueryParam(page=1, pageSize=10, name=, gender=null, begin=null, end=null)
+2025-12-12 20:56:49.972 [http-nio-8080-exec-6] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:49.972 [http-nio-8080-exec-6] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:49.972 [http-nio-8080-exec-6] INFO  com.itheima.controller.DeptController-查询全部的部门数据
+2025-12-12 20:56:50.542 [http-nio-8080-exec-2] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:50.542 [http-nio-8080-exec-2] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:50.542 [http-nio-8080-exec-9] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:50.542 [http-nio-8080-exec-9] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:50.543 [http-nio-8080-exec-2] INFO  com.itheima.controller.DeptController-查询全部的部门数据
+2025-12-12 20:56:50.543 [http-nio-8080-exec-9] INFO  com.itheima.controller.EmpController-分页查询:EmpQueryParam(page=1, pageSize=10, name=, gender=null, begin=null, end=null)
+2025-12-12 20:56:51.571 [http-nio-8080-exec-7] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:51.571 [http-nio-8080-exec-7] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:51.573 [http-nio-8080-exec-7] INFO  com.itheima.controller.CountController-统计员工职位数据
+2025-12-12 20:56:51.589 [http-nio-8080-exec-3] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:51.590 [http-nio-8080-exec-3] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:51.590 [http-nio-8080-exec-3] INFO  com.itheima.controller.CountController-统计员工姓别数据
+2025-12-12 20:56:55.802 [http-nio-8080-exec-4] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:55.802 [http-nio-8080-exec-1] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:56:55.802 [http-nio-8080-exec-4] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:55.802 [http-nio-8080-exec-1] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:56:55.803 [http-nio-8080-exec-4] INFO  com.itheima.controller.CountController-统计班级人数历数据
+2025-12-12 20:56:55.803 [http-nio-8080-exec-1] INFO  com.itheima.controller.CountController-统计学生学历数据
+2025-12-12 20:57:01.366 [http-nio-8080-exec-8] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:57:01.366 [http-nio-8080-exec-10] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:57:01.366 [http-nio-8080-exec-10] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:57:01.366 [http-nio-8080-exec-8] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:57:01.366 [http-nio-8080-exec-10] INFO  com.itheima.controller.EmpController-查询所有员工数据
+2025-12-12 20:57:01.367 [http-nio-8080-exec-8] INFO  com.itheima.controller.ClazzController-分页查询:ClazzQueryParam(page=1, pageSize=10, name=, begin=null, end=null)
+2025-12-12 20:57:01.763 [http-nio-8080-exec-5] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:57:01.763 [http-nio-8080-exec-6] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:57:01.763 [http-nio-8080-exec-5] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:57:01.763 [http-nio-8080-exec-6] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:57:01.763 [http-nio-8080-exec-6] INFO  com.itheima.controller.ClazzController-查询所有班级
+2025-12-12 20:57:01.764 [http-nio-8080-exec-5] INFO  com.itheima.controller.StudentController-分页查询:StudentQueryParam(page=1, pageSize=10, name=, degree=null, clazzId=null)
+2025-12-12 20:57:03.379 [http-nio-8080-exec-2] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:57:03.379 [http-nio-8080-exec-2] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:57:03.379 [http-nio-8080-exec-2] INFO  com.itheima.controller.DeptController-查询全部的部门数据
+2025-12-12 20:57:04.748 [http-nio-8080-exec-9] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:57:04.748 [http-nio-8080-exec-7] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:57:04.748 [http-nio-8080-exec-9] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:57:04.748 [http-nio-8080-exec-7] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:57:04.749 [http-nio-8080-exec-7] INFO  com.itheima.controller.DeptController-查询全部的部门数据
+2025-12-12 20:57:04.750 [http-nio-8080-exec-9] INFO  com.itheima.controller.EmpController-分页查询:EmpQueryParam(page=1, pageSize=10, name=, gender=null, begin=null, end=null)
+2025-12-12 20:57:05.343 [http-nio-8080-exec-3] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:57:05.343 [http-nio-8080-exec-4] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:57:05.343 [http-nio-8080-exec-4] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:57:05.343 [http-nio-8080-exec-3] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:57:05.343 [http-nio-8080-exec-4] INFO  com.itheima.controller.ClazzController-查询所有班级
+2025-12-12 20:57:05.345 [http-nio-8080-exec-3] INFO  com.itheima.controller.StudentController-分页查询:StudentQueryParam(page=1, pageSize=10, name=, degree=null, clazzId=null)
+2025-12-12 20:57:05.663 [http-nio-8080-exec-10] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:57:05.663 [http-nio-8080-exec-1] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:57:05.663 [http-nio-8080-exec-10] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:57:05.663 [http-nio-8080-exec-1] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:57:05.663 [http-nio-8080-exec-1] INFO  com.itheima.controller.EmpController-查询所有员工数据
+2025-12-12 20:57:05.664 [http-nio-8080-exec-10] INFO  com.itheima.controller.ClazzController-分页查询:ClazzQueryParam(page=1, pageSize=10, name=, begin=null, end=null)
+2025-12-12 20:57:06.664 [http-nio-8080-exec-8] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:57:06.664 [http-nio-8080-exec-8] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:57:06.670 [http-nio-8080-exec-8] ERROR com.itheima.exception.GlobalExceptionHandler-服务器发生异常:No static resource log/page.
+2025-12-12 20:57:07.274 [http-nio-8080-exec-6] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:57:07.276 [http-nio-8080-exec-6] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:57:07.278 [http-nio-8080-exec-6] INFO  com.itheima.controller.CountController-统计班级人数历数据
+2025-12-12 20:57:07.279 [http-nio-8080-exec-5] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:57:07.279 [http-nio-8080-exec-5] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:57:07.279 [http-nio-8080-exec-5] INFO  com.itheima.controller.CountController-统计学生学历数据
+2025-12-12 20:57:08.769 [http-nio-8080-exec-2] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:57:08.769 [http-nio-8080-exec-7] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:57:08.769 [http-nio-8080-exec-2] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:57:08.769 [http-nio-8080-exec-7] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:57:08.770 [http-nio-8080-exec-2] INFO  com.itheima.controller.CountController-统计员工职位数据
+2025-12-12 20:57:08.770 [http-nio-8080-exec-7] INFO  com.itheima.controller.CountController-统计员工姓别数据
+2025-12-12 20:57:09.778 [http-nio-8080-exec-9] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:57:09.778 [http-nio-8080-exec-9] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:57:09.778 [http-nio-8080-exec-4] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:57:09.779 [http-nio-8080-exec-4] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:57:09.779 [http-nio-8080-exec-4] INFO  com.itheima.controller.CountController-统计学生学历数据
+2025-12-12 20:57:09.779 [http-nio-8080-exec-9] INFO  com.itheima.controller.CountController-统计班级人数历数据
+2025-12-12 20:57:12.315 [http-nio-8080-exec-3] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:57:12.315 [http-nio-8080-exec-3] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:57:12.315 [http-nio-8080-exec-3] INFO  com.itheima.controller.CountController-统计员工职位数据
+2025-12-12 20:57:12.331 [http-nio-8080-exec-1] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:57:12.331 [http-nio-8080-exec-1] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:57:12.332 [http-nio-8080-exec-1] INFO  com.itheima.controller.CountController-统计员工姓别数据
+2025-12-12 20:57:13.360 [http-nio-8080-exec-10] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:57:13.360 [http-nio-8080-exec-10] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:57:13.360 [http-nio-8080-exec-10] INFO  com.itheima.controller.CountController-统计班级人数历数据
+2025-12-12 20:57:13.362 [http-nio-8080-exec-8] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:57:13.362 [http-nio-8080-exec-8] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:57:13.362 [http-nio-8080-exec-8] INFO  com.itheima.controller.CountController-统计学生学历数据
+2025-12-12 20:57:13.824 [http-nio-8080-exec-6] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:57:13.824 [http-nio-8080-exec-6] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:57:13.824 [http-nio-8080-exec-6] INFO  com.itheima.controller.CountController-统计员工职位数据
+2025-12-12 20:57:13.837 [http-nio-8080-exec-5] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:57:13.837 [http-nio-8080-exec-5] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:57:13.837 [http-nio-8080-exec-5] INFO  com.itheima.controller.CountController-统计员工姓别数据
+2025-12-12 20:57:15.114 [http-nio-8080-exec-7] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:57:15.114 [http-nio-8080-exec-2] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:57:15.115 [http-nio-8080-exec-2] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:57:15.115 [http-nio-8080-exec-7] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:57:15.115 [http-nio-8080-exec-2] INFO  com.itheima.controller.EmpController-查询所有员工数据
+2025-12-12 20:57:15.115 [http-nio-8080-exec-7] INFO  com.itheima.controller.ClazzController-分页查询:ClazzQueryParam(page=1, pageSize=10, name=, begin=null, end=null)
+2025-12-12 20:57:15.615 [http-nio-8080-exec-4] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:57:15.615 [http-nio-8080-exec-9] INFO  com.itheima.filter.TokenFilter-当前用户ID为：41,将其存入ThreadLocal
+2025-12-12 20:57:15.616 [http-nio-8080-exec-4] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:57:15.616 [http-nio-8080-exec-9] INFO  com.itheima.filter.TokenFilter-令牌合法
+2025-12-12 20:57:15.616 [http-nio-8080-exec-4] INFO  com.itheima.controller.ClazzController-查询所有班级
+2025-12-12 20:57:15.617 [http-nio-8080-exec-9] INFO  com.itheima.controller.StudentController-分页查询:StudentQueryParam(page=1, pageSize=10, name=, degree=null, clazzId=null)
+2025-12-12 21:00:21.050 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-12 21:00:21.101 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2025-12-12 21:00:21.106 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2025-12-12 21:00:21.129 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
