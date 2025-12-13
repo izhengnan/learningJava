@@ -1,5 +1,7 @@
 package com.sky.mapper;
 
+import com.github.pagehelper.Page;
+import com.sky.dto.DishPageQueryDTO;
 import com.sky.entity.Dish;
 import com.sky.entity.DishFlavor;
 import com.sky.vo.DishVO;
@@ -31,4 +33,6 @@ public interface DishMapper {
 
     @Select("select name from category where id = #{categoryId}")
     String selectDishCategoryNameById(Long categoryId);
+
+    Page<Dish> selectDishList(DishPageQueryDTO dishPageQueryDTO);
 }

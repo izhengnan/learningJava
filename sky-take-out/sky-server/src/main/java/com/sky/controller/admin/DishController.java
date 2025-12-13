@@ -1,7 +1,9 @@
 package com.sky.controller.admin;
 
 import com.sky.dto.DishDTO;
+import com.sky.dto.DishPageQueryDTO;
 import com.sky.entity.Dish;
+import com.sky.result.PageResult;
 import com.sky.result.Result;
 import com.sky.service.DishService;
 import com.sky.vo.DishVO;
@@ -28,5 +30,12 @@ public class DishController {
         log.info("查询菜品：{}",id);
         DishVO dishVO = dishService.selectDishById(id);
         return Result.success(dishVO);
+    }
+
+    @GetMapping("/page")
+    public Result<PageResult> SelectDishList(DishPageQueryDTO dishPageQueryDTO){
+        log.info("分页查询菜品:{}",dishPageQueryDTO);
+        PageResult pageResult = dishService.selectDishList(dishPageQueryDTO);
+        return Result.success(pageResult);
     }
 }

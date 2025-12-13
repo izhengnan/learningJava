@@ -1,9 +1,13 @@
 package com.sky.service.impl;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.sky.context.BaseContext;
 import com.sky.dto.DishDTO;
+import com.sky.dto.DishPageQueryDTO;
 import com.sky.entity.Dish;
 import com.sky.mapper.DishMapper;
+import com.sky.result.PageResult;
 import com.sky.service.DishService;
 import com.sky.vo.DishVO;
 import org.springframework.beans.BeanUtils;
@@ -37,4 +41,17 @@ public class DishServiceImpl implements DishService {
         dishVO.setCategoryName(dishMapper.selectDishCategoryNameById(dishVO.getCategoryId()));
         return dishVO;
     }
+
+    @Override
+    public PageResult selectDishList(DishPageQueryDTO dishPageQueryDTO) {
+        //TODO 未实现菜品分类的查询
+        PageHelper.startPage(dishPageQueryDTO.getPage(), dishPageQueryDTO.getPageSize());
+        PageResult pageResult = new PageResult();
+        Page<Dish> page = dishMapper.selectDishList(dishPageQueryDTO);
+        pageResult.setTotal(page.getTotal());
+        pageResult.setRecords(page.getResult());
+        return pageResult;
+    }
+
+
 }
