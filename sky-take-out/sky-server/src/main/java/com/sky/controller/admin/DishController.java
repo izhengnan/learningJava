@@ -48,15 +48,8 @@ public class DishController {
     }
 
     @DeleteMapping
-    public Result deleteDishList(@RequestParam("ids") String ids){
-        log.info("删除菜品：{}",ids);
-        ArrayList<Long> id = new ArrayList<>();
-        if (ids != null && !ids.isEmpty()) {
-            String[] idArray = ids.split(",");
-            for (String idStr : idArray) {
-                id.add(Long.parseLong(idStr.trim()));
-            }
-        }
+    public Result deleteDishList(@RequestParam("ids") ArrayList<Long> id){
+        log.info("删除菜品：{}",id);
         dishService.deleteDishList(id);
         return Result.success();
     }
