@@ -1,14 +1,13 @@
 package com.sky.controller.admin;
 
 import com.sky.dto.DishDTO;
+import com.sky.entity.Dish;
 import com.sky.result.Result;
 import com.sky.service.DishService;
+import com.sky.vo.DishVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @Slf4j
@@ -22,5 +21,12 @@ public class DishController {
         log.info("新增菜品：{}",dishDTO);
         dishService.addDish(dishDTO);
         return Result.success();
+    }
+
+    @GetMapping("/{id}")
+    public Result<DishVO> SelectDishById(@PathVariable Long id){
+        log.info("查询菜品：{}",id);
+        DishVO dishVO = dishService.selectDishById(id);
+        return Result.success(dishVO);
     }
 }

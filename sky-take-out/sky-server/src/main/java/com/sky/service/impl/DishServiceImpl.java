@@ -5,6 +5,7 @@ import com.sky.dto.DishDTO;
 import com.sky.entity.Dish;
 import com.sky.mapper.DishMapper;
 import com.sky.service.DishService;
+import com.sky.vo.DishVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,5 +28,13 @@ public class DishServiceImpl implements DishService {
         dish.setCreateUser(BaseContext.getCurrentId());
         dish.setUpdateUser(BaseContext.getCurrentId());
         dishMapper.addDish(dish);
+    }
+
+    @Override
+    public DishVO selectDishById(Long id) {
+        DishVO dishVO = dishMapper.selectById(id);
+        dishVO.setFlavors(dishMapper.selectDishFlavorsById(id));
+        dishVO.setCategoryName(dishMapper.selectDishCategoryNameById(dishVO.getCategoryId()));
+        return dishVO;
     }
 }
