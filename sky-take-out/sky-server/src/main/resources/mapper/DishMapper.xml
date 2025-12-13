@@ -44,8 +44,12 @@
         #{value}
         )
     </insert>
-    <select id="selectDishList" resultType="com.sky.entity.Dish">
-        select * from dish
+    <select id="selectDishList" resultType="com.sky.vo.DishVO">
+        SELECT
+        d.*,
+        c.name as categoryName
+        FROM dish d
+        LEFT JOIN category c ON d.category_id = c.id
         <where>
             <if test="name != null and name != ''">
                 and name like concat('%',#{name},'%')
@@ -53,7 +57,11 @@
             <if test="categoryId != null">
                 and category_id = #{categoryId}
             </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
         </where>
         order by create_time desc
     </select>
+
 </mapper>

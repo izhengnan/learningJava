@@ -65,7 +65,7 @@ public class DishServiceImpl implements DishService {
         //TODO 未实现菜品分类的查询
         PageHelper.startPage(dishPageQueryDTO.getPage(), dishPageQueryDTO.getPageSize());
         PageResult pageResult = new PageResult();
-        Page<Dish> page = dishMapper.selectDishList(dishPageQueryDTO);
+        Page<DishVO> page = dishMapper.selectDishList(dishPageQueryDTO);
         pageResult.setTotal(page.getTotal());
         pageResult.setRecords(page.getResult());
         return pageResult;

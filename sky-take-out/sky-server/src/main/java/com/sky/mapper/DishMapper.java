@@ -33,5 +33,5 @@ public interface DishMapper {
     @Select("select name from category where id = #{categoryId}")
     String selectDishCategoryNameById(Long categoryId);
 
-    Page<Dish> selectDishList(DishPageQueryDTO dishPageQueryDTO);
+    Page<DishVO> selectDishList(DishPageQueryDTO dishPageQueryDTO);
 }
