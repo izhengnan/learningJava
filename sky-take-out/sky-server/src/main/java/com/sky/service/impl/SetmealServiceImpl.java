@@ -16,8 +16,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -51,9 +53,17 @@ public class SetmealServiceImpl implements SetmealService {
     public PageResult selectSetmealList(SetmealPageQueryDTO setmealPageQueryDTO) {
         PageHelper.startPage(setmealPageQueryDTO.getPage(),setmealPageQueryDTO.getPageSize());
         PageResult pageResult = new PageResult();
-        Page<SetmealVO> page = setmealDishMapper.selectSetmealList(setmealPageQueryDTO);
+        Page<SetmealVO> page = setmealMapper.selectSetmealList(setmealPageQueryDTO);
         pageResult.setTotal(page.getTotal());
         pageResult.setRecords(page.getResult());
         return pageResult;
+    }
+
+    @Override
+    @Transactional
+    public void deleteSetmealList(ArrayList<Long> ids) {
+        //TODO 删除前检查状态是否启用，若启用则无法删除
+        setmealMapper.deleteSetmealList(ids);
+        setmealDishMapper.deleteSetmealDishList(ids);
     }
 }

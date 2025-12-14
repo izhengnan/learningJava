@@ -32,4 +32,23 @@
         <if test="updateUser != null">#{updateUser},</if>
         </trim>
     </insert>
+
+
+    <select id="selectSetmealList" resultType="com.sky.vo.SetmealVO">
+        select * from setmeal
+        <where>
+            <if  test="name != null">and name like concat ('%',#{name},'%')</if>
+            <if  test="status != null">and status = #{status}</if>
+            <if  test="categoryId != null">and status = #{categoryId}</if>
+        </where>
+        order by update_time desc
+    </select>
+
+    <delete id="deleteSetmealList">
+        delete from setmeal where id in
+        <foreach collection="ids" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+
+    </delete>
 </mapper>

@@ -16,5 +16,5 @@ public interface SetmealDishMapper {
 
     void addSetmealDishes(List<SetmealDish> setmealDishes);
 
-    Page<SetmealVO> selectSetmealList(SetmealPageQueryDTO setmealPageQueryDTO);
+    void deleteSetmealDishList(ArrayList<Long> ids);
 }
