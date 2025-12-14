@@ -19,4 +19,6 @@ public interface SetmealDishMapper {
     void deleteSetmealDishList(ArrayList<Long> ids);
 
     List<SetmealDish> selectSetmealDishById(Long id);
+
+    ArrayList<Integer> selectSetmealDishByIdList(ArrayList<Long> ids);
 }

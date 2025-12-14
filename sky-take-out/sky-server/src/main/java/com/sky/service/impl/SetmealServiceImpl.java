@@ -2,6 +2,7 @@ package com.sky.service.impl;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.sky.constant.MessageConstant;
 import com.sky.context.BaseContext;
 import com.sky.dto.SetmealDTO;
 import com.sky.dto.SetmealPageQueryDTO;
@@ -62,7 +63,12 @@ public class SetmealServiceImpl implements SetmealService {
     @Override
     @Transactional
     public void deleteSetmealList(ArrayList<Long> ids) {
-        //TODO 删除前检查状态是否启用，若启用则无法删除
+        ArrayList<Integer> status = setmealDishMapper.selectSetmealDishByIdList(ids);
+        for (int i = 0; i < status.size(); i++) {
+            if (status.get(i) == 1){
+                throw new RuntimeException(MessageConstant.SETMEAL_ON_SALE);
+            }
+        }
         setmealMapper.deleteSetmealList(ids);
         setmealDishMapper.deleteSetmealDishList(ids);
     }
