@@ -101,10 +101,12 @@ public class DishServiceImpl implements DishService {
     @Override
     @Transactional
     public void deleteDishList(ArrayList<Long> dishId) {
-        //TODO 循环查表后期需修改
-        for (Long aLong : dishId) {
-            if (Objects.equals(dishMapper.selectById(aLong).getStatus(), StatusConstant.ENABLE)) {
-                throw new DeletionNotAllowedException(MessageConstant.DISH_ON_SALE);
+        ArrayList<Integer> integers = dishMapper.selectStatusById(dishId);
+        if (integers != null && !integers.isEmpty()) {
+            for (Integer integer : integers) {
+                if (Objects.equals(integer, StatusConstant.ENABLE)) {
+                    throw new DeletionNotAllowedException(MessageConstant.DISH_ON_SALE);
+                }
             }
         }
         ArrayList<Long> setmealIds = setmealDishMapper.getSetmealIdsByDishIds(dishId);

@@ -45,4 +45,6 @@ public interface DishMapper {
     void startOrStopDish(Dish dish);
 
     List<DishVO> selectDishListByCategoryId(Long categoryId);
+
+    ArrayList<Integer> selectStatusById(ArrayList<Long> dishId);
 }

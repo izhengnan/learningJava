@@ -95,4 +95,11 @@
         </where>
         order by update_time desc
     </select>
+    <select id="selectStatusById" resultType="java.lang.Integer">
+        select status from dish where id in
+        <foreach collection="dishId" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </select>
+
 </mapper>
