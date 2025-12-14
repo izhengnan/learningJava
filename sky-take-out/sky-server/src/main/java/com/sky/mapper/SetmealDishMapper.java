@@ -21,4 +21,6 @@ public interface SetmealDishMapper {
     List<SetmealDish> selectSetmealDishById(Long id);
 
     ArrayList<Integer> selectSetmealDishByIdList(ArrayList<Long> ids);
+
+    ArrayList<Integer> selectSetmealDishStatusBySetmealId(Long id);
 }

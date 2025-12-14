@@ -53,4 +53,11 @@ public class SetmealController {
         setmealService.updateSetmeal(setmealDTO);
         return Result.success();
     }
+
+    @PostMapping("status/{status}")
+    public Result startOrStopSetmeal(@PathVariable Integer status,Long id){
+        log.info("启用或禁用id为{}的套餐：{}",id,status);
+        setmealService.startOrStopSetmeal(status,id);
+        return Result.success();
+    }
 }

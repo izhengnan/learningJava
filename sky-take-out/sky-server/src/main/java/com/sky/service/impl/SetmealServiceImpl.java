@@ -3,11 +3,13 @@ package com.sky.service.impl;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.sky.constant.MessageConstant;
+import com.sky.constant.StatusConstant;
 import com.sky.context.BaseContext;
 import com.sky.dto.SetmealDTO;
 import com.sky.dto.SetmealPageQueryDTO;
 import com.sky.entity.Setmeal;
 import com.sky.entity.SetmealDish;
+import com.sky.exception.BaseException;
 import com.sky.mapper.SetmealDishMapper;
 import com.sky.mapper.SetmealMapper;
 import com.sky.result.PageResult;
@@ -22,6 +24,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @Slf4j
@@ -98,5 +101,18 @@ public class SetmealServiceImpl implements SetmealService {
             setmealDishes.forEach(setmealDish -> setmealDish.setSetmealId(setmeal.getId()));
         }
         setmealDishMapper.addSetmealDishes(setmealDTO.getSetmealDishes());
+    }
+
+    @Override
+    public void startOrStopSetmeal(Integer status,Long id) {
+        if(Objects.equals(status, StatusConstant.ENABLE)) {
+            ArrayList<Integer> statusList = setmealDishMapper.selectSetmealDishStatusBySetmealId(id);
+            for (Integer integer : statusList) {
+                if (Objects.equals(integer, StatusConstant.DISABLE)) {
+                    throw new BaseException(MessageConstant.SETMEAL_ENABLE_FAILED);
+                }
+            }
+        }
+        setmealMapper.startOrStopSetmeal(status,id);
     }
 }

@@ -6,6 +6,7 @@ import com.sky.entity.Setmeal;
 import com.sky.vo.SetmealVO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.ArrayList;
 
@@ -29,4 +30,7 @@ public interface SetmealMapper {
     SetmealVO selectSetmealById(Long id);
 
     void updateSetmeal(Setmeal setmeal);
+
+    @Update("update setmeal set status=#{status} where id = #{id}")
+    void startOrStopSetmeal(Integer status, Long id);
 }

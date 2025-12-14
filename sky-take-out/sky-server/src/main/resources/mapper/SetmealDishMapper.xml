@@ -32,5 +32,9 @@
             #{id}
         </foreach>
     </select>
+    <select id="selectSetmealDishStatusBySetmealId" resultType="java.lang.Integer">
+        select d.status from setmeal_dish sd left join dish d on sd.dish_id = d.id
+        where sd.setmeal_id = #{id}
+    </select>
 
 </mapper>
