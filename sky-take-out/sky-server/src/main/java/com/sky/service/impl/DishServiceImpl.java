@@ -9,6 +9,7 @@ import com.sky.dto.DishDTO;
 import com.sky.dto.DishPageQueryDTO;
 import com.sky.entity.Dish;
 import com.sky.entity.DishFlavor;
+import com.sky.exception.BaseException;
 import com.sky.exception.DeletionNotAllowedException;
 import com.sky.mapper.CategoryMapper;
 import com.sky.mapper.DishFlavorMapper;
@@ -62,6 +63,9 @@ public class DishServiceImpl implements DishService {
     @Override
     public DishVO selectDishById(Long id) {
         DishVO dishVO = dishMapper.selectById(id);
+        if (dishVO == null) {
+            throw new BaseException(MessageConstant.DISH_NOT_FOUND);
+        }
         dishVO.setFlavors(dishMapper.selectDishFlavorsById(id));
         dishVO.setCategoryName(dishMapper.selectDishCategoryNameById(dishVO.getCategoryId()));
         return dishVO;
