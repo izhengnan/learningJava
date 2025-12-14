@@ -27,4 +27,6 @@ public interface SetmealMapper {
     void deleteSetmealList(ArrayList<Long> ids);
 
     SetmealVO selectSetmealById(Long id);
+
+    void updateSetmeal(Setmeal setmeal);
 }

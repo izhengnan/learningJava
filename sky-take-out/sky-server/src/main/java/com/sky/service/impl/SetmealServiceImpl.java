@@ -64,8 +64,8 @@ public class SetmealServiceImpl implements SetmealService {
     @Transactional
     public void deleteSetmealList(ArrayList<Long> ids) {
         ArrayList<Integer> status = setmealDishMapper.selectSetmealDishByIdList(ids);
-        for (int i = 0; i < status.size(); i++) {
-            if (status.get(i) == 1){
+        for (Integer integer : status) {
+            if (integer == 1) {
                 throw new RuntimeException(MessageConstant.SETMEAL_ON_SALE);
             }
         }
@@ -78,5 +78,25 @@ public class SetmealServiceImpl implements SetmealService {
         SetmealVO setmealVO = setmealMapper.selectSetmealById(id);
         setmealVO.setSetmealDishes(setmealDishMapper.selectSetmealDishById(id));
         return setmealVO;
+    }
+
+    @Override
+    @Transactional
+    public void updateSetmeal(SetmealDTO setmealDTO) {
+        Setmeal setmeal = new Setmeal();
+        BeanUtils.copyProperties(setmealDTO,setmeal);
+        setmeal.setUpdateUser(BaseContext.getCurrentId());
+        setmeal.setUpdateTime(LocalDateTime.now());
+        setmealMapper.updateSetmeal(setmeal);
+
+        ArrayList<Long> ids = new ArrayList<>();
+        ids.add(setmeal.getId());
+        setmealDishMapper.deleteSetmealDishList(ids);
+
+        List<SetmealDish> setmealDishes = setmealDTO.getSetmealDishes();
+        if (setmealDishes != null && !setmealDishes.isEmpty()){
+            setmealDishes.forEach(setmealDish -> setmealDish.setSetmealId(setmeal.getId()));
+        }
+        setmealDishMapper.addSetmealDishes(setmealDTO.getSetmealDishes());
     }
 }
