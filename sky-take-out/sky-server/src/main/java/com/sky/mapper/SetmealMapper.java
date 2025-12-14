@@ -25,4 +25,6 @@ public interface SetmealMapper {
     Page<SetmealVO> selectSetmealList(SetmealPageQueryDTO setmealPageQueryDTO);
 
     void deleteSetmealList(ArrayList<Long> ids);
+
+    SetmealVO selectSetmealById(Long id);
 }
