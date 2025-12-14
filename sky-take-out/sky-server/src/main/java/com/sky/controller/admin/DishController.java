@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @Slf4j
@@ -59,5 +60,12 @@ public class DishController {
         log.info("启用或禁用菜品：{}",id);
         dishService.startOrStopDish(status,id);
         return Result.success();
+    }
+
+    @GetMapping("/list")
+    public Result<List<DishVO>> selectDishListByCategoryId(Long categoryId){
+        log.info("根据分类id查询菜品：{}",categoryId);
+        List<DishVO> dishVOSList= dishService.selectDishListByCategoryId(categoryId);
+        return Result.success(dishVOSList);
     }
 }

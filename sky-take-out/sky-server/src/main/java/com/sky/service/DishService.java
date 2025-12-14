@@ -7,6 +7,7 @@ import com.sky.result.PageResult;
 import com.sky.vo.DishVO;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface DishService {
     void addDish(DishDTO dishDTO);
@@ -20,4 +21,6 @@ public interface DishService {
     void deleteDishList(ArrayList<Long> id);
 
     void startOrStopDish(Integer status, Long id);
+
+    List<DishVO> selectDishListByCategoryId(Long categoryId);
 }

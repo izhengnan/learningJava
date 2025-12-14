@@ -43,4 +43,6 @@ public interface DishMapper {
     void deleteDishList(ArrayList<Long> id);
 
     void startOrStopDish(Dish dish);
+
+    List<DishVO> selectDishListByCategoryId(Long categoryId);
 }

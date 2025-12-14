@@ -11,7 +11,6 @@ import com.sky.entity.Dish;
 import com.sky.entity.DishFlavor;
 import com.sky.exception.BaseException;
 import com.sky.exception.DeletionNotAllowedException;
-import com.sky.mapper.CategoryMapper;
 import com.sky.mapper.DishFlavorMapper;
 import com.sky.mapper.DishMapper;
 import com.sky.mapper.SetmealDishMapper;
@@ -126,6 +125,11 @@ public class DishServiceImpl implements DishService {
                 .updateUser(updateUser)
                 .id(id).build();
         dishMapper.startOrStopDish(dish);
+    }
+
+    @Override
+    public List<DishVO> selectDishListByCategoryId(Long categoryId) {
+        return dishMapper.selectDishListByCategoryId(categoryId);
     }
 
 
