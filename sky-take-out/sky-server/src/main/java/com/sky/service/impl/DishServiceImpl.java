@@ -116,13 +116,23 @@ public class DishServiceImpl implements DishService {
     }
 
     @Override
+    @Transactional
     public void startOrStopDish(Integer status, Long id) {
-        LocalDateTime updateTime = LocalDateTime.now();
-        Long updateUser = BaseContext.getCurrentId();
+        if(Objects.equals(status, StatusConstant.DISABLE)) {
+            Integer mealDishStatus = setmealDishMapper.selectSetmealStatusByDishId(id);
+            if(Objects.equals(mealDishStatus, StatusConstant.ENABLE)){
+                ArrayList<Long> dishIds = new ArrayList<>();
+                dishIds.add(id);
+                ArrayList<Long> mealDishList = setmealDishMapper.getSetmealIdsByDishIds(dishIds);
+                if (mealDishList != null && !mealDishList.isEmpty()) {
+                    throw new DeletionNotAllowedException(MessageConstant.DISH_BE_STOP_BY_SETMEAL);
+                }
+            }
+        }
         Dish dish=Dish.builder()
                 .status(status)
-                .updateTime(updateTime)
-                .updateUser(updateUser)
+                .updateTime(LocalDateTime.now())
+                .updateUser(BaseContext.getCurrentId())
                 .id(id).build();
         dishMapper.startOrStopDish(dish);
     }
