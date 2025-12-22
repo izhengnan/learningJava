@@ -6,10 +6,10 @@ spring:
   application:
     name: shipment
   datasource:
-    url: jdbc:mysql://101.34.210.41:3306/shipment
+    url: jdbc:mysql://localhost:8864/shipment
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: shipment
-    password: JPcG4PYHSChYNJ2n
+    password: 58jipnAmf7yKXJrc
 
 mybatis:
   configuration:
