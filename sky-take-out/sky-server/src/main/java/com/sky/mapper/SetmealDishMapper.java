@@ -3,6 +3,7 @@ package com.sky.mapper;
 import com.github.pagehelper.Page;
 import com.sky.dto.SetmealPageQueryDTO;
 import com.sky.entity.SetmealDish;
+import com.sky.vo.DishItemVO;
 import com.sky.vo.SetmealVO;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -25,4 +26,6 @@ public interface SetmealDishMapper {
     ArrayList<Integer> selectSetmealDishStatusBySetmealId(Long id);
 
     Integer selectSetmealStatusByDishId(Long id);
+
+    ArrayList<DishItemVO> selectDishBySetmealId(Long id);
 }

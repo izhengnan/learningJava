@@ -37,5 +37,9 @@
         select s.status from setmeal_dish sd left join setmeal s on sd.setmeal_id = s.id
         where sd.dish_id = #{id}
     </select>
+    <select id="selectDishBySetmealId" resultType="com.sky.vo.DishItemVO">
+        select sd.name,sd.copies,d.image,d.description from setmeal_dish sd left join dish d on sd.dish_id = d.id
+        where setmeal_id = #{id}
+    </select>
 
 </mapper>

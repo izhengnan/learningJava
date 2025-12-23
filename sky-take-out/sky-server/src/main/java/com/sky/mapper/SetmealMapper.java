@@ -33,4 +33,6 @@ public interface SetmealMapper {
 
     @Update("update setmeal set status=#{status} where id = #{id}")
     void startOrStopSetmeal(Integer status, Long id);
+
+    ArrayList<Setmeal> selectSetmealByCategoryId(Long categoryId);
 }

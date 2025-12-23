@@ -71,4 +71,9 @@
             <if test="updateUser != null">update_user = #{updateUser},</if>
         </set>
     </update>
+
+    <select id="selectSetmealByCategoryId" resultType="com.sky.entity.Setmeal">
+        select * from setmeal where category_id = #{categoryId}
+    </select>
+
 </mapper>
