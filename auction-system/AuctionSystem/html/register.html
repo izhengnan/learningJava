@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拍卖系统 - 用户注册</title>
+    <!-- 引入Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="common.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">拍卖系统</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">拍品列表</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">登录</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="register.html">注册</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-login.html">管理员入口</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 注册表单 -->
+    <div class="form-container">
+        <h3 class="form-title">用户注册</h3>
+        <form id="registerForm">
+            <div class="mb-3">
+                <label for="username" class="form-label">用户名</label>
+                <input type="text" class="form-control" id="username" placeholder="请输入用户名" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">密码</label>
+                <input type="password" class="form-control" id="password" placeholder="请输入密码" required>
+            </div>
+            <div class="mb-3">
+                <label for="confirmPwd" class="form-label">确认密码</label>
+                <input type="password" class="form-control" id="confirmPwd" placeholder="请再次输入密码" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">注册</button>
+            <div class="text-center mt-3">
+                <a href="login.html">已有账号？立即登录</a>
+            </div>
+        </form>
+    </div>
+
+    <!-- 引入JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module">
+        import { post } from './utils/request.js';
+        
+        // 注册表单提交事件
+        document.getElementById('registerForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const pwd = document.getElementById('password').value;
+            const confirmPwd = document.getElementById('confirmPwd').value;
+            
+            if (!username) {
+                alert('用户名不能为空！');
+                return;
+            }
+            
+            if (pwd !== confirmPwd) {
+                alert('两次密码输入不一致！');
+                return;
+            }
+            if (pwd.length < 6) {
+                alert('密码长度不能少于6位！');
+                return;
+            }
+            
+            try {
+                // 调用后端注册接口
+                const response = await post('/user/register', {
+                    username: username,
+                    password: pwd
+                });
+                
+                if (response.code === 1) {
+                    alert('注册成功！即将跳转到登录页面');
+                    window.location.href = 'login.html';
+                } else {
+                    alert('注册失败: ' + response.msg);
+                }
+            } catch (error) {
+                console.error('注册异常:', error);
+                alert('注册异常，请稍后重试');
+            }
+        });
+    </script>
+</body>
+</html>

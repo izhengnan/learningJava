@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qkl.auctionsystem.mapper.ItemMapper">
+
+    <insert id="addItem">
+        insert into auction_item
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+        <if test="id != null">id,</if>
+        <if test="title != null">title,</if>
+        <if test="image != null">image,</if>
+        <if test="initialPrice != null">initial_price,</if>
+        <if test="description != null">description,</if>
+        <if test="startTime != null">start_time,</if>
+        <if test="endTime != null">end_time,</if>
+        <if test="currentMaxPrice != null">current_max_price,</if>
+        <if test="currentMaxUserId != null">current_max_user_id,</if>
+        <if test="status != null">status,</if>
+        <if test="listingStatus != null">listing_status,</if>
+        <if test="createTime != null">create_time,</if>
+        <if test="updateTime != null">update_time,</if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+        <if test="id != null">#{id},</if>
+        <if test="title != null">#{title},</if>
+        <if test="image != null">#{image},</if>
+        <if test="initialPrice != null">#{initialPrice},</if>
+        <if test="description != null">#{description},</if>
+        <if test="startTime != null">#{startTime},</if>
+        <if test="endTime != null">#{endTime},</if>
+        <if test="currentMaxPrice != null">#{currentMaxPrice},</if>
+        <if test="currentMaxUserId != null">#{currentMaxUserId},</if>
+        <if test="status != null">#{status},</if>
+        <if test="listingStatus != null">#{listingStatus},</if>
+        <if test="createTime != null">#{createTime},</if>
+        <if test="updateTime != null">#{updateTime},</if>
+        </trim>
+    </insert>
+
+    <select id="selectItemList" resultType="com.qkl.auctionsystem.pojo.entity.Item">
+        select * from auction_item
+        <where>
+            <if test="title != null">and title like concat('%',#{title},'%')</if>
+            <if test="status != null">and status = #{status}</if>
+            <if test="minPrice != null">and current_max_price >= #{minPrice}</if>
+            <if test="maxPrice != null">and current_max_price <![CDATA[ <= ]]> #{maxPrice}</if>
+            and listing_status = 1
+        </where>
+    </select>
+    
+    <select id="selectItemById" resultType="com.qkl.auctionsystem.pojo.entity.Item">
+        select * from auction_item where id = #{id}
+    </select>
+
+    <delete id="deleteItemByIds">
+        delete from auction_item where id in
+        <foreach collection="ids" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </delete>
+    <update id="updateItem">
+        update auction_item
+        <set>
+            <if test="title != null">title = #{title},</if>
+            <if test="image != null">image = #{image},</if>
+            <if test="initialPrice != null">initial_price = #{initialPrice},</if>
+            <if test="description != null">description = #{description},</if>
+            <if test="startTime != null">start_time = #{startTime},</if>
+            <if test="endTime != null">end_time = #{endTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </set>
+        where id = #{id}
+    </update>
+    
+    <select id="selectAllItems" resultType="com.qkl.auctionsystem.pojo.entity.Item">
+        select * from auction_item
+    </select>
+    <select id="selectItemListingStatusByIds" resultType="java.lang.Integer">
+        select listing_status from auction_item where id in
+        <foreach collection="ids" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </select>
+    <select id="selectItemListByAdmin" resultType="com.qkl.auctionsystem.pojo.entity.Item">
+        select * from auction_item
+        <where>
+            <if test="title != null">and title like concat('%',#{title},'%')</if>
+            <if test="status != null">and status = #{status}</if>
+            <if test="minPrice != null">and current_max_price >= #{minPrice}</if>
+            <if test="maxPrice != null">and current_max_price <![CDATA[ <= ]]> #{maxPrice}</if>
+        </where>
+    </select>
+
+    <update id="updateItemStatus">
+        update auction_item set status = #{status} where id = #{id}
+    </update>
+    
+    <update id="updateCurrentMaxPrice">
+        update auction_item
+        set current_max_price = #{currentMaxPrice}, current_max_user_id = #{currentMaxUserId}
+        where id = #{itemId} and (current_max_price is null or current_max_price <![CDATA[ < ]]> #{currentMaxPrice})
+    </update>
+    <update id="updateItemlistingStatusById">
+        update auction_item
+        set listing_status = #{listingStatus}
+        where id = #{id}
+    </update>
+</mapper>

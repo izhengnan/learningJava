@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qkl.auctionsystem.mapper.UserMapper">
+    <insert id="userRegister">
+        insert user(username,password,role,create_time,update_time) values(#{username},#{password},#{role},#{createTime},#{updateTime})
+    </insert>
+    <select id="userLogin" resultType="com.qkl.auctionsystem.pojo.entity.User">
+        select * from user where username = #{username}
+    </select>
+</mapper>
