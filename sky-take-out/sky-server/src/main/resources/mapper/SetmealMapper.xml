@@ -73,7 +73,7 @@
     </update>
 
     <select id="selectSetmealByCategoryId" resultType="com.sky.entity.Setmeal">
-        select * from setmeal where category_id = #{categoryId}
+        select * from setmeal where category_id = #{categoryId} and status = 1
     </select>
 
 </mapper>
