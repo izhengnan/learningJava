@@ -92,6 +92,7 @@
         select * from dish
         <where>
             category_id = #{categoryId}
+            and status = 1
         </where>
         order by update_time desc
     </select>
