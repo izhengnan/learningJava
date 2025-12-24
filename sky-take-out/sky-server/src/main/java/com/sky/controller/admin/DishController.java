@@ -9,10 +9,12 @@ import com.sky.service.DishService;
 import com.sky.vo.DishVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @RestController("adminDishController")
 @Slf4j
@@ -20,11 +22,15 @@ import java.util.List;
 public class DishController {
     @Autowired
     private DishService dishService;
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     @PostMapping
     public Result addDish(@RequestBody DishDTO dishDTO){
         log.info("新增菜品：{}",dishDTO);
         dishService.addDish(dishDTO);
+        String key = "dish_"+dishDTO.getCategoryId();
+        cleanCach(key);
         return Result.success();
     }
 
@@ -45,6 +51,7 @@ public class DishController {
     public Result updateDish(@RequestBody DishDTO dishDTO){
         log.info("修改菜品：{}",dishDTO);
         dishService.updateDish(dishDTO);
+        cleanCach("dish_*");
         return Result.success();
     }
 
@@ -52,6 +59,7 @@ public class DishController {
     public Result deleteDishList(@RequestParam("ids") ArrayList<Long> id){
         log.info("删除菜品：{}",id);
         dishService.deleteDishList(id);
+        cleanCach("dish_*");
         return Result.success();
     }
 
@@ -59,13 +67,18 @@ public class DishController {
     public Result startOrStopDish(@PathVariable Integer status,Long id){
         log.info("启用或禁用菜品：{}",id);
         dishService.startOrStopDish(status,id);
+        cleanCach("dish_*");
         return Result.success();
     }
-
     @GetMapping("/list")
     public Result<List<DishVO>> selectDishListByCategoryId(Long categoryId){
         log.info("根据分类id查询菜品：{}",categoryId);
         List<DishVO> dishVOSList= dishService.selectDishListByCategoryId(categoryId);
         return Result.success(dishVOSList);
+    }
+    private void cleanCach(String pattern) {
+        log.info("清理缓存：{}",pattern);
+        Set keys = redisTemplate.keys(pattern);
+        redisTemplate.delete(keys);
     }
 }
