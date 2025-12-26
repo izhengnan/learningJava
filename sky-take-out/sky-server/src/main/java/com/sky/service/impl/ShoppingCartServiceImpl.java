@@ -31,10 +31,10 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
         shoppingCart.setUserId(BaseContext.getCurrentId());
         shoppingCart.setCreateTime(LocalDateTime.now());
 
-        if (shoppingCartMapper.selectDishExist(shoppingCart) != null) {
+        Integer dishNumber = shoppingCartMapper.selectDishNumber(shoppingCart);
+        if (dishNumber != null && dishNumber >= 1) {
             shoppingCartMapper.updateShoppingCart(shoppingCart);
         } else {
-            shoppingCart.setNumber(1);
             if (shoppingCartDTO.getDishId() != null) {
                 DishVO dishVO = dishMapper.selectById(shoppingCartDTO.getDishId());
                 shoppingCart.setName(dishVO.getName());
@@ -46,6 +46,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
                 shoppingCart.setImage(setmealVO.getImage());
                 shoppingCart.setAmount(setmealVO.getPrice());
             }
+            shoppingCart.setNumber(1);
 
             shoppingCartMapper.addShoppingCart(shoppingCart);
         }
@@ -55,5 +56,24 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     public ArrayList<ShoppingCart> getShoppingCart() {
         Long userId = BaseContext.getCurrentId();
         return shoppingCartMapper.getShoppingCart(userId);
+    }
+
+    @Override
+    public void cleanShoppingCart() {
+        Long userId = BaseContext.getCurrentId();
+        shoppingCartMapper.cleanShoppingCart(userId);
+    }
+
+    @Override
+    public void deleteShoppingCartDishOrSetmeal(ShoppingCartDTO shoppingCartDTO) {
+        ShoppingCart shoppingCart = new ShoppingCart();
+        BeanUtils.copyProperties(shoppingCartDTO, shoppingCart);
+        shoppingCart.setUserId(BaseContext.getCurrentId());
+        Integer dishNumber = shoppingCartMapper.selectDishNumber(shoppingCart);
+        if (dishNumber != null && dishNumber > 1) {
+            shoppingCartMapper.subShoppingCart(shoppingCart);
+        }else{
+            shoppingCartMapper.deleteShoppingCartDishOrSetmeal(shoppingCart);
+        }
     }
 }

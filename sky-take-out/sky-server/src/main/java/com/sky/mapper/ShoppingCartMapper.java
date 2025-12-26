@@ -10,9 +10,15 @@ import java.util.ArrayList;
 public interface ShoppingCartMapper {
     void addShoppingCart(ShoppingCart shoppingCart);
 
-    ShoppingCart selectDishExist(ShoppingCart shoppingCart);
+    Integer selectDishNumber(ShoppingCart shoppingCart);
 
     void updateShoppingCart(ShoppingCart shoppingCart);
 
     ArrayList<ShoppingCart> getShoppingCart(Long userId);
+
+    void cleanShoppingCart(Long userId);
+
+    void subShoppingCart(ShoppingCart shoppingCart);
+
+    void deleteShoppingCartDishOrSetmeal(ShoppingCart shoppingCart);
 }

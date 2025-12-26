@@ -35,8 +35,9 @@
             </if>
         </where>
     </update>
-    <select id="selectDishExist" resultType="com.sky.entity.ShoppingCart">
-        select * from shopping_cart
+    <update id="subShoppingCart">
+        update shopping_cart
+        set number = number - 1
         <where>
             user_id = #{userId}
             <if test="dishId != null">
@@ -49,6 +50,40 @@
                 AND dish_flavor = #{dishFlavor}
             </if>
         </where>
+    </update>
+    <delete id="cleanShoppingCart">
+        delete from shopping_cart where user_id = #{userId}
+    </delete>
+    <delete id="deleteShoppingCartDishOrSetmeal">
+        delete from shopping_cart
+        <where>
+            user_id = #{userId}
+            <if test="dishId != null">
+                AND dish_id = #{dishId}
+            </if>
+            <if test="dishFlavor != null">
+                AND dish_flavor = #{dishFlavor}
+            </if>
+            <if test="setmealId != null">
+                AND setmeal_id = #{setmealId}
+            </if>
+        </where>
+    </delete>
+    <select id="selectDishNumber" resultType="Integer">
+        select number from shopping_cart
+        <where>
+            user_id = #{userId}
+            <if test="dishId != null">
+                AND dish_id = #{dishId}
+            </if>
+            <if test="setmealId != null">
+                AND setmeal_id = #{setmealId}
+            </if>
+            <if test="dishFlavor != null">
+                AND dish_flavor = #{dishFlavor}
+            </if>
+        </where>
+        limit 1
     </select>
     <select id="getShoppingCart" resultType="com.sky.entity.ShoppingCart">
         select * from shopping_cart where user_id=#{userId}
