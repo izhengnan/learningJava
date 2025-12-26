@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sky.mapper.ShoppingCartMapper">
+
+    <insert id="addShoppingCart">
+        insert into shopping_cart
+            <trim prefix="(" suffix=")" suffixOverrides=",">
+                <if test="dishId != null">dish_id,</if>
+                <if test="setmealId != null">setmeal_id,</if>
+                <if test="dishFlavor != null">dish_flavor,</if>
+                name,user_id,number,amount,image,create_time
+            </trim>
+        values
+            <trim prefix="(" suffix=")" suffixOverrides=",">
+                <if test="dishId != null">#{dishId},</if>
+                <if test="setmealId != null">#{setmealId},</if>
+                <if test="dishFlavor != null">#{dishFlavor},</if>
+                #{name},#{userId},#{number},#{amount},#{image},#{createTime}
+            </trim>
+    </insert>
+    <update id="updateShoppingCart">
+        update shopping_cart
+        set number = number + 1
+        <where>
+            user_id = #{userId}
+            <if test="dishId != null">
+                AND dish_id = #{dishId}
+            </if>
+            <if test="setmealId != null">
+                AND setmeal_id = #{setmealId}
+            </if>
+            <if test="dishFlavor != null">
+                AND dish_flavor = #{dishFlavor}
+            </if>
+        </where>
+    </update>
+    <select id="selectDishExist" resultType="com.sky.entity.ShoppingCart">
+        select * from shopping_cart
+        <where>
+            user_id = #{userId}
+            <if test="dishId != null">
+                AND dish_id = #{dishId}
+            </if>
+            <if test="setmealId != null">
+                AND setmeal_id = #{setmealId}
+            </if>
+            <if test="dishFlavor != null">
+                AND dish_flavor = #{dishFlavor}
+            </if>
+        </where>
+    </select>
+    <select id="getShoppingCart" resultType="com.sky.entity.ShoppingCart">
+        select * from shopping_cart where user_id=#{userId}
+    </select>
+
+</mapper>
