@@ -27,4 +27,6 @@ public interface OrderService {
     PageResult selectHistoryOrders(OrdersPageQueryDTO ordersPageQueryDTO);
 
     OrderVO selectOrderDetail(Long id);
+
+    void repetitionOrder(Long id);
 }

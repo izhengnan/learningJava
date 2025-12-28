@@ -50,4 +50,11 @@ public class OrderController {
         OrderVO orderVO = orderService.selectOrderDetail(id);
         return Result.success(orderVO);
     }
+
+    @PostMapping("/repetition/{id}")
+    public Result repetitionOrder(@PathVariable Long id){
+        log.info( "再来一单：{}", id);
+        orderService.repetitionOrder(id);
+        return Result.success();
+    }
 }

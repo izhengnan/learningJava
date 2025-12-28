@@ -19,6 +19,7 @@
                 #{name},#{userId},#{number},#{amount},#{image},#{createTime}
             </trim>
     </insert>
+
     <update id="updateShoppingCart">
         update shopping_cart
         set number = number + 1
@@ -88,5 +89,11 @@
     <select id="getShoppingCart" resultType="com.sky.entity.ShoppingCart">
         select * from shopping_cart where user_id=#{userId}
     </select>
-
+    <insert id="addShoppingCartList">
+        insert into shopping_cart(name, image, user_id, dish_id, setmeal_id, dish_flavor, number, amount, create_time)
+        VALUES
+        <foreach collection="shoppingCartList" item="list" separator=",">
+            (#{list.name}, #{list.image}, #{list.userId}, #{list.dishId}, #{list.setmealId}, #{list.dishFlavor}, #{list.number}, #{list.amount}, #{list.createTime})
+        </foreach>
+    </insert>
 </mapper>

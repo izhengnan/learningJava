@@ -185,4 +185,24 @@ public class OrderServiceImpl implements OrderService {
         
         return orderVO;
     }
+
+    @Override
+    public void repetitionOrder(Long id) {
+        List<OrderDetail> orderDetailList = orderDetailMapper.selectByOrderId(id);
+        List<ShoppingCart> shoppingCartList = new ArrayList<>();
+        for (OrderDetail orderDetail : orderDetailList) {
+            ShoppingCart shoppingCart = new ShoppingCart();
+            shoppingCart.setName(orderDetail.getName());
+            shoppingCart.setImage(orderDetail.getImage());
+            shoppingCart.setDishId(orderDetail.getDishId());
+            shoppingCart.setSetmealId(orderDetail.getSetmealId());
+            shoppingCart.setDishFlavor(orderDetail.getDishFlavor());
+            shoppingCart.setNumber(orderDetail.getNumber());
+            shoppingCart.setAmount(orderDetail.getAmount());
+            shoppingCart.setUserId(BaseContext.getCurrentId());
+            shoppingCart.setCreateTime(LocalDateTime.now());
+            shoppingCartList.add(shoppingCart);
+        }
+        shoppingCartMapper.addShoppingCartList(shoppingCartList);
+    }
 }

@@ -5,6 +5,7 @@ import com.sky.entity.ShoppingCart;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Mapper
 public interface ShoppingCartMapper {
@@ -21,4 +22,6 @@ public interface ShoppingCartMapper {
     void subShoppingCart(ShoppingCart shoppingCart);
 
     void deleteShoppingCartDishOrSetmeal(ShoppingCart shoppingCart);
+
+    void addShoppingCartList(List<ShoppingCart> shoppingCartList);
 }
