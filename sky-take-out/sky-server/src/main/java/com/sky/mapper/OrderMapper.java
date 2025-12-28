@@ -30,4 +30,6 @@ public interface OrderMapper {
     void update(Orders orders);
 
     List<Orders> selectHistoryOrders(OrdersPageQueryDTO ordersPageQueryDTO);
+
+    Orders selectOrderDetail(Long id, Long userId);
 }

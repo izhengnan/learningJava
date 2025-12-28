@@ -49,4 +49,10 @@
         </where>
         order by order_time desc
     </select>
+    <select id="selectOrderDetail" resultType="com.sky.entity.Orders">
+        select * from orders
+        <where>
+            id = #{id} AND user_id = #{userId}
+        </where>
+    </select>
 </mapper>
