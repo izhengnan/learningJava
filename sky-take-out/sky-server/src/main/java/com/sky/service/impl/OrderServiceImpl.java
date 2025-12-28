@@ -205,4 +205,20 @@ public class OrderServiceImpl implements OrderService {
         }
         shoppingCartMapper.addShoppingCartList(shoppingCartList);
     }
+
+    @Override
+    public void cancelOrder(Long id) {
+        Long userId = BaseContext.getCurrentId();
+        Orders orders = orderMapper.selectOrderDetail(id, userId);
+        if(orders.getStatus()>Orders.TO_BE_CONFIRMED){
+            throw new OrderBusinessException(MessageConstant.ORDER_STATUS_ERROR);
+        }
+        if(orders.getStatus().equals(Orders.TO_BE_CONFIRMED)){
+            orders.setPayStatus(Orders.REFUND);
+        }
+        orders.setStatus(Orders.CANCELLED);
+        orders.setCancelReason("用户取消");
+        orders.setCancelTime(LocalDateTime.now());
+        orderMapper.update(orders);
+    }
 }
