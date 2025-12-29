@@ -5,9 +5,7 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.sky.constant.MessageConstant;
 import com.sky.context.BaseContext;
-import com.sky.dto.OrdersPageQueryDTO;
-import com.sky.dto.OrdersPaymentDTO;
-import com.sky.dto.OrdersSubmitDTO;
+import com.sky.dto.*;
 import com.sky.entity.*;
 import com.sky.exception.AddressBookBusinessException;
 import com.sky.exception.OrderBusinessException;
@@ -172,8 +170,8 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public OrderVO selectOrderDetail(Long id) {
-        Long userId = BaseContext.getCurrentId();
-        Orders orders = orderMapper.selectOrderDetail(id, userId);
+//        Long userId = BaseContext.getCurrentId();
+        Orders orders = orderMapper.selectOrderDetail(id);
         
         if (orders == null) {
             return null;
@@ -210,8 +208,8 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public void cancelOrder(Long id) {
-        Long userId = BaseContext.getCurrentId();
-        Orders orders = orderMapper.selectOrderDetail(id, userId);
+//        Long userId = BaseContext.getCurrentId();
+        Orders orders = orderMapper.selectOrderDetail(id);
         if(orders.getStatus()>Orders.TO_BE_CONFIRMED){
             throw new OrderBusinessException(MessageConstant.ORDER_STATUS_ERROR);
         }
@@ -257,4 +255,37 @@ public class OrderServiceImpl implements OrderService {
         }
         return orderStatisticsVO;
     }
+
+    @Override
+    public void confirmOrder(OrdersConfirmDTO ordersConfirmDTO) {
+        Orders orders = orderMapper.selectOrderDetail(ordersConfirmDTO.getId());
+        if(orders == null){
+            throw new OrderBusinessException("未找到该订单");
+        }
+        if(!Objects.equals(orders.getStatus(), Orders.TO_BE_CONFIRMED)){
+            throw new OrderBusinessException("订单状态不为待接单，无法接单");
+        }
+        Orders updateOrder = new Orders();
+        updateOrder.setId(ordersConfirmDTO.getId());
+        updateOrder.setStatus(Orders.CONFIRMED);
+        orderMapper.update(updateOrder);
+    }
+
+    @Override
+    public void rejectionOrder(OrdersRejectionDTO ordersRejectionDTO) {
+        Orders orders = orderMapper.selectOrderDetail(ordersRejectionDTO.getId());
+        if(orders == null){
+            throw new OrderBusinessException("未找到该订单");
+        }
+        if(!Objects.equals(orders.getStatus(), Orders.TO_BE_CONFIRMED)){
+            throw new OrderBusinessException("订单状态不为待接单，无法拒单");
+        }
+        Orders updateOrder = new Orders();
+        updateOrder.setId(ordersRejectionDTO.getId());
+        updateOrder.setStatus(Orders.CANCELLED);
+        updateOrder.setRejectionReason(ordersRejectionDTO.getRejectionReason());
+        updateOrder.setCancelTime(LocalDateTime.now());
+        orderMapper.update(updateOrder);
+    }
+
 }

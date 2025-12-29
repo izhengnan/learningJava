@@ -52,7 +52,7 @@
     <select id="selectOrderDetail" resultType="com.sky.entity.Orders">
         select * from orders
         <where>
-            id = #{id} AND user_id = #{userId}
+            id = #{id}
         </where>
     </select>
     <select id="conditionSearchOrder" resultType="com.sky.vo.OrderVO">
