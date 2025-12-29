@@ -6,6 +6,7 @@ sky:
     database: sky_take_out
     username: root
     password: zn010924
+    url: jdbc:mysql://${sky.datasource.host}:${sky.datasource.port}/${sky.datasource.database}?allowMultiQueries=true
   wechat:
     appid: wxed42889a0d196b87
     secret: 80c898e65cf442623be99ea71acf1a89

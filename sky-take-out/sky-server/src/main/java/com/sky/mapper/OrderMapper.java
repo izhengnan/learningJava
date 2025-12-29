@@ -10,6 +10,7 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,4 +38,8 @@ public interface OrderMapper {
     Page<OrderVO> conditionSearchOrder(OrdersPageQueryDTO ordersPageQueryDTO);
 
     List<Integer> orderStatistics();
+
+    List<Orders> getByStatusAndOrderTime(Integer status, LocalDateTime orderTime);
+
+    void updateList(List<Orders> ordersList);
 }

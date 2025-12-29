@@ -39,6 +39,40 @@
         </set>
         where id = #{id}
     </update>
+    <update id="updateList">
+        <foreach collection="ordersList" item="list" separator=";">
+            update orders
+            set
+            <trim suffixOverrides=",">
+                <if test="list.cancelReason != null and list.cancelReason!='' ">
+                    cancel_reason= #{list.cancelReason},
+                </if>
+                <if test="list.rejectionReason != null and list.rejectionReason!='' ">
+                    rejection_reason= #{list.rejectionReason},
+                </if>
+                <if test="list.cancelTime != null">
+                    cancel_time= #{list.cancelTime},
+                </if>
+                <if test="list.payStatus != null">
+                    pay_status= #{list.payStatus},
+                </if>
+                <if test="list.payMethod != null">
+                    pay_method= #{list.payMethod},
+                </if>
+                <if test="checkoutTime != null">
+                    checkout_time=#{checkoutTime},
+                </if>
+                <if test="status != null">
+                    status = #{status},
+                </if>
+                <if test="deliveryTime != null">
+                    delivery_time = #{deliveryTime}
+                </if>
+            </trim>
+            where id = #{list.id}
+        </foreach>
+
+    </update>
     <select id="selectHistoryOrders" resultType="com.sky.entity.Orders">
         select * from orders
         <where>
@@ -66,6 +100,9 @@
     </select>
     <select id="orderStatistics" resultType="java.lang.Integer">
         select status from orders
+    </select>
+    <select id="getByStatusAndOrderTime" resultType="com.sky.entity.Orders">
+        select * from orders where status=#{status} and order_time = #{orderTime}
     </select>
 
 </mapper>
