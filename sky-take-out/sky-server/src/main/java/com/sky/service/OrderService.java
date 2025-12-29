@@ -38,4 +38,6 @@ public interface OrderService {
     void confirmOrder(OrdersConfirmDTO ordersConfirmDTO);
 
     void rejectionOrder(OrdersRejectionDTO ordersRejectionDTO);
+
+    void adminCancelOrder(OrdersCancelDTO ordersCancelDTO);
 }

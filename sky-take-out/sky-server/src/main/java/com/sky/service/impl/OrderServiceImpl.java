@@ -288,4 +288,21 @@ public class OrderServiceImpl implements OrderService {
         orderMapper.update(updateOrder);
     }
 
+    @Override
+    public void adminCancelOrder(OrdersCancelDTO ordersCancelDTO) {
+        Orders orders = orderMapper.selectOrderDetail(ordersCancelDTO.getId());
+        if(orders == null){
+            throw new OrderBusinessException("未找到该订单");
+        }
+        if(Objects.equals(orders.getStatus(), Orders.CANCELLED)
+        ){throw new OrderBusinessException("订单已取消");}
+
+        Orders updateOrder = new Orders();
+        updateOrder.setId(ordersCancelDTO.getId());
+        updateOrder.setStatus(Orders.CANCELLED);
+        updateOrder.setCancelReason(ordersCancelDTO.getCancelReason());
+        updateOrder.setCancelTime(LocalDateTime.now());
+        orderMapper.update(updateOrder);
+    }
+
 }
