@@ -4,6 +4,7 @@ import com.github.pagehelper.Page;
 import com.sky.dto.OrdersPageQueryDTO;
 import com.sky.entity.OrderDetail;
 import com.sky.entity.Orders;
+import com.sky.vo.OrderStatisticsVO;
 import com.sky.vo.OrderVO;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
@@ -34,4 +35,6 @@ public interface OrderMapper {
     Orders selectOrderDetail(Long id, Long userId);
 
     Page<OrderVO> conditionSearchOrder(OrdersPageQueryDTO ordersPageQueryDTO);
+
+    List<Integer> orderStatistics();
 }

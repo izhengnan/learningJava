@@ -64,4 +64,8 @@
         </where>
         order by order_time desc
     </select>
+    <select id="orderStatistics" resultType="java.lang.Integer">
+        select status from orders
+    </select>
+
 </mapper>

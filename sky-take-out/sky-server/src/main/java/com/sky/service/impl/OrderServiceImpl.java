@@ -17,6 +17,7 @@ import com.sky.result.PageResult;
 import com.sky.service.OrderService;
 import com.sky.utils.WeChatPayUtil;
 import com.sky.vo.OrderPaymentVO;
+import com.sky.vo.OrderStatisticsVO;
 import com.sky.vo.OrderSubmitVO;
 import com.sky.vo.OrderVO;
 import lombok.extern.slf4j.Slf4j;
@@ -29,6 +30,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @Slf4j
@@ -233,5 +235,26 @@ public class OrderServiceImpl implements OrderService {
         pageResult.setRecords(page.getResult());
         pageResult.setTotal(page.getTotal());
         return pageResult;
+    }
+
+    @Override
+    public OrderStatisticsVO orderStatistics() {
+        List<Integer> status = orderMapper.orderStatistics();
+        OrderStatisticsVO orderStatisticsVO = new OrderStatisticsVO();
+        orderStatisticsVO.setToBeConfirmed(0);
+        orderStatisticsVO.setConfirmed(0);
+        orderStatisticsVO.setDeliveryInProgress(0);
+        for (Integer i : status) {
+            if(Objects.equals(i, Orders.TO_BE_CONFIRMED)){
+                orderStatisticsVO.setToBeConfirmed(orderStatisticsVO.getToBeConfirmed()+1);
+            }
+            if(Objects.equals(i, Orders.CONFIRMED)){
+                orderStatisticsVO.setConfirmed(orderStatisticsVO.getConfirmed()+1);
+            }
+            if(Objects.equals(i, Orders.DELIVERY_IN_PROGRESS)){
+                orderStatisticsVO.setDeliveryInProgress(orderStatisticsVO.getDeliveryInProgress()+1);
+            }
+        }
+        return orderStatisticsVO;
     }
 }
