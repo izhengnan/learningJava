@@ -305,4 +305,34 @@ public class OrderServiceImpl implements OrderService {
         orderMapper.update(updateOrder);
     }
 
+    @Override
+    public void deliveryOrder(Long id) {
+        Orders orders = orderMapper.selectOrderDetail(id);
+        if(orders == null){
+            throw new OrderBusinessException("未找到该订单");
+        }
+        if(Objects.equals(orders.getStatus(), Orders.CANCELLED)){
+            throw new OrderBusinessException("订单状态不为待派送，无法派送");
+        }
+        Orders updateOrder = new Orders();
+        updateOrder.setId(id);
+        updateOrder.setStatus(Orders.DELIVERY_IN_PROGRESS);
+        orderMapper.update(updateOrder);
+    }
+
+    @Override
+    public void completeOrder(Long id) {
+        Orders orders = orderMapper.selectOrderDetail(id);
+        if(orders == null){
+            throw new OrderBusinessException("未找到该订单");
+        }
+        if(Objects.equals(orders.getStatus(), Orders.CANCELLED)){
+            throw new OrderBusinessException("订单状态不为派送中，无法完成");
+        }
+        Orders updateOrder = new Orders();
+        updateOrder.setId(id);
+        updateOrder.setStatus(Orders.COMPLETED);
+        orderMapper.update(updateOrder);
+    }
+
 }

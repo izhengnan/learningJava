@@ -57,4 +57,16 @@ public class OrderController {
         orderService.adminCancelOrder(ordersCancelDTO);
         return Result.success();
     }
+    @PutMapping("/delivery/{id}")
+    public Result deliveryOrder(@PathVariable Long id){
+        log.info("派送订单：{}", id);
+        orderService.deliveryOrder(id);
+        return Result.success();
+    }
+    @PutMapping("/complete/{id}")
+    public Result completeOrder(@PathVariable Long id) {
+        log.info("完成订单：{}", id);
+        orderService.completeOrder(id);
+        return Result.success();
+    }
 }
