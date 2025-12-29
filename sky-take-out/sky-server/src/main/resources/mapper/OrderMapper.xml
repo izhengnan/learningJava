@@ -55,4 +55,13 @@
             id = #{id} AND user_id = #{userId}
         </where>
     </select>
+    <select id="conditionSearchOrder" resultType="com.sky.vo.OrderVO">
+        select * from orders
+        <where>
+            <if test="number!=null" >and number like concat('%',#{number},'%')</if>
+            <if test="phone!=null" >and phone like concat('%',#{number},'%')</if>
+            <if test="status!=null" >and phone status=#{status}</if>
+        </where>
+        order by order_time desc
+    </select>
 </mapper>

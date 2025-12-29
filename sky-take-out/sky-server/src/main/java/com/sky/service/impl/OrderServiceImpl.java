@@ -221,4 +221,17 @@ public class OrderServiceImpl implements OrderService {
         orders.setCancelTime(LocalDateTime.now());
         orderMapper.update(orders);
     }
+
+    @Override
+    public PageResult conditionSearchOrder(OrdersPageQueryDTO ordersPageQueryDTO) {
+        PageHelper.startPage(ordersPageQueryDTO.getPage(),ordersPageQueryDTO.getPageSize());
+        PageResult pageResult = new PageResult();
+        Page<OrderVO> page = orderMapper.conditionSearchOrder(ordersPageQueryDTO);
+        if(page == null){
+            throw new OrderBusinessException("未找到相关订单");
+        }
+        pageResult.setRecords(page.getResult());
+        pageResult.setTotal(page.getTotal());
+        return pageResult;
+    }
 }

@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
-@RestController
+@RestController("userOrderController")
 @RequestMapping("/user/order")
 @Slf4j
 public class OrderController {

@@ -32,4 +32,6 @@ public interface OrderMapper {
     List<Orders> selectHistoryOrders(OrdersPageQueryDTO ordersPageQueryDTO);
 
     Orders selectOrderDetail(Long id, Long userId);
+
+    Page<OrderVO> conditionSearchOrder(OrdersPageQueryDTO ordersPageQueryDTO);
 }
