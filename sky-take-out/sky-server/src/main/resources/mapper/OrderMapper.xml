@@ -104,5 +104,15 @@
     <select id="getByStatusAndOrderTime" resultType="com.sky.entity.Orders">
         select * from orders where status=#{status} and order_time = #{orderTime}
     </select>
-
+    <select id="countByMap" resultType="java.lang.Integer">
+        select count(*) from orders
+        <where>
+            <if test="begin != null">
+                and order_time &gt;= #{begin}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+        </where>
+    </select>
 </mapper>

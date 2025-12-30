@@ -9,6 +9,7 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 @Mapper
 public interface SetmealMapper {
@@ -35,4 +36,6 @@ public interface SetmealMapper {
     void startOrStopSetmeal(Integer status, Long id);
 
     ArrayList<Setmeal> selectSetmealByCategoryId(Long categoryId);
+
+    Integer countByMap(Map map);
 }
