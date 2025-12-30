@@ -42,4 +42,7 @@ public interface OrderMapper {
     List<Orders> getByStatusAndOrderTime(Integer status, LocalDateTime orderTime);
 
     void updateList(List<Orders> ordersList);
+
+    @Select("select * from orders where id=#{id}")
+    Orders getById(Long id);
 }
