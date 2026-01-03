@@ -240,8 +240,19 @@ public class OrderServiceImpl implements OrderService {
         if(page == null){
             throw new OrderBusinessException("未找到相关订单");
         }
-        pageResult.setRecords(page.getResult());
+        List<OrderVO> orderVOList = page.getResult();
+        for (OrderVO orderVO : orderVOList) {
+            List<OrderDetail> orderDetailList = orderDetailMapper.selectByOrderId(orderVO.getId());
+            StringBuilder orderDishes = new StringBuilder();
+            if (orderDetailList != null && !orderDetailList.isEmpty()) {
+                for (OrderDetail orderDetail : orderDetailList) {
+                    orderDishes.append(orderDetail.getName()).append("*").append(orderDetail.getNumber()).append(" ");
+                }
+            }
+            orderVO.setOrderDishes(orderDishes.toString());
+        }
         pageResult.setTotal(page.getTotal());
+        pageResult.setRecords(orderVOList);
         return pageResult;
     }
 
