@@ -5,7 +5,7 @@
 
     <insert id="addDishFlavor">
         INSERT INTO dish_flavor (dish_id, name, value) VALUES
-        <foreach collection="flavorList" item="df">
+        <foreach collection="flavorList" item="df" separator=",">
             (#{df.dishId}, #{df.name}, #{df.value})
         </foreach>
     </insert>

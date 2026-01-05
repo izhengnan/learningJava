@@ -26,7 +26,7 @@ public class DishController {
     public Result<List<DishVO>> selectDishListByCategoryId(Long categoryId){
         log.info("根据分类id查询菜品：{}",categoryId);
         //构造redis中的key，dish_categoryId
-        String key = "dish"+categoryId;
+        String key = "dish_"+categoryId;
         //查询redis
         List<DishVO> dishVOSList = (List<DishVO>) redisTemplate.opsForValue().get(key);
         if (dishVOSList != null && !dishVOSList.isEmpty()){
