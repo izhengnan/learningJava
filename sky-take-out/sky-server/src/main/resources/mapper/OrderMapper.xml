@@ -59,14 +59,14 @@
                 <if test="list.payMethod != null">
                     pay_method= #{list.payMethod},
                 </if>
-                <if test="checkoutTime != null">
-                    checkout_time=#{checkoutTime},
+                <if test="list.checkoutTime != null">
+                    checkout_time=#{list.checkoutTime},
                 </if>
-                <if test="status != null">
-                    status = #{status},
+                <if test="list.status != null">
+                    status = #{list.status},
                 </if>
-                <if test="deliveryTime != null">
-                    delivery_time = #{deliveryTime}
+                <if test="list.deliveryTime != null">
+                    delivery_time = #{list.deliveryTime}
                 </if>
             </trim>
             where id = #{list.id}
@@ -102,7 +102,7 @@
         select status from orders
     </select>
     <select id="getByStatusAndOrderTime" resultType="com.sky.entity.Orders">
-        select * from orders where status=#{status} and order_time = #{orderTime}
+        select * from orders where status=#{status} and order_time &lt; #{orderTime}
     </select>
     <select id="countByMap" resultType="java.lang.Integer">
         select count(*) from orders

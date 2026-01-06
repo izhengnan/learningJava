@@ -1,0 +1,22 @@
+package com.sky.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
+import java.time.LocalDateTime;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class UserRegisterDTO implements Serializable {
+
+    //姓名
+    private String name;
+
+    private String password;
+
+}

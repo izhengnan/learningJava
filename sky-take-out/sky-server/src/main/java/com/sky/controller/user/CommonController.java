@@ -1,4 +1,4 @@
-package com.sky.controller.admin;
+package com.sky.controller.user;
 
 import com.sky.result.Result;
 import com.sky.utils.AliyunOSSOperator;
@@ -11,9 +11,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Objects;
 
-@RestController("adminCommonController")
+@RestController("userCommonController")
 @Slf4j
-@RequestMapping("/admin/common")
+@RequestMapping("/user/common")
 public class CommonController {
     @Autowired
     private AliyunOSSOperator aliyunOSSOperator;

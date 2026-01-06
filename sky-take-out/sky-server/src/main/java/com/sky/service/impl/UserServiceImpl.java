@@ -3,8 +3,13 @@ package com.sky.service.impl;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.sky.constant.MessageConstant;
+import com.sky.context.BaseContext;
 import com.sky.dto.UserLoginDTO;
+import com.sky.dto.UserPageLoginDTO;
+import com.sky.dto.UserRegisterDTO;
 import com.sky.entity.User;
+import com.sky.entity.UserPage;
+import com.sky.entity.UserRegister;
 import com.sky.exception.LoginFailedException;
 import com.sky.mapper.UserMapper;
 import com.sky.properties.WeChatProperties;
@@ -43,6 +48,36 @@ public class UserServiceImpl implements UserService {
         }
 
         return user;
+    }
+
+    @Override
+    public UserPage Login(UserPageLoginDTO userPageLoginDTO) {
+        UserPage userPage = userMapper.login(userPageLoginDTO);
+        if(userPage == null){
+            throw new LoginFailedException(MessageConstant.LOGIN_FAILED);
+        }
+        return userPage;
+    }
+
+    @Override
+    public void Register(UserRegisterDTO userRegisterDTO) {
+        UserRegister userRegister = UserRegister.builder()
+                .name(userRegisterDTO.getName())
+                .password(userRegisterDTO.getPassword())
+                .createTime(LocalDateTime.now())
+                .build();
+        userMapper.Register(userRegister);
+    }
+
+    @Override
+    public UserPage getUserMessage(Long id) {
+        return userMapper.getUserMessage(id);
+    }
+
+    @Override
+    public void setAvator(UserPage userPage) {
+        userPage.setId(BaseContext.getCurrentId());
+        userMapper.setAvator(userPage);
     }
 
     private String getOpenid(UserLoginDTO userLoginDTO) {
